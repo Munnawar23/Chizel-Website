@@ -1,62 +1,52 @@
 import AnimatedTitle from "../components/common/AnimatedTitle";
 import Button from "../components/common/Button";
 
-/**
- * A small, reusable component for rendering the clipped images.
- * Keeping this inside the section is fine as it's not used elsewhere.
- */
-const ImageClipBox = ({ src, clipClass, alt }) => (
-  <div className={clipClass}>
-    <img src={src} alt={alt} className="size-full object-cover" />
-  </div>
-);
-
 const ContactSection = () => {
   return (
-    <div id="contact" className="my-20 min-h-96 w-screen px-10">
-      {/* Main container with Chizel's card background color */}
-      <div className="relative rounded-lg bg-card py-24 text-text sm:overflow-hidden">
+    <div id="contact" className="my-20 w-screen px-4 sm:px-10">
+      {/* Main container with enhanced background */}
+      <div className="relative rounded-lg bg-gradient-to-br from-card via-card to-card/80 py-12 sm:py-16 lg:py-20 text-text overflow-hidden">
         
-        {/* Left-side decorative images */}
-        <div className="absolute -left-20 top-0 hidden h-full w-72 overflow-hidden sm:block lg:left-20 lg:w-96">
-          <ImageClipBox
-            src="/images/contact-kid-1.webp"
-            alt="Child happily using a tablet"
-            clipClass="contact-clip-path-1"
-          />
-          <ImageClipBox
-            src="/images/contact-kid-2.webp"
-            alt="Colorful abstract shapes from the Chizel app"
-            clipClass="contact-clip-path-2 lg:translate-y-40 translate-y-60"
-          />
-        </div>
-
-        {/* Right-side decorative images */}
-        <div className="absolute -top-40 left-20 w-60 sm:top-1/2 md:left-auto md:right-10 lg:top-20 lg:w-80">
-          <ImageClipBox
-            src="/images/chizel-app-partial.webp"
-            alt="A close-up of the Chizel app interface"
-            clipClass="absolute md:scale-125"
-          />
-          <ImageClipBox
-            src="/images/chizel-app-full.webp"
-            alt="A full view of a Chizel game"
-            clipClass="sword-man-clip-path md:scale-125"
-          />
+        {/* Animated background elements - reduced and more subtle */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Floating geometric shapes - fewer and smaller */}
+          <div className="absolute top-8 left-8 w-16 h-16 bg-blue-500/8 rounded-full animate-pulse"></div>
+          <div className="absolute top-16 right-12 w-12 h-12 bg-purple-500/8 rounded-lg rotate-45 animate-bounce"></div>
+          <div className="absolute bottom-12 left-1/4 w-10 h-10 bg-green-500/8 rounded-full animate-ping"></div>
+          
+          {/* Single gradient orb for subtle depth */}
+          <div className="absolute top-1/3 right-1/3 w-28 h-28 bg-gradient-to-r from-blue-400/15 to-purple-400/15 rounded-full blur-xl animate-pulse"></div>
         </div>
 
         {/* Centered text content */}
-        <div className="flex flex-col items-center text-center">
-          <p className="mb-10 font-body text-[10px] uppercase text-secondary-text">
-            Join The Chizel Community
-          </p>
+        <div className="relative z-10 flex flex-col items-center text-center px-6 sm:px-8 md:px-16 lg:px-24">
+          <div className="mb-4 sm:mb-6 flex items-center gap-2">
+            <div className="w-6 h-px bg-gradient-to-r from-transparent via-secondary-text to-transparent"></div>
+            <p className="font-body text-[10px] sm:text-xs uppercase text-secondary-text tracking-wider">
+              Get In Touch
+            </p>
+            <div className="w-6 h-px bg-gradient-to-r from-transparent via-secondary-text to-transparent"></div>
+          </div>
 
-          <AnimatedTitle
-            containerClass="special-font !md:text-[6.2rem] w-full !text-5xl !font-black !leading-[.9]"
-            title="Let's shape the <br /> future <b>o</b>f learning <br /> t<b>o</b>gether."
-          />
-          <Button title="Get In Touch" containerClass="mt-10" />
+          <div className="max-w-4xl mx-auto flex flex-col items-center">
+            <AnimatedTitle
+              containerClass="special-font !text-3xl sm:!text-4xl md:!text-5xl lg:!text-[5.5rem] w-full !font-black !leading-[.9] !text-center"
+              title="Have an idea t<b>o</b> make <br /> Chizel better? <br /> <b>L</b>et's talk."
+            />
+          </div>
+          
+          <p className="mt-4 sm:mt-6 max-w-2xl text-secondary-text text-sm sm:text-base leading-relaxed">
+            Got feedback, partnership ideas, or questions about Chizel? 
+            We'd love to hear from you and build the future of learning together.
+          </p>
+          
+          <div className="mt-6 sm:mt-8">
+            <Button title="Contact Us" containerClass="px-10 py-3" />
+          </div>
         </div>
+
+        {/* Bottom accent line */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-secondary-text/20 to-transparent"></div>
       </div>
     </div>
   );

@@ -55,16 +55,18 @@ const AppSection = () => {
   return (
     <section id="download" className="min-h-dvh w-screen bg-background text-text">
       <div className="flex size-full flex-col items-center py-10 pb-24">
-        <p className="font-body text-sm uppercase text-secondary-text md:text-[10px]">
+        <p className="font-body text-sm uppercase text-secondary-text md:text-base tracking-wide">
           Coming Soon
         </p>
 
         <div className="relative size-full">
-          {/* Animated title with a blend effect that interacts with the image behind it */}
-          <AnimatedTitle
-            title="The adventure <br /> begins s<b>oo</b>n"
-            containerClass="mt-5 pointer-events-none mix-blend-difference relative z-10"
-          />
+          {/* Animated title with proper centering and visibility */}
+          <div className="flex justify-center w-full mt-5 relative z-10">
+            <AnimatedTitle
+              title="Chizel app<br />is c<b>o</b>ming "
+              containerClass="pointer-events-none text-center"
+            />
+          </div>
 
           {/* This is the container for the uniquely shaped interactive image */}
           <div className="story-img-container">
@@ -74,7 +76,7 @@ const AppSection = () => {
                   ref={frameRef}
                   onMouseMove={handleMouseMove}
                   onMouseLeave={handleMouseLeave}
-                  src="/images/p5.png"
+                  src="/images/p3.png"
                   alt="A phone showcasing the Chizel application"
                   className="object-contain"
                 />
@@ -118,15 +120,81 @@ const AppSection = () => {
         <div className="-mt-80 flex w-full justify-center md:-mt-64 md:me-44 md:justify-end">
           <div className="flex h-full w-fit flex-col items-center md:items-start">
             <p className="mt-3 max-w-sm text-center font-body text-secondary-text md:text-start">
-              Get ready to unlock your child's potential. Be the first to know
-              when the adventure begins and gain exclusive early access.
+              "Big things are coming! The Chizel mobile app will soon bring smart play to your phone."
             </p>
 
-            <Button
-              id="waitlist-btn"
-              title="Join the Waitlist"
-              containerClass="mt-5"
-            />
+            {/* Feature showcase - mobile optimized */}
+            <div className="mt-5 w-full max-w-sm mx-auto sm:max-w-none">
+              {/* Mobile: Single stacked card, Desktop: Three cards */}
+              <div className="sm:hidden">
+                <div className="group">
+                  <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-primary/20 to-accent/20 backdrop-blur-sm border border-primary/30 p-4 transition-all duration-300">
+                    <div className="text-center">
+                      <div className="flex items-center justify-center gap-2 mb-2">
+                        <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                        <span className="text-base font-medium text-text">Coming Soon</span>
+                      </div>
+                      <p className="text-sm text-secondary-text mb-3">Smart Play • AI Powered • Mobile Ready</p>
+                      <div className="flex justify-center gap-4 text-xs text-secondary-text">
+                        <span className="flex items-center gap-1">
+                          <svg className="w-3 h-3 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          iOS
+                        </span>
+                        <span>•</span>
+                        <span className="flex items-center gap-1">
+                          <svg className="w-3 h-3 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          Android
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Desktop: Original three cards */}
+              <div className="hidden sm:flex gap-3">
+                {/* Coming Soon Badge */}
+                <div className="group">
+                  <div className="relative overflow-hidden rounded-lg bg-gradient-to-r from-primary/20 to-accent/20 backdrop-blur-sm border border-primary/30 p-3 transition-all duration-300 hover:scale-105">
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                      <span className="text-sm font-medium text-text">Coming Soon</span>
+                    </div>
+                    <p className="text-xs text-secondary-text mt-1">Mobile App</p>
+                  </div>
+                </div>
+
+                {/* Smart Play Feature */}
+                <div className="group">
+                  <div className="relative overflow-hidden rounded-lg bg-card/60 backdrop-blur-sm border border-secondary-text/20 p-3 transition-all duration-300 hover:scale-105 hover:border-accent/40">
+                    <div className="flex items-center gap-2">
+                      <svg className="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <span className="text-sm font-medium text-text">Smart Play</span>
+                    </div>
+                    <p className="text-xs text-secondary-text mt-1">AI Powered</p>
+                  </div>
+                </div>
+
+                {/* Mobile Ready */}
+                <div className="group">
+                  <div className="relative overflow-hidden rounded-lg bg-card/60 backdrop-blur-sm border border-secondary-text/20 p-3 transition-all duration-300 hover:scale-105 hover:border-accent/40">
+                    <div className="flex items-center gap-2">
+                      <svg className="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M7 2a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7zm3 14a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
+                      </svg>
+                      <span className="text-sm font-medium text-text">Mobile Ready</span>
+                    </div>
+                    <p className="text-xs text-secondary-text mt-1">iOS & Android</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

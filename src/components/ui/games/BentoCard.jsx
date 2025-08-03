@@ -1,14 +1,13 @@
 import { useState, useRef } from "react";
 
 /**
- * A bento-style card with background video, title, and description.
+ * A bento-style card with optional icon or video, title, and description.
  */
-export const BentoCard = ({ src, title, description }) => {
+export const BentoCard = ({ src, icon, title, description}) => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [hoverOpacity, setHoverOpacity] = useState(0);
   const hoverRef = useRef(null);
 
-  // Track mouse position for radial effect
   const handleMouseMove = (e) => {
     if (!hoverRef.current) return;
     const rect = hoverRef.current.getBoundingClientRect();
@@ -19,27 +18,32 @@ export const BentoCard = ({ src, title, description }) => {
   const handleMouseLeave = () => setHoverOpacity(0);
 
   return (
-    <div className="relative size-full">
-      {/* Background video */}
-      <video
-        src={src}
-        loop
-        muted
-        autoPlay
-        playsInline
-        className="absolute left-0 top-0 size-full object-cover object-center"
-      />
+    <div className="relative size-full overflow-hidden bg-card">
+      {/* Video background if src is provided */}
+      {src && (
+        <video
+          src={src}
+          loop
+          muted
+          autoPlay
+          playsInline
+          className="absolute left-0 top-0 size-full object-cover object-center"
+        />
+      )}
 
       {/* Content */}
       <div className="relative z-10 flex size-full flex-col justify-between p-5 text-text">
         <div>
-          <h1 className="bento-title font-heading">{title}</h1>
+          {icon && <div className="mb-3 text-6xl text-primary">{icon}</div>}
+          <h1 className="bento-title font-heading text-xl md:text-2xl">{title}</h1>
           {description && (
             <p className="mt-3 max-w-64 font-body text-xs md:text-base">{description}</p>
           )}
         </div>
 
-        {/* Hover effect placeholder (if you still want it for future use) */}
+       
+
+        {/* Radial hover effect placeholder */}
         <div
           ref={hoverRef}
           onMouseMove={handleMouseMove}

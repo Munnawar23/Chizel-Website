@@ -42,6 +42,30 @@
     src: url("/fonts/Fredoka-Bold.woff2") format("woff2");
   }
 
+   /* Baloo 2 */
+  @font-face {
+    font-family: "Baloo 2";
+    font-weight: 600;
+    src: url("/fonts/Baloo2-SemiBold.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "Baloo 2";
+    font-weight: 700;
+    src: url("/fonts/Baloo2-Bold.woff2") format("woff2");
+  }
+
+  /* Quicksand */
+  @font-face {
+    font-family: "Quicksand";
+    font-weight: 400;
+    src: url("/fonts/Quicksand-Regular.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "Quicksand";
+    font-weight: 500;
+    src: url("/fonts/Quicksand-Medium.woff2") format("woff2");
+  }
+
   body {
     width: 100dvw;
     overflow-x: hidden;
@@ -74,8 +98,8 @@
     font-family: var(--font-heading);
   }
   .animated-title {
-    @apply flex flex-col gap-1 text-7xl uppercase leading-[.8] md:text-[6rem];
-  }
+  @apply flex flex-col gap-1 text-5xl md:text-6xl lg:text-[5rem] uppercase leading-[0.8];
+}
   .animated-word {
     @apply font-heading font-black opacity-0;
     transform: translate3d(10px, 51px, -60px) rotateY(60deg) rotateX(-40deg);

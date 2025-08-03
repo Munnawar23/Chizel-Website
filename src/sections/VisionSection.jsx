@@ -12,43 +12,44 @@ const VisionSection = () => {
     // 🎯 Create a timeline animation for the clip reveal effect
     const clipAnimation = gsap.timeline({
       scrollTrigger: {
-        trigger: "#clip-container",        // Element that starts the animation
-        start: "center center",            // Start point: when trigger's center hits viewport's center
-        end: "+=800 center",               // End point: 800px below start position
-        scrub: 0.5,                        // Sync animation progress with scroll (0.5 = smoothing)
-        pin: true,                         // Pin the container during the animation (stays fixed)
-        pinSpacing: true,                  // Keeps space beneath pinned element so layout doesn't jump
+        trigger: "#clip-container", // Element that starts the animation
+        start: "center center", // Start point: when trigger's center hits viewport's center
+        end: "+=800 center", // End point: 800px below start position
+        scrub: 0.5, // Sync animation progress with scroll (0.5 = smoothing)
+        pin: true, // Pin the container during the animation (stays fixed)
+        pinSpacing: true, // Keeps space beneath pinned element so layout doesn't jump
       },
     });
 
     // 🌀 Animation: Expand the clipped image to full screen with no border radius
     clipAnimation.to(".mask-clip-path", {
-      width: "100vw",       // Expand to full viewport width
-      height: "100vh",      // Expand to full viewport height
-      borderRadius: 0,      // Remove border radius for a smooth rectangular expansion
+      width: "100vw", // Expand to full viewport width
+      height: "100vh", // Expand to full viewport height
+      borderRadius: 0, // Remove border radius for a smooth rectangular expansion
     });
   });
 
   return (
     <div id="about" className="min-h-screen w-screen bg-background">
-      
       {/* 🟧 Text Content Block */}
-      <div className="relative mb-8 mt-36 flex flex-col items-center gap-5">
-        <p className="font-body text-sm uppercase text-secondary-text md:text-[10px]">
-          The Future of Learning
+      <div className="relative mb-8 mt-12 flex flex-col items-center gap-5">
+        <p className="font-body text-sm uppercase text-secondary-text md:text-[20px]">
+          "Smart Play for Growth"
         </p>
 
         {/* 🟪 Animated Title Component */}
         <AnimatedTitle
-          title="A fun way t<b>o</b> learn <br /> and gr<b>o</b>w with Chizel"
+          title="Expl<b>o</b>re, learn <br /> and gr<b>o</b>w with Chizel"
           containerClass="mt-5 !text-text text-center"
         />
 
         {/* 🟫 Subtext Below Title */}
         <div className="about-subtext font-body text-text">
-          <p>Chizel makes learning an adventure!</p>
+          <p>Embark on a Chizel adventure!</p>
           <p className="text-secondary-text">
-            We transform screen time into a productive and fun experience.
+            Explore games that spark learning and imagination.
+            <br />
+            Dive into puzzles, colors, and curious challenges.
           </p>
         </div>
       </div>
