@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0d0b1f;
+  --color-card: #2a1d4e;
+  --color-text: #e0e6ff;
+  --color-secondary-text: #a9a1d4;
+  --color-primary: #ff40a4;
+  --color-accent: #3ffaf4;
+  --color-badge-bg: #ffd970;
+  --color-badge-text: #0d0b1f;
+  --color-primary-alpha: rgba(255, 64, 164, 0.4);
+
+  --font-heading: "Orbitron", sans-serif;
+  --font-body: "Fredoka", sans-serif;
+}
+
+@layer base {
+  @font-face {
+    font-family: "Orbitron";
+    font-weight: 500;
+    src: url("/fonts/Orbitron-Medium.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "Orbitron";
+    font-weight: 700;
+    src: url("/fonts/Orbitron-Bold.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "Fredoka";
+    font-weight: 400;
+    src: url("/fonts/Fredoka-Regular.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "Fredoka";
+    font-weight: 500;
+    src: url("/fonts/Fredoka-Medium.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "Fredoka";
+    font-weight: 700;
+    src: url("/fonts/Fredoka-Bold.woff2") format("woff2");
+  }
+
+  body {
+    width: 100dvw;
+    overflow-x: hidden;
+    background-color: var(--color-background);
+    font-family: var(--font-body);
+    color: var(--color-text);
+  }
+}
+
+@layer utilities {
+  .absolute-center {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+  .hero-heading {
+    @apply font-heading uppercase text-5xl sm:text-7xl md:text-9xl lg:text-[12rem];
+  }
+  .about-subtext {
+    @apply absolute bottom-[-80dvh] left-1/2 w-full max-w-96 -translate-x-1/2 text-center text-lg md:max-w-[34rem];
+  }
+  .about-image {
+    @apply absolute left-1/2 top-0 z-20 h-[60vh] w-96 origin-center -translate-x-1/2 overflow-hidden rounded-3xl md:w-[30vw];
+  }
+  .mask-clip-path {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .special-font b {
+    font-family: var(--font-heading);
+  }
+  .animated-title {
+    @apply flex flex-col gap-1 text-7xl uppercase leading-[.8] md:text-[6rem];
+  }
+  .animated-word {
+    @apply font-heading font-black opacity-0;
+    transform: translate3d(10px, 51px, -60px) rotateY(60deg) rotateX(-40deg);
+    transform-origin: 50% 50% -150px !important;
+    will-change: opacity, transform;
+  }
+  
+  .border-hsla {
+    @apply border border-text/20;
+  }
+
+  .bento-tilt_1 {
+    @apply relative col-span-2 overflow-hidden rounded-md transition-transform duration-300 ease-out md:col-span-1;
+  }
+  .bento-tilt_2 {
+    @apply relative col-span-1 row-span-1 overflow-hidden rounded-md transition-transform duration-300 ease-out;
+  }
+  .bento-title {
+    @apply uppercase md:text-6xl text-4xl font-black;
+  }
+    .sword-man-clip-path {
+    clip-path: polygon(16% 0, 89% 15%, 75% 100%, 0 97%);
+  }
+  .contact-clip-path-1 {
+    clip-path: polygon(25% 0%, 74% 0, 69% 64%, 34% 73%);
+  }
+  .contact-clip-path-2 {
+    clip-path: polygon(29% 15%, 85% 30%, 50% 100%, 10% 64%);
+  }
+  .button-primary {
+    @apply rounded-full bg-primary px-8 py-3 font-body text-sm font-bold uppercase text-text transition-transform duration-300 ease-out hover:scale-105;
+  }
+
+    .reveal-from-left {
+    clip-path: inset(0% 100% 0% 0%);
+  }
+
+   .story-img-container {
+    @apply relative md:h-dvh h-[90vh] w-full;
+    filter: url("#flt_tag"); /* This applies the SVG filter defined in the JSX */
+  }
+
+  /* This is the element with the unique, non-rectangular shape */
+  .story-img-mask {
+    @apply absolute left-0 top-0 size-full overflow-hidden md:left-[20%] md:top-[-10%] md:size-4/5;
+    clip-path: polygon(4% 0, 83% 21%, 100% 73%, 0% 100%);
+  }
+
+  /* This is the container for the actual image inside the mask */
+  .story-img-content {
+    @apply absolute w-full md:h-dvh h-[50dvh] opacity-100 left-10 top-16 md:left-0 md:top-10 lg:left-[-300px] lg:top-[-100px];
+    transform: translate3d(0, 0, 0) rotateX(0) rotateY(0) rotateZ(0) scale(1);
+  }
+
+}
