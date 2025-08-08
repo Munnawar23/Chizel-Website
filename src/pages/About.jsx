@@ -8,7 +8,7 @@ import { principles } from "../constants/data";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const AboutSection = () => {
+const About = () => {
   useGSAP(() => {
     let ctx = gsap.context(() => {
       const scrollTriggerConfig = {
@@ -154,4 +154,4 @@ const AboutSection = () => {
   );
 };
 
-export default AboutSection;
+export default About;

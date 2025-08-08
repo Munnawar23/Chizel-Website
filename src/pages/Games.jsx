@@ -1,5 +1,5 @@
 import BentoTilt from "../components/common/BentoTilt";
-import BentoCard from "../components/ui/games/BentoCard";
+import BentoCard from "../components/common/BentoCard";
 import { TiStarFullOutline, TiPuzzle, TiChartLine, TiLightbulb } from "react-icons/ti";
 import { FaLayerGroup } from "react-icons/fa";
 
@@ -7,7 +7,7 @@ import { FaLayerGroup } from "react-icons/fa";
  * The main "Games" section of the website, showcasing different games
  * in a bento grid layout with interactive tilt effects.
  */
-const GamesSection = () => (
+const Games = () => (
   <section id="games" className="bg-background pb-52">
     <div className="container mx-auto px-3 md:px-10">
 
@@ -88,4 +88,4 @@ const GamesSection = () => (
   </section>
 );
 
-export default GamesSection;
+export default Games;

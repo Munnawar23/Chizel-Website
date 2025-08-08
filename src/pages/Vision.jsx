@@ -6,7 +6,7 @@ import AnimatedTitle from "../components/common/AnimatedTitle";
 // ✅ Register ScrollTrigger plugin with GSAP — necessary for scroll-based animations
 gsap.registerPlugin(ScrollTrigger);
 
-const VisionSection = () => {
+const Vision = () => {
   // ✅ Initialize GSAP animations when component mounts
   useGSAP(() => {
     // 🎯 Create a timeline animation for the clip reveal effect
@@ -68,4 +68,4 @@ const VisionSection = () => {
   );
 };
 
-export default VisionSection;
+export default Vision;

@@ -1,7 +1,7 @@
 import AnimatedTitle from "../components/common/AnimatedTitle";
 import Button from "../components/common/Button";
 
-const ContactSection = () => {
+const Contact = () => {
   return (
     <div id="contact" className="my-20 w-screen px-4 sm:px-10">
       {/* Main container with enhanced background */}
@@ -52,4 +52,4 @@ const ContactSection = () => {
   );
 };
 
-export default ContactSection;
+export default Contact;

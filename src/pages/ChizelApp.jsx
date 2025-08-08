@@ -7,7 +7,7 @@ import AnimatedTitle from "../components/common/AnimatedTitle";
  * A section to encourage users to join the waitlist for the upcoming Chizel app,
  * featuring a unique, interactive image with a 3D tilt effect and a gooey edge filter.
  */
-const AppSection = () => {
+const ChizelApp = () => {
   // A ref for the interactive image element.
   const frameRef = useRef(null);
 
@@ -202,4 +202,4 @@ const AppSection = () => {
   );
 };
 
-export default AppSection;
+export default ChizelApp;
