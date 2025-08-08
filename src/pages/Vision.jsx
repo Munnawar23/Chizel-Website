@@ -9,6 +9,11 @@ gsap.registerPlugin(ScrollTrigger);
 const Vision = () => {
   // ✅ Initialize GSAP animations when component mounts
   useGSAP(() => {
+    // 🔧 Get actual viewport height for Chrome mobile fix
+    const getViewportHeight = () => {
+      return window.innerHeight;
+    };
+
     // 🎯 Create a timeline animation for the clip reveal effect
     const clipAnimation = gsap.timeline({
       scrollTrigger: {
@@ -24,15 +29,29 @@ const Vision = () => {
     // 🌀 Animation: Expand the clipped image to full screen with no border radius
     clipAnimation.to(".mask-clip-path", {
       width: "100vw", // Expand to full viewport width
-      height: "100vh", // Expand to full viewport height
+      height: () => `${getViewportHeight()}px`, // ✨ Use actual viewport height for Chrome mobile
       borderRadius: 0, // Remove border radius for a smooth rectangular expansion
     });
+
+    // 🔧 Handle resize/orientation changes
+    const handleResize = () => {
+      ScrollTrigger.refresh();
+    };
+
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleResize);
+    };
   });
 
   return (
     <div id="about" className="min-h-screen w-screen bg-background">
       {/* 🟧 Text Content Block */}
-      <div className="relative mb-8 mt-12 flex flex-col items-center gap-5">
+      <div className="relative flex min-h-[60vh] md:min-h-[50vh] flex-col justify-end items-center gap-5 px-4 pb-16 md:pb-8">
         <p className="font-body text-sm uppercase text-secondary-text md:text-[20px]">
           "Smart Play for Growth"
         </p>
@@ -43,10 +62,10 @@ const Vision = () => {
           containerClass="mt-5 !text-text text-center"
         />
 
-        {/* 🟫 Subtext Below Title */}
-        <div className="about-subtext font-body text-text">
+        {/* 🟫 Subtext Below Title - At bottom with more space */}
+        <div className="about-subtext font-body text-text text-center">
           <p>Embark on a Chizel adventure!</p>
-          <p className="text-secondary-text">
+          <p className="text-secondary-text mt-2">
             Explore games that spark learning and imagination.
             <br />
             Dive into puzzles, colors, and curious challenges.
