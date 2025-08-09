@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaCheckCircle } from "react-icons/fa";
 import AnimatedTitle from "../components/common/AnimatedTitle";
 import BentoTilt from "../components/common/BentoTilt";
-import { principles } from "../constants/data";
+import { principles } from "../constants/index";
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -62,8 +62,8 @@ const Vision = () => {
           containerClass="mt-5 !text-text text-center"
         />
 
-        {/* 🟫 Subtext Below Title - At bottom with more space */}
-        <div className="about-subtext font-body text-text text-center">
+        {/* 🟫 Subtext Below Title - Hidden on mobile devices */}
+        <div className="about-subtext font-body text-text text-center hidden sm:block">
           <p>Embark on a Chizel adventure!</p>
           <p className="text-secondary-text mt-2">
             Explore games that spark learning and imagination.
