@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import Games from "./pages/Games";
 import Vision from "./pages/Vision";
 import CustomCursor from './components/layout/CustomCursor';
+import Home from './pages/Home';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -19,6 +20,7 @@ const App = () => {
         <>
         <CustomCursor />
         <Navbar />
+        <Home />
           <About />
           <Vision />
           <Games />
