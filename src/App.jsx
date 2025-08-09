@@ -7,6 +7,7 @@ import ChizelApp from "./pages/ChizelApp";
 import Contact from "./pages/Contact";
 import Games from "./pages/Games";
 import Vision from "./pages/Vision";
+import CustomCursor from './components/layout/CustomCursor';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -16,6 +17,7 @@ const App = () => {
       <Loader setIsLoading={setIsLoading} />
       {!isLoading && (
         <>
+        <CustomCursor />
         <Navbar />
           <About />
           <Vision />
