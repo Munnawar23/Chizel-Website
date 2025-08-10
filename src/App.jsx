@@ -9,6 +9,7 @@ import Games from "./pages/Games";
 import Vision from "./pages/Vision";
 import CustomCursor from "./components/layout/CustomCursor";
 import Home from "./pages/Home";
+import Features from "./pages/Features";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,6 +24,7 @@ const App = () => {
           <Home />
           <About />
           <Vision />
+          <Features />
           <Games />
           <ChizelApp />
           <Contact />

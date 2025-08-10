@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+::selection {
+  background: yellow; /* Highlight color */
+  color: black;       /* Text color */
+}
+
 html, body {
   overflow-x: hidden !important;
   max-width: 100vw !important;
