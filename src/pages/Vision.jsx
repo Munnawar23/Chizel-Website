@@ -6,8 +6,8 @@ import AnimatedTitle from "../components/common/AnimatedTitle";
 gsap.registerPlugin(ScrollTrigger);
 
 const Vision = () => {
+  // GSAP logic remains exactly as provided.
   useGSAP(() => {
-    // A clean, simple timeline is all we need now.
     const clipAnimation = gsap.timeline({
       scrollTrigger: {
         trigger: "#clip-container",
@@ -19,34 +19,33 @@ const Vision = () => {
       },
     });
 
-    // Animate the clip-path element to a stable 100svh height.
     clipAnimation.to(".mask-clip-path", {
       width: "100vw",
-      height: "100svh", // ✨ FIX: Use stable small viewport height
+      height: "100svh",
       borderRadius: 0,
     });
-
-    // GSAP's ScrollTrigger automatically handles refreshing on resize,
-    // so the manual event listeners are not required.
-  }, []); // Empty dependency array is fine here.
+  }, []);
 
   return (
-    // FIX: Using svh for min-height to ensure the top section is also stable.
-    <div id="about" className="min-h-screen w-screen bg-background">
-      {/* Text Content Block */}
-      <div className="relative flex min-h-[60svh] md:min-h-[50vh] flex-col justify-end items-center gap-5 px-4 pb-16 md:pb-8">
-        <p className="font-body text-sm uppercase text-secondary-text md:text-[20px]">
+    // ============== ROOT CONTAINER (LIGHT THEME) ==============
+    <div id="vision" className="min-h-screen w-screen bg-light-background">
+      
+      {/* ============== TOP TEXT CONTENT ============== */}
+      <div className="relative flex min-h-[60svh] md:min-h-[50vh] flex-col justify-end items-center gap-4 px-4 pb-12 text-center">
+        <p className="font-ui text-sm uppercase text-light-secondary-text tracking-wider md:text-base">
           "Smart Play for Growth"
         </p>
 
         <AnimatedTitle
           title="Expl<b>o</b>re, learn <br /> and gr<b>o</b>w with Chizel"
-          containerClass="mt-5 !text-text text-center"
+          // Switched to light theme text colors
+          containerClass="!text-light-text"
         />
 
-        <div className="about-subtext font-body text-text text-center hidden sm:block">
+        {/* This text is positioned absolutely by the 'about-subtext' utility class */}
+        <div className="about-subtext font-body text-light-text hidden sm:block">
           <p>Embark on a Chizel adventure!</p>
-          <p className="text-secondary-text mt-2">
+          <p className="text-light-secondary-text mt-1">
             Explore games that spark learning and imagination.
             <br />
             Dive into puzzles, colors, and curious challenges.
@@ -54,9 +53,9 @@ const Vision = () => {
         </div>
       </div>
 
-      {/* GSAP Scroll-Animated Image Section */}
-      {/* FIX: Using h-[100svh] to give the pinning container a stable height. */}
-      <div className="h-[100svh] w-screen" id="clip-container">
+      {/* ============== GSAP ANIMATED IMAGE SECTION ============== */}
+      <div id="clip-container" className="h-[100svh] w-screen">
+        {/* The 'about-image' and 'mask-clip-path' classes define the initial state for the animation */}
         <div className="mask-clip-path about-image">
           <img
             src="/images/about-background.png"

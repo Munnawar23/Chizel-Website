@@ -1,25 +1,26 @@
 import { useState, useRef } from "react";
+import clsx from "clsx";
 
-/**
- * A bento-style card with optional icon or video, title, and description.
- */
-export const BentoCard = ({ src, icon, title, description}) => {
+export const BentoCard = ({ src, icon, title, description, className }) => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  const [hoverOpacity, setHoverOpacity] = useState(0);
-  const hoverRef = useRef(null);
+  const [isHovering, setIsHovering] = useState(false);
 
   const handleMouseMove = (e) => {
-    if (!hoverRef.current) return;
-    const rect = hoverRef.current.getBoundingClientRect();
+    const rect = e.currentTarget.getBoundingClientRect();
     setCursorPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };
 
-  const handleMouseEnter = () => setHoverOpacity(1);
-  const handleMouseLeave = () => setHoverOpacity(0);
-
   return (
-    <div className="relative size-full overflow-hidden bg-card">
-      {/* Video background if src is provided */}
+    <div
+      className={clsx(
+        "relative size-full overflow-hidden rounded-xl bg-card border-hsla p-4 md:p-5",
+        className
+      )}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+      onMouseMove={handleMouseMove}
+    >
+      {/* Video Background */}
       {src && (
         <video
           src={src}
@@ -27,41 +28,35 @@ export const BentoCard = ({ src, icon, title, description}) => {
           muted
           autoPlay
           playsInline
-          className="absolute left-0 top-0 size-full object-cover object-center"
+          className="absolute left-0 top-0 size-full object-cover"
         />
       )}
 
-      {/* Content */}
-      <div className="relative z-10 flex size-full flex-col justify-between p-4 md:p-5 text-text">
-        <div className="flex-1 flex flex-col">
-          {icon && <div className="mb-2 md:mb-3 text-4xl md:text-5xl lg:text-6xl text-primary flex-shrink-0">{icon}</div>}
-          <h1 className="font-heading text-5xl md:text-lg lg:text-5xl leading-tight mb-2 flex-shrink-0">
-            {title}
-          </h1>
-          {description && (
-            <p className="font-body text-xs md:text-sm text-secondary-text leading-relaxed flex-1 overflow-hidden">
-              {description}
-            </p>
-          )}
-        </div>
+      {/* Card Content */}
+      <div className="relative z-10 flex h-full flex-col justify-start text-text">
+        {/* Restored larger icon size */}
+        {icon && <div className="mb-3 text-5xl text-primary">{icon}</div>}
+        
+        {/* Restored larger title size */}
+        <h3 className="font-heading text-4xl font-bold leading-tight">
+          {title}
+        </h3>
 
-        {/* Radial hover effect */}
-        <div
-          ref={hoverRef}
-          onMouseMove={handleMouseMove}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          className="absolute inset-0 w-full h-full"
-        >
-          <div
-            className="pointer-events-none absolute inset-0 transition duration-300"
-            style={{
-              opacity: hoverOpacity,
-              background: `radial-gradient(120px circle at ${cursorPosition.x}px ${cursorPosition.y}px, var(--color-primary-alpha), transparent)`,
-            }}
-          />
-        </div>
+        {description && (
+          <p className="mt-2 font-body text-sm text-secondary-text leading-relaxed">
+            {description}
+          </p>
+        )}
       </div>
+
+      {/* Hover Effect */}
+      <div
+        className="pointer-events-none absolute inset-0 transition-opacity duration-300"
+        style={{
+          opacity: isHovering ? 1 : 0,
+          background: `radial-gradient(150px circle at ${cursorPosition.x}px ${cursorPosition.y}px, var(--color-primary-alpha), transparent)`,
+        }}
+      />
     </div>
   );
 };

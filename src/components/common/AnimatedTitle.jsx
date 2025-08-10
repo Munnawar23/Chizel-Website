@@ -1,51 +1,52 @@
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import clsx from "clsx"; 
+import clsx from "clsx";
 
-// ✅ Register the GSAP plugin
 gsap.registerPlugin(ScrollTrigger);
 
 const AnimatedTitle = ({ title = '', containerClass }) => {
-  const containerRef = useRef(null); // Ref to the title wrapper div
+  const containerRef = useRef(null);
 
-  // 🌀 Animate on Scroll using useEffect
+  // GSAP: Animate title when it scrolls into view
   useEffect(() => {
-    // 🔁 Create a GSAP context to scope animations within the component
+    // Create a GSAP context to scope animations and make cleanup easy
     const ctx = gsap.context(() => {
-      const titleAnimation = gsap.timeline({
+      // The timeline will be controlled by the ScrollTrigger instance
+      gsap.to(".animated-word", {
+        // ScrollTrigger configuration
         scrollTrigger: {
-          trigger: containerRef.current,    // Element to watch for scroll
-          start: "100 bottom",              // When top 100px of element hits bottom of viewport
-          toggleActions: "play none none reverse", // Plays on enter, reverses on leave
+          trigger: containerRef.current,
+          start: "top 90%", 
+          toggleActions: "play none none reverse", 
         },
+        opacity: 1,
+        transform: "translate3d(0, 0, 0) rotateY(0deg) rotateX(0deg)",
+        ease: "power3.out", 
+        stagger: 0.05,     
       });
+    }, containerRef); 
 
-      // 🧩 Animation: Reveal each word with fade + 3D unflip + stagger
-      titleAnimation.to(".animated-word", {
-        opacity: 1, // Make each word visible
-        transform: "translate3d(0, 0, 0) rotateY(0deg) rotateX(0deg)", // Bring to normal 3D position
-        ease: "power2.inOut", // Smooth easing
-        stagger: 0.02, // Animates words one after another
-      });
-    }, containerRef); // Limit context to the title container
+    // Cleanup function to revert all animations within the context
+    return () => ctx.revert();
+  }, []); 
 
-    return () => ctx.revert(); // 🧼 Clean up animation on unmount
-  }, []);
-
-  // 🟩 JSX Output
   return (
+    // ============== MAIN CONTAINER ==============
     <div ref={containerRef} className={clsx("animated-title", containerClass)}>
-      {/* 🔤 Break title into lines and words */}
-      {title.split("<br />").map((line, index) => (
+      {/* Map through lines separated by <br /> */}
+      {title.split("<br />").map((line, lineIndex) => (
         <div
-          key={index}
-          className="flex-center max-w-full flex-wrap gap-2 px-10 md:gap-3"
+          key={lineIndex}
+          // Using `flex-wrap` is a good practice for responsiveness
+          className="flex flex-wrap items-center justify-start gap-x-2 md:gap-x-3"
         >
-          {line.split(" ").map((word, idx) => (
+          {/* Map through words in each line */}
+          {line.split(" ").map((word, wordIndex) => (
             <span
-              key={idx}
-              className="animated-word"
+              key={wordIndex}
+              className="animated-word" // This class is the target for our GSAP animation
+              // Use dangerouslySetInnerHTML to allow for <b>, <i> etc. tags within words
               dangerouslySetInnerHTML={{ __html: word }}
             />
           ))}

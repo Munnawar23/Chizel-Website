@@ -1,3 +1,14 @@
+export const navItems = [
+  { name: "Home", href: "#home" },
+  { name: "What is Chizel", href: "#about" },
+  { name: "Features", href: "#features" },
+  { name: "Travel into Space", href: "#vision" },
+  { name: "Games", href: "#games" },
+  { name: "Our App", href: "#chizelApp" },
+  { name: "Contact", href: "#contact" },
+];
+
+
 export const principles = [
   {
     title: "From Screen Waste to Smart Play",
@@ -21,7 +32,7 @@ export const featuresData = [
       "Builds strong social skills, improves speaking abilities, and grows confident communicators through engaging, language-based challenges.",
     quote: "The art of communication is the language of leadership.",
     author: "James Humes",
-    gifSrc: "/gifs/1.gif", // ✅ Updated path
+    gifSrc: "/gifs/1.gif", 
   },
   {
     title: "Logic League",
@@ -30,7 +41,7 @@ export const featuresData = [
     quote:
       "It's not that I'm so smart, it's just that I stay with problems longer.",
     author: "Albert Einstein",
-    gifSrc: "/gifs/1.gif", // ✅ Updated path
+    gifSrc: "/gifs/1.gif", 
   },
   {
     title: "Chizel Club",
@@ -38,6 +49,13 @@ export const featuresData = [
       "A lively space for kids to learn and grow. They build friendships, confidence, and a sense of belonging through group projects.",
     quote: "Alone we can do so little; together we can do so much.",
     author: "Helen Keller",
-    gifSrc: "/gifs/1.gif", // ✅ Updated path
+    gifSrc: "/gifs/1.gif", 
   },
+];
+
+export const socialLinks = [
+  { name: "Discord", href: "#" },
+  { name: "Twitter", href: "#" },
+  { name: "YouTube", href: "#" },
+  { name: "Medium", href: "#" },
 ];

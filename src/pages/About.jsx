@@ -9,128 +9,82 @@ import { principles } from "../constants/index";
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
+  // GSAP: Scroll-triggered animations for the About section
   useGSAP(() => {
     let ctx = gsap.context(() => {
       const scrollTriggerConfig = {
-        toggleActions: "play none none reverse",
-        refreshPriority: -1,
+        toggleActions: "play none none reverse", 
       };
-
+      
+      // Cleanup previous animations to prevent conflicts on re-render
       gsap.killTweensOf([".about-image-container", ".about-description", ".principle-item"]);
 
-      gsap.set(".about-image-container", {
-        opacity: 1,
-        clipPath: "inset(0% 0% 0% 0%)",
-        clearProps: "all"
+      // Image reveal animation
+      gsap.from(".about-image-container", {
+        scrollTrigger: { trigger: ".about-image-container", start: "top 85%", ...scrollTriggerConfig },
+        opacity: 0,
+        clipPath: "inset(0% 50% 0% 50%)", 
+        duration: 1.2,
+        ease: "power3.inOut",
       });
 
-      gsap.set(".about-description", {
-        opacity: 1,
-        y: 0,
-        clearProps: "all"
+      // Description text fade-in animation
+      gsap.from(".about-description", {
+        scrollTrigger: { trigger: ".about-text-content", start: "top 80%", ...scrollTriggerConfig },
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        ease: "power2.out",
+        delay: 0.3, 
       });
 
-      gsap.set(".principle-item", {
-        opacity: 1,
-        x: 0,
-        clearProps: "all"
+      // Staggered animation for the principles list
+      gsap.from(".principle-item", {
+        scrollTrigger: { trigger: ".principles-list", start: "top 85%", ...scrollTriggerConfig },
+        opacity: 0,
+        x: -30,
+        duration: 0.6,
+        ease: "power2.out",
+        stagger: 0.15, 
+        delay: 0.5,
       });
-
-      gsap.fromTo(".about-image-container",
-        {
-          opacity: 0,
-          clipPath: "inset(0% 50% 0% 50%)",
-        },
-        {
-          scrollTrigger: {
-            trigger: ".about-image-container",
-            start: "top 85%",
-            id: "about-image",
-            ...scrollTriggerConfig,
-          },
-          opacity: 1,
-          clipPath: "inset(0% 0% 0% 0%)",
-          duration: 1.2,
-          ease: "power3.inOut",
-        }
-      );
-
-      gsap.fromTo(".about-description",
-        {
-          opacity: 0,
-          y: 30,
-        },
-        {
-          scrollTrigger: {
-            trigger: ".about-text-content",
-            start: "top 80%",
-            id: "about-description",
-            ...scrollTriggerConfig,
-          },
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          delay: 0.4,
-        }
-      );
-
-      gsap.fromTo(".principle-item",
-        {
-          opacity: 0,
-          x: -30,
-        },
-        {
-          scrollTrigger: {
-            trigger: ".principles-list",
-            start: "top 85%",
-            id: "about-principles",
-            ...scrollTriggerConfig,
-          },
-          opacity: 1,
-          x: 0,
-          duration: 0.6,
-          ease: "power2.out",
-          stagger: 0.15,
-          delay: 0.6,
-        }
-      );
     });
 
-    return () => {
-      ctx.revert();
-    };
+    // Cleanup function to revert animations
+    return () => ctx.revert();
   }, []);
 
   return (
-    <section id="about" className="relative w-screen bg-background py-20 sm:py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-primary/5 pointer-events-none" />
+    <section id="about" className="relative w-screen bg-light-background py-16 sm:py-24 overflow-hidden">
+      {/* ============== SUBTLE BACKGROUND GRADIENT ============== */}
+      <div className="absolute inset-0 bg-gradient-to-br from-light-accent/5 via-transparent to-light-primary/5 pointer-events-none" />
 
-      <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-10 md:grid-cols-2 md:gap-20 relative z-10">
-
-        {/* TEXT FIRST ON MOBILE */}
+      <div className="container mx-auto grid grid-cols-1 items-center gap-10 px-8 md:grid-cols-2 md:gap-16 relative z-10">
+        
+        {/* ============== TEXT CONTENT ============== */}
         <div className="about-text-content order-1 md:order-2">
           <AnimatedTitle
             title="Learning, <br /> Re<b>i</b>magined."
-            containerClass="!text-4xl md:!text-5xl !leading-tight !items-start !text-left"
+            // Pass light-theme text color to the animated title component
+            containerClass="!text-4xl md:!text-5xl !leading-tight !items-start !text-left text-light-text"
           />
 
-          <p className="about-description mt-6 font-body text-lg text-secondary-text leading-relaxed">
+          <p className="about-description mt-4 font-body text-lg text-light-secondary-text leading-relaxed">
             Chizel is a fun and safe learning app made especially for kids. Instead of just watching videos or wasting time on screens, Chizel turns screen time into smart time — where every tap and swipe helps children learn, think, and grow in a playful way.
           </p>
 
-          <ul className="principles-list mt-8 space-y-6">
+          <ul className="principles-list mt-6 space-y-4">
             {principles.map((principle) => (
-              <li key={principle.title} className="principle-item flex items-start gap-4 group">
+              <li key={principle.title} className="principle-item flex items-start gap-3 group">
                 <FaCheckCircle
-                  size="1.5em"
-                  className="mt-1 flex-shrink-0 text-accent transition-all duration-300 group-hover:text-primary group-hover:scale-110"
+                  size="1.4em" // Slightly adjusted size
+                  className="mt-1 flex-shrink-0 text-light-accent transition-all duration-300 group-hover:text-light-primary group-hover:scale-110"
                 />
                 <div className="transition-transform duration-300 group-hover:translate-x-1">
-                  <h3 className="font-body text-xl font-bold text-text group-hover:text-accent transition-colors duration-300">
+                  <h3 className="font-body text-xl font-bold text-light-text group-hover:text-light-accent transition-colors duration-300">
                     {principle.title}
                   </h3>
-                  <p className="font-body text-secondary-text leading-relaxed">
+                  <p className="font-body text-light-secondary-text leading-relaxed">
                     {principle.description}
                   </p>
                 </div>
@@ -139,14 +93,14 @@ const About = () => {
           </ul>
         </div>
 
-        {/* IMAGE SECOND ON MOBILE */}
+        {/* ============== IMAGE CONTENT ============== */}
         <BentoTilt className="about-image-container order-2 md:order-1 relative h-96 w-full rounded-2xl md:h-[70vh]">
           <img
             src="/images/p5.png"
             alt="A child engaged in a learning game on a tablet"
             className="size-full rounded-2xl object-cover"
           />
-          <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-accent/10 to-primary/10 blur-xl opacity-40 -z-10" />
+          <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-light-accent/10 to-light-primary/10 blur-xl opacity-40 -z-10" />
         </BentoTilt>
 
       </div>

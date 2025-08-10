@@ -1,33 +1,44 @@
 import { useState, useRef } from "react";
 
-/**
- * Adds a smooth 3D tilt effect to any child component based on mouse position
- */
 const BentoTilt = ({ children, className = "" }) => {
+  // ============== STATE AND REFS ==============
   const [transformStyle, setTransformStyle] = useState("");
-  const containerRef = useRef(null); // Get reference to the wrapper div
+  const containerRef = useRef(null); // A reference to the component's root element
 
-  // 🧲 Calculate tilt based on mouse position
+  // ============== EVENT HANDLERS ==============
+  /**
+   * Calculates and applies the tilt effect when the mouse moves over the component.
+   */
   const handleMouseMove = (event) => {
     if (!containerRef.current) return;
+
+    // Get the position and dimensions of the container element
     const { left, top, width, height } = containerRef.current.getBoundingClientRect();
 
+    // Calculate the mouse position relative to the element (from 0 to 1)
     const relativeX = (event.clientX - left) / width;
     const relativeY = (event.clientY - top) / height;
 
-    const tiltX = (relativeY - 0.5) * 10;
-    const tiltY = (relativeX - 0.5) * -10;
+    // Calculate the desired rotation degrees, mapping [0, 1] to a -10deg to +10deg range
+    const tiltX = (relativeY - 0.5) * 20; // Tilt up/down
+    const tiltY = (relativeX - 0.5) * -20; // Tilt left/right
 
+    // Apply the transform style with perspective for a 3D effect
     setTransformStyle(
-      `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(0.98, 0.98, 0.98)`
+      `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.05, 1.05, 1.05)`
     );
   };
 
-  // 🧼 Reset tilt on mouse leave
+  /**
+   * Resets the tilt effect when the mouse leaves the component.
+   */
   const handleMouseLeave = () => {
-    setTransformStyle("perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)");
+    setTransformStyle(
+      "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)"
+    );
   };
 
+  // ============== COMPONENT RENDER ==============
   return (
     <div
       ref={containerRef}
@@ -35,8 +46,12 @@ const BentoTilt = ({ children, className = "" }) => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{
+        // Apply the dynamic transform style
         transform: transformStyle,
-        transition: "transform 0.2s cubic-bezier(0.23, 1, 0.32, 1)", // Smooth spring-like motion
+        // Use a longer, smoother transition for a more graceful effect
+        transition: "transform 0.4s cubic-bezier(0.23, 1, 0.32, 1)",
+        // Ensure child elements also respect the 3D space
+        transformStyle: "preserve-3d",
       }}
     >
       {children}

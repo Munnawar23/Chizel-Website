@@ -1,50 +1,46 @@
 import { FaDiscord, FaTwitter, FaYoutube, FaMedium } from "react-icons/fa";
+import { socialLinks } from "../../constants/index";
 
-// An array of social media links. You can customize these with your actual URLs.
-const socialLinks = [
-  { name: "Discord", href: "#", icon: <FaDiscord size="1.2em" /> },
-  { name: "Twitter", href: "#", icon: <FaTwitter size="1.2em" /> },
-  { name: "YouTube", href: "#", icon: <FaYoutube size="1.2em" /> },
-  { name: "Medium", href: "#", icon: <FaMedium size="1.2em" /> },
-];
+const iconMap = {
+  Discord: <FaDiscord size="1.2em" />,
+  Twitter: <FaTwitter size="1.2em" />,
+  YouTube: <FaYoutube size="1.2em" />,
+  Medium: <FaMedium size="1.2em" />,
+};
 
-/**
- * The main footer component for the website.
- */
+
 const Footer = () => {
   return (
-    // The main footer container. Using the site's primary background color.
-    // A top border helps to visually separate it from the content above.
-    <footer className="w-screen border-t border-text/10 bg-background py-4">
-      <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 md:flex-row">
+    // ============== FOOTER CONTAINER ==============
+    <footer className="w-screen border-t border-hsla bg-background py-4">
+      <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 sm:px-8 md:flex-row">
         
-        {/* Copyright Information */}
-        <p className="font-body text-sm font-light text-secondary-text">
-          {/* Updated the copyright name and year. */}
+        {/* ============== COPYRIGHT INFO ============== */}
+        <p className="font-ui text-sm text-secondary-text">
           © Chizel {new Date().getFullYear()}. All rights reserved.
         </p>
 
-        {/* Social Media Links */}
-        <div className="flex justify-center gap-5 md:justify-start">
+        {/* ============== SOCIAL MEDIA LINKS ============== */}
+        <div className="flex justify-center gap-5">
           {socialLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`Chizel on ${link.name}`}
-              // The text color uses secondary-text, and hovers to the bright accent color.
+              aria-label={`Follow Chizel on ${link.name}`}
               className="text-secondary-text transition-colors duration-300 hover:text-accent"
             >
-              {link.icon}
+              {/* Look up the correct icon from our map */}
+              {iconMap[link.name]}
             </a>
           ))}
         </div>
 
-        {/* Legal Links */}
+        {/* ============== LEGAL LINKS ============== */}
         <a
           href="#privacy-policy"
-          className="font-body text-sm font-light text-secondary-text hover:text-accent hover:underline"
+          className="font-ui text-sm text-secondary-text hover:text-accent hover:underline"
         >
           Privacy Policy
         </a>

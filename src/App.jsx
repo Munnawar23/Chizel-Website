@@ -23,8 +23,8 @@ const App = () => {
           <Navbar />
           <Home />
           <About />
-          <Vision />
           <Features />
+          <Vision />
           <Games />
           <ChizelApp />
           <Contact />
