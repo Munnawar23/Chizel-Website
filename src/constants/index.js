@@ -1,14 +1,14 @@
 export const principles = [
   {
-    title: "Boosts IQ Naturally",
-    description: "Each game is designed to sharpen thinking and improve problem-solving skills.",
+    title: "From Screen Waste to Smart Play",
+    description: "Ditch violent games and junk videos — kids get the same fun while sharpening creativity and problem-solving skills.",
   },
   {
-    title: "Built-in Parental Control",
-    description: "Parents can track progress and manage time through simple, helpful tools.",
+    title: "From Shy to Social Star",
+    description: "From speaking up to making friends, our AI chatbot helps kids build social skills and shine anywhere — no boring lessons here.",
   },
   {
-    title: "Learn While Playing",
-    description: "We turn playtime into skill-building with fun and educational activities.",
-  },
+    title: "From Isolated to Inspired",
+    description: "Find buddies, build dreams, spark ideas — all in a safe, vibrant community where children can thrive.",
+  },
 ];

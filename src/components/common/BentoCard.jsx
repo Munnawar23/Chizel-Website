@@ -32,27 +32,29 @@ export const BentoCard = ({ src, icon, title, description}) => {
       )}
 
       {/* Content */}
-      <div className="relative z-10 flex size-full flex-col justify-between p-5 text-text">
-        <div>
-          {icon && <div className="mb-3 text-6xl text-primary">{icon}</div>}
-          <h1 className="bento-title font-heading text-xl md:text-2xl">{title}</h1>
+      <div className="relative z-10 flex size-full flex-col justify-between p-4 md:p-5 text-text">
+        <div className="flex-1 flex flex-col">
+          {icon && <div className="mb-2 md:mb-3 text-4xl md:text-5xl lg:text-6xl text-primary flex-shrink-0">{icon}</div>}
+          <h1 className="font-heading text-5xl md:text-lg lg:text-5xl leading-tight mb-2 flex-shrink-0">
+            {title}
+          </h1>
           {description && (
-            <p className="mt-3 max-w-64 font-body text-xs md:text-base">{description}</p>
+            <p className="font-body text-xs md:text-sm text-secondary-text leading-relaxed flex-1 overflow-hidden">
+              {description}
+            </p>
           )}
         </div>
 
-       
-
-        {/* Radial hover effect placeholder */}
+        {/* Radial hover effect */}
         <div
           ref={hoverRef}
           onMouseMove={handleMouseMove}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          className="relative w-full h-0"
+          className="absolute inset-0 w-full h-full"
         >
           <div
-            className="pointer-events-none absolute -inset-px transition duration-300"
+            className="pointer-events-none absolute inset-0 transition duration-300"
             style={{
               opacity: hoverOpacity,
               background: `radial-gradient(120px circle at ${cursorPosition.x}px ${cursorPosition.y}px, var(--color-primary-alpha), transparent)`,
