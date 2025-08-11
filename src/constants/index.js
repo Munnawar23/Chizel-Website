@@ -2,7 +2,6 @@ export const navItems = [
   { name: "Home", href: "#home" },
   { name: "What is Chizel", href: "#about" },
   { name: "Features", href: "#features" },
-  { name: "Travel into Space", href: "#vision" },
   { name: "Games", href: "#games" },
   { name: "Our App", href: "#chizelApp" },
   { name: "Contact", href: "#contact" },
@@ -29,29 +28,29 @@ export const featuresData = [
   {
     title: "Word Warriors",
     description:
-      "Builds strong social skills, improves speaking abilities, and grows confident communicators through engaging, language-based challenges.",
+      "Instead of wasting hours on mindless scrolling and toxic online chatter, Word Warriors helps children build strong social skills, improve speaking abilities, sharpen people skills, and grow into confident communicators from a very young age — all through engaging, language-based challenges.",
     quote: "The art of communication is the language of leadership.",
     author: "James Humes",
-    gifSrc: "/gifs/1.gif", 
+    gifSrc: "/gifs/word-warrior.gif",
   },
   {
     title: "Logic League",
     description:
-      "Boosts thinking skills, focus, and creativity with the same thrill as games, but through fun, brain-challenging adventures.",
-    quote:
-      "It's not that I'm so smart, it's just that I stay with problems longer.",
+      "Instead of consuming garbage content on social media and violence from games, Logic League gives kids the same thrill and excitement — while boosting their thinking skills, focus, and creativity through fun, brain-challenging adventures.",
+    quote: "It’s not that I’m so smart, it’s just that I stay with problems longer.",
     author: "Albert Einstein",
-    gifSrc: "/gifs/1.gif", 
+    gifSrc: "/gifs/logic-league.gif",
   },
   {
     title: "Chizel Club",
     description:
-      "A lively space for kids to learn and grow. They build friendships, confidence, and a sense of belonging through group projects.",
+      "Chizel Club is a lively space where children can learn, grow, and share their ideas with others. Through group projects, creative collaborations, and skill-sharing activities, they not only develop knowledge but also build friendships, confidence, and a sense of belonging—all within a safe and vibrant community.",
     quote: "Alone we can do so little; together we can do so much.",
     author: "Helen Keller",
-    gifSrc: "/gifs/1.gif", 
+    gifSrc: "/gifs/chizel-club.gif",
   },
 ];
+
 
 export const socialLinks = [
   { name: "Discord", href: "#" },

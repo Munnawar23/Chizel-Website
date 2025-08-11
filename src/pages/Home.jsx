@@ -34,7 +34,7 @@ const Home = () => {
     <section id="home" className="relative h-screen w-screen overflow-hidden">
       {/* ============== BACKGROUND VIDEO ============== */}
       <video
-        src="/videos/warmhole.mp4"
+        src="/videos/home-video.webm"
         autoPlay
         loop
         muted

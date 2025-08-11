@@ -27,25 +27,23 @@ const Vision = () => {
   }, []);
 
   return (
-    // ============== ROOT CONTAINER (LIGHT THEME) ==============
-    <div id="vision" className="min-h-screen w-screen bg-light-background">
-      
+    // ============== ROOT CONTAINER ==============
+    <div id="vision" className="min-h-screen w-screen bg-background">
       {/* ============== TOP TEXT CONTENT ============== */}
-      <div className="relative flex min-h-[60svh] md:min-h-[50vh] flex-col justify-end items-center gap-4 px-4 pb-12 text-center">
-        <p className="font-ui text-sm uppercase text-light-secondary-text tracking-wider md:text-base">
+      <div className="relative flex min-h-[40svh] md:min-h-[40vh] flex-col justify-end items-center gap-4 px-4 pb-12 text-center">
+        <p className="font-ui text-sm uppercase text-secondary-text tracking-wider md:text-base">
           "Smart Play for Growth"
         </p>
 
         <AnimatedTitle
           title="Expl<b>o</b>re, learn <br /> and gr<b>o</b>w with Chizel"
-          // Switched to light theme text colors
-          containerClass="!text-light-text"
+          containerClass="!text-text"
         />
 
         {/* This text is positioned absolutely by the 'about-subtext' utility class */}
-        <div className="about-subtext font-body text-light-text hidden sm:block">
+        <div className="about-subtext font-body text-text hidden sm:block">
           <p>Embark on a Chizel adventure!</p>
-          <p className="text-light-secondary-text mt-1">
+          <p className="text-secondary-text mt-1">
             Explore games that spark learning and imagination.
             <br />
             Dive into puzzles, colors, and curious challenges.
@@ -55,10 +53,9 @@ const Vision = () => {
 
       {/* ============== GSAP ANIMATED IMAGE SECTION ============== */}
       <div id="clip-container" className="h-[100svh] w-screen">
-        {/* The 'about-image' and 'mask-clip-path' classes define the initial state for the animation */}
         <div className="mask-clip-path about-image">
           <img
-            src="/images/about-background.png"
+            src="/images/vision-image.webp"
             alt="Kids playing educational games on a tablet"
             className="absolute left-0 top-0 size-full object-cover"
           />

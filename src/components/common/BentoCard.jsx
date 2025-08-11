@@ -34,16 +34,14 @@ export const BentoCard = ({ src, icon, title, description, className }) => {
 
       {/* Card Content */}
       <div className="relative z-10 flex h-full flex-col justify-start text-text">
-        {/* Restored larger icon size */}
-        {icon && <div className="mb-3 text-5xl text-primary">{icon}</div>}
+        {icon && <div className="mb-3 text-6xl text-primary">{icon}</div>}
         
-        {/* Restored larger title size */}
-        <h3 className="font-heading text-4xl font-bold leading-tight">
+        <h3 className="font-heading text-5xl font-bold leading-tight">
           {title}
         </h3>
 
         {description && (
-          <p className="mt-2 font-body text-sm text-secondary-text leading-relaxed">
+          <p className="mt-2 font-body text-base text-secondary-text leading-relaxed">
             {description}
           </p>
         )}

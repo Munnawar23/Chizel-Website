@@ -87,7 +87,7 @@ const Games = () => (
         <BentoTilt className="col-span-1 md:col-span-3">
           <div className="flex size-full flex-col justify-center items-center text-center bg-card border-hsla rounded-xl p-6 gap-4">
             {/* Restored larger font size */}
-            <h3 className="font-heading text-4xl md:text-5xl font-bold text-text">
+            <h3 className="font-heading text-4xl md:text-6xl font-bold text-text">
               M<b>o</b>re Games Co<b>m</b>ing S<b>o</b>on
             </h3>
             <TiStarFullOutline className="text-6xl text-primary" />
