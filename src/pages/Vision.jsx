@@ -16,8 +16,6 @@ const Vision = () => {
         scrub: 0.5,
         pin: true,
         pinSpacing: true,
-        // Only add these mobile fixes
-        invalidateOnRefresh: true,
       },
     });
 
@@ -25,8 +23,6 @@ const Vision = () => {
       width: "100vw",
       height: "100svh",
       borderRadius: 0,
-      // Add only this for mobile performance
-      force3D: true,
     });
   }, []);
 
