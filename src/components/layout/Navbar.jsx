@@ -1,14 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { navItems } from "../../constants/index";
+import { navItems } from "../../utils/constants";
 import { FaBuromobelexperte } from "react-icons/fa";
+import { useScrollDirection } from "../../hooks/useScrollDirection"; 
 
 const Navbar = () => {
-  // State and event handlers are unchanged
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [isVisible, setIsVisible] = useState(true);
+  const isVisible = useScrollDirection(); 
 
   const navbarRef = useRef(null);
   const menuRef = useRef(null);
@@ -18,27 +17,18 @@ const Navbar = () => {
     setIsMenuOpen(false);
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
+
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
-    document.documentElement.style.overflow = isMenuOpen ? "hidden" : "auto";
   }, [isMenuOpen]);
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setIsVisible(currentScrollY < lastScrollY || currentScrollY < 100);
-      setLastScrollY(currentScrollY);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
 
-  // All GSAP animations are preserved exactly as they were
   useGSAP(() => {
     gsap.to(navbarRef.current, {
       y: isVisible ? 0 : -120,
       duration: 0.5,
       ease: "power2.out",
     });
+
     const tl = gsap.timeline();
     if (isMenuOpen) {
       gsap.set(menuRef.current, { display: "flex" });
@@ -70,6 +60,7 @@ const Navbar = () => {
         "-=0.2"
       );
     }
+
     const duration = 0.4,
       ease = "power2.out";
     gsap.to(".hamburger-line-1", {
@@ -93,7 +84,6 @@ const Navbar = () => {
 
   return (
     <>
-      {/* ============== MAIN NAVBAR ============== */}
       <nav
         ref={navbarRef}
         className="fixed top-3 left-1/2 -translate-x-1/2 w-auto z-50 bg-light-card/80 backdrop-blur-md rounded-full border border-light-text/10 shadow-lg"
@@ -106,8 +96,9 @@ const Navbar = () => {
             <div className="flex-center p-2 bg-gradient-to-br from-light-primary/80 to-light-accent/80 rounded-full transition-all duration-300 group-hover:scale-110 group-hover:shadow-md">
               <FaBuromobelexperte className="text-light-background text-lg" />
             </div>
+            {/* TEXT FIX: Changed "Menu" back to "Chizel" */}
             <span className="text-xl font-heading font-bold text-light-text pr-2">
-              Menu
+              Chizel
             </span>
           </a>
           <button
@@ -122,7 +113,6 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* ============== FULLSCREEN MENU OVERLAY (LIGHT THEME) ============== */}
       <div
         ref={menuRef}
         className="fixed inset-0 z-40 hidden flex-col items-center justify-center bg-light-background text-light-text overflow-hidden"
@@ -149,8 +139,9 @@ const Navbar = () => {
           ))}
         </div>
         <div className="absolute bottom-6 text-center menu-item w-full px-4">
+          {/* TEXT FIX: Corrected copyright format */}
           <p className="text-sm font-ui text-light-secondary-text">
-            @2025 Chizel · All Rights Reserved
+            Chizel © {new Date().getFullYear()}
           </p>
         </div>
       </div>

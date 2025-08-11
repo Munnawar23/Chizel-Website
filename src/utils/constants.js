@@ -53,8 +53,7 @@ export const featuresData = [
 
 
 export const socialLinks = [
-  { name: "Discord", href: "#" },
-  { name: "Twitter", href: "#" },
-  { name: "YouTube", href: "#" },
-  { name: "Medium", href: "#" },
+  { name: "Instagram", href: "https://www.instagram.com/chizel_ox?igsh=MXkxdDR6Nzg1cnl4YQ==" },
+  { name: "YouTube", href: "https://www.youtube.com/@chizelofficial" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/chizelofficial/?viewAsMember=true" },
 ];

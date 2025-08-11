@@ -1,5 +1,5 @@
 import BentoTilt from "../components/common/BentoTilt";
-import BentoCard from "../components/common/BentoCard";
+import BentoCard from "../components/features/games/BentoCard";
 import { TiStarFullOutline, TiPuzzle, TiChartLine, TiLightbulb } from "react-icons/ti";
 import { FaLayerGroup, FaGamepad, FaBrain, FaChild } from "react-icons/fa";
 

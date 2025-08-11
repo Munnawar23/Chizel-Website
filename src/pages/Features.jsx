@@ -3,7 +3,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaQuoteLeft } from "react-icons/fa";
-import { featuresData } from "../constants";
+import { featuresData } from "../utils/constants";
 
 gsap.registerPlugin(ScrollTrigger);
 
