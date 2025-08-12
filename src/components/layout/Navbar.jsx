@@ -96,9 +96,8 @@ const Navbar = () => {
             <div className="flex-center p-2 bg-gradient-to-br from-light-primary/80 to-light-accent/80 rounded-full transition-all duration-300 group-hover:scale-110 group-hover:shadow-md">
               <FaBuromobelexperte className="text-light-background text-lg" />
             </div>
-            {/* TEXT FIX: Changed "Menu" back to "Chizel" */}
             <span className="text-xl font-heading font-bold text-light-text pr-2">
-              Chizel
+              MENU
             </span>
           </a>
           <button
