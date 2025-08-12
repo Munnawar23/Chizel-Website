@@ -9,7 +9,7 @@ import Games from "./pages/Games";
 import Vision from "./pages/Vision";
 import CustomCursor from "./components/layout/CustomCursor";
 import Home from "./pages/Home";
-import Features from "./pages/Features";
+import ChizelVerse from "./pages/ChizelVerse";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,7 +23,7 @@ const App = () => {
           <Navbar />
           <Home />
           <About />
-          <Features />
+          <ChizelVerse />
           <Vision />
           <Games />
           <ChizelApp />

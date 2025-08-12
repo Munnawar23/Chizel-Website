@@ -1,7 +1,7 @@
 export const navItems = [
   { name: "Home", href: "#home" },
   { name: "What is Chizel", href: "#about" },
-  { name: "Features", href: "#features" },
+  { name: "ChizelVerse", href: "#chizelverse" },
   { name: "Games", href: "#games" },
   { name: "Our App", href: "#chizelApp" },
   { name: "Contact", href: "#contact" },
