@@ -60,6 +60,42 @@ const Games = () => (
         </div>
       </BentoTilt>
 
+      {/* ============== IMPACT STATS CARDS ============== */}
+      <div className="text-center mb-8">
+        <h3 className="font-heading text-3xl md:text-4xl text-text mb-3">
+          Proven Results That Matter
+        </h3>
+        <p className="font-body text-lg text-secondary-text max-w-3xl mx-auto">
+          Our games don't just entertain — they transform. Here's how much these games literally help your child grow:
+        </p>
+      </div>
+      <div className="mb-12 grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div className="text-center rounded-2xl bg-gradient-to-br from-primary/15 via-accent/10 to-badge-bg/10 border border-white/10 p-6 hover:shadow-[0_0_30px_rgba(93,63,211,0.25)] transition-shadow">
+          <div className="font-heading text-4xl md:text-5xl bg-gradient-to-r from-primary via-accent to-badge-bg bg-clip-text text-transparent">
+            +62%
+          </div>
+          <div className="mt-1 font-ui text-xs uppercase tracking-widest text-secondary-text">Memory Mastery</div>
+        </div>
+        <div className="text-center rounded-2xl bg-gradient-to-br from-primary/15 via-accent/10 to-badge-bg/10 border border-white/10 p-6 hover:shadow-[0_0_30px_rgba(93,63,211,0.25)] transition-shadow">
+          <div className="font-heading text-4xl md:text-5xl bg-gradient-to-r from-primary via-accent to-badge-bg bg-clip-text text-transparent">
+            +47%
+          </div>
+          <div className="mt-1 font-ui text-xs uppercase tracking-widest text-secondary-text">Problem Solving</div>
+        </div>
+        <div className="text-center rounded-2xl bg-gradient-to-br from-primary/15 via-accent/10 to-badge-bg/10 border border-white/10 p-6 hover:shadow-[0_0_30px_rgba(93,63,211,0.25)] transition-shadow">
+          <div className="font-heading text-4xl md:text-5xl bg-gradient-to-r from-primary via-accent to-badge-bg bg-clip-text text-transparent">
+            +53%
+          </div>
+          <div className="mt-1 font-ui text-xs uppercase tracking-widest text-secondary-text">Laser Logic</div>
+        </div>
+        <div className="text-center rounded-2xl bg-gradient-to-br from-primary/15 via-accent/10 to-badge-bg/10 border border-white/10 p-6 hover:shadow-[0_0_30px_rgba(93,63,211,0.25)] transition-shadow">
+          <div className="font-heading text-4xl md:text-5xl bg-gradient-to-r from-primary via-accent to-badge-bg bg-clip-text text-transparent">
+            +38%
+          </div>
+          <div className="mt-1 font-ui text-xs uppercase tracking-widest text-secondary-text">Social Confidence</div>
+        </div>
+      </div>
+
       {/* ============== BENTO GRID (Larger rows to accommodate fonts) ============== */}
       <div className="grid w-full auto-rows-[22rem] gap-5">
         <BentoTilt className="col-span-1 md:col-span-2" data-aos="fade-up">

@@ -11,7 +11,7 @@ const problemSlides = [
     title: "A Generation Under Siege",
     highlight: "We are raising creators in theory — but consumers in reality.",
     description:
-      "Glowing rectangles are silently dismantling the foundation of young minds. Harmless-looking videos and games form dopamine loops that dull curiosity, erode patience, and make real learning feel ‘too slow’ to tolerate.",
+      "Glowing rectangles are silently dismantling the foundation of young minds. Harmless-looking videos and games form dopamine loops that dull curiosity, erode patience, and make real learning feel 'too slow' to tolerate.",
     gradient: "from-primary/25 via-accent/20 to-badge-bg/20",
     image: "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDdjMWxlOTFyZ29yeGd2dWgxd2FrajVwZXltbnYyaHR2eGNrMWJ6OSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l0HlEEwgZfgqfH70c/giphy.webp",
   },
@@ -20,45 +20,18 @@ const problemSlides = [
     title: "Hearts Going Numb",
     highlight: "Empathy is shrinking before our eyes.",
     description:
-      "Quick hits replace real stories. Kids lose the ability to wait, listen, and care — not because they’re bad, but because they’re wired for speed. The result? Numbness where wonder should live.",
+      "Quick hits replace real stories. Kids lose the ability to wait, listen, and care — not because they're bad, but because they're wired for speed. The result? Numbness where wonder should live.",
     gradient: "from-accent/25 via-badge-bg/20 to-primary/20",
     image: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXozb2g1YjEwb3hvc3B0d243NjFqa256cDgzdzRyd3Rhemh1YjkxcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l4Ki1fHZorEdWAPsc/giphy.gif",
   },
   {
     badge: "Gateway to Harm",
     title: "Doors to Darker Worlds",
-    highlight: "The internet finds them before they’re ready.",
+    highlight: "The internet finds them before they're ready.",
     description:
       "Violence and explicit content are reaching children far earlier than parents imagine. What shocks at 8 feels normal at 10 — rewiring values, emotions, and trust.",
     gradient: "from-red-500/15 via-orange-400/15 to-primary/10",
     image: "https://media1.tenor.com/m/ACZReejIQ0MAAAAC/hack-hacking.gif",
-  },
-  {
-    badge: "Parent Trap",
-    title: "No Good Choices",
-    highlight: "Boring ‘education’ vs addictive ‘entertainment’.",
-    description:
-      "Parents are cornered. Learning apps fail to engage, entertainment apps hijack attention — and every wasted scroll deepens the damage while guilt grows.",
-    gradient: "from-badge-bg/25 via-primary/20 to-accent/20",
-    image: "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHNsZ2NuMjZjYWxkejR0NWtxbjFncGp5cHdzcG1vM2R6NGd1OW9hayZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3oz8xXeFzDt0YfMMQU/giphy.webp",
-  },
-  {
-    badge: "Neural Scars",
-    title: "Every Scroll Shapes a Brain",
-    highlight: "Attention, courage, patience — built or broken daily.",
-    description:
-      "What children consume wires who they become. The rewiring is happening now, and the years we lose to digital decay are years we never get back.",
-    gradient: "from-accent/25 via-primary/15 to-badge-bg/15",
-    image: "https://media0.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3NXgzeXF4NnIxbDFxaWd0ajUxbTdtejF1anBtZTgwOXo5MTJneTg1YyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/D2y4iK6g6E4yZJcaeN/giphy.webp",
-  },
-  {
-    badge: "The Urgency",
-    title: "This Is the Moment",
-    highlight: "Flip brainrot into brainpower — or lose a generation.",
-    description:
-      "We can’t outwait this. We can’t outregulate this. We must outdesign it — now. CHIZEL turns the same addictive tech into a growth engine for skill, empathy, and resilience.",
-    gradient: "from-primary/25 via-accent/20 to-badge-bg/20",
-    image: "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTR0ajBpY2Q1YjhsemU0eGk1eGhmcXR1aWw5dDc2bzBydXQxZ2JhZSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/AOwMOfIPqhrTvEGgrJ/giphy.webp",
   },
 ];
 

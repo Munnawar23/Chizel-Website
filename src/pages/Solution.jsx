@@ -10,10 +10,10 @@ const features = [
     badge: "Revolutionary Core",
     title: "Hybrid Gamified Learning",
     desc:
-      "Not ‘edutainment’. A system where play is the engine, and growth is the outcome — by design.",
+      "Not 'edutainment'. A system where play is the engine, and growth is the outcome — by design.",
   },
   {
-    badge: "Your Child’s Co-Pilot",
+    badge: "Your Child's Co-Pilot",
     title: "AI Learning Companions",
     desc:
       "Customizable, caring, and adaptive — guiding progress without pressure. Confidence, not comparison.",
@@ -40,15 +40,8 @@ const features = [
     badge: "For Every Child",
     title: "Inclusive by Design",
     desc:
-      "Built for accessibility — because learning isn’t a privilege, it’s a right.",
+      "Built for accessibility — because learning isn't a privilege, it's a right.",
   },
-];
-
-const outcomes = [
-  { stat: "+62%", label: "Memory Mastery" },
-  { stat: "+47%", label: "Problem Solving" },
-  { stat: "+53%", label: "Laser Logic" },
-  { stat: "+38%", label: "Social Confidence" },
 ];
 
 const Solution = () => {
@@ -69,14 +62,6 @@ const Solution = () => {
         duration: 0.7,
         ease: "power3.out",
       });
-    });
-    gsap.from(".sol-stat", {
-      scrollTrigger: { trigger: ".sol-stats", start: "top 90%", toggleActions: "play none none reverse" },
-      scale: 0.85,
-      opacity: 0,
-      duration: 0.6,
-      stagger: 0.08,
-      ease: "back.out(1.6)",
     });
   }, []);
 
@@ -100,17 +85,6 @@ const Solution = () => {
               <span className="px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-primary font-ui text-[0.7rem] uppercase tracking-widest">{f.badge}</span>
               <h3 className="mt-3 font-heading text-2xl md:text-3xl text-text">{f.title}</h3>
               <p className="mt-2 font-body text-secondary-text">{f.desc}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="sol-stats mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4">
-          {outcomes.map((o) => (
-            <div key={o.label} className="sol-stat text-center rounded-2xl bg-gradient-to-br from-primary/15 via-accent/10 to-badge-bg/10 border border-white/10 p-6">
-              <div className="font-heading text-4xl md:text-5xl bg-gradient-to-r from-primary via-accent to-badge-bg bg-clip-text text-transparent">
-                {o.stat}
-              </div>
-              <div className="mt-1 font-ui text-xs uppercase tracking-widest text-secondary-text">{o.label}</div>
             </div>
           ))}
         </div>

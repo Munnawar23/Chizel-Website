@@ -72,34 +72,8 @@ const About = () => {
             containerClass="!text-4xl md:!text-5xl !leading-tight !items-start !text-left text-text"
           />
           <p className="about-description mt-4 font-body text-lg text-secondary-text leading-relaxed">
-            CHIZEL doesn’t fight screens — it redefines them. We transform the same device that drains attention into a growth engine that sharpens minds, strengthens emotions, and builds real skills.
+            CHIZEL doesn't fight screens — it redefines them. We transform the same device that drains attention into a growth engine that sharpens minds, strengthens emotions, and builds real skills.
           </p>
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="p-5 rounded-xl bg-card border-hsla">
-              <h4 className="font-heading text-2xl text-text">What Kids Gain</h4>
-              <ul className="mt-2 space-y-1 text-secondary-text">
-                <li>+62% Memory Retention</li>
-                <li>+47% Problem Solving</li>
-                <li>+53% Logic & Patterns</li>
-                <li>+38% Social Confidence</li>
-              </ul>
-            </div>
-            <div className="p-5 rounded-xl bg-card border-hsla">
-              <h4 className="font-heading text-2xl text-text">Why Parents Trust</h4>
-              <ul className="mt-2 space-y-1 text-secondary-text">
-                <li>No violence or junk content</li>
-                <li>Guided learning in play</li>
-                <li>Built for attention and calm</li>
-                <li>Meaningful, measurable growth</li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-6 p-5 rounded-xl bg-card border-hsla">
-            <h4 className="font-heading text-2xl text-text">For Investors</h4>
-            <p className="mt-2 text-secondary-text">
-              A category-defining platform at the intersection of gaming and learning — with retention loops, compounding engagement, and a brand parents trust.
-            </p>
-          </div>
           <ul className="principles-list mt-6 space-y-4">
             {principles.map((principle) => (
               <li
