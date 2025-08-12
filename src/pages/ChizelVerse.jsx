@@ -88,22 +88,17 @@ const ChizelVerse = () => {
         scrollTrigger: {
           trigger: scrollContainerRef.current,
           pin: true,
-          scrub: 1,
-          snap: {
-            snapTo: 1 / (cards.length - 1),
-            duration: 0.5,
-            delay: 0.1
-          },
+          scrub: 0.8,
+          snap: cards.length > 1 ? 1 / (cards.length - 1) : false,
           start: "top top",
-          end: () => `+=${cards.length * 100}vw`,
+          end: () => `+=${(cards.length - 1) * window.innerWidth}`,
+          invalidateOnRefresh: true,
           onUpdate: (self) => {
-            // Dynamic background during scroll
-            const progress = self.progress;
-            const hue = progress * 60; // Color shift from blue to purple
-            gsap.set(scrollContainerRef.current, {
-              background: `linear-gradient(${progress * 180}deg, 
-                hsl(${220 + hue}, 70%, ${8 + progress * 5}%) 0%, 
-                hsl(${240 + hue}, 60%, ${12 + progress * 8}%) 100%)`
+            const dots = document.querySelectorAll('.progress-dot');
+            const activeIndex = Math.round(self.progress * (cards.length - 1));
+            dots.forEach((dot, i) => {
+              dot.style.transform = i === activeIndex ? 'scale(1.3)' : 'scale(1)';
+              dot.style.backgroundColor = i === activeIndex ? 'var(--color-primary)' : 'rgba(31,111,235,0.3)';
             });
           }
         }
@@ -235,7 +230,8 @@ const ChizelVerse = () => {
           className="flex h-screen"
           style={{
             width: `${featuresData.length * 100}vw`,
-            willChange: 'transform'
+            willChange: 'transform',
+            touchAction: 'none'
           }}
         >
           {featuresData.map((feature, index) => (

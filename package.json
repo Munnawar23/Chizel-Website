@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "lenis": "^1.0.35",
+    "aos": "^2.3.4",
     "@gsap/react": "^2.1.2",
     "@tailwindcss/vite": "^4.1.11",
     "clsx": "^2.1.1",

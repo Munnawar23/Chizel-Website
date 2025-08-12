@@ -9,10 +9,22 @@ import Games from "./pages/Games";
 import Vision from "./pages/Vision";
 import CustomCursor from "./components/layout/CustomCursor";
 import Home from "./pages/Home";
+import { useEffect } from "react";
 import ChizelVerse from "./pages/ChizelVerse";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Initialize AOS if present
+    (async () => {
+      try {
+        const AOS = (await import('aos')).default;
+        await import('aos/dist/aos.css');
+        AOS.init({ duration: 700, once: true, easing: 'ease-out' });
+      } catch { }
+    })();
+  }, []);
 
   return (
     <main className="relative min-h-screen w-full overflow-x-hidden">

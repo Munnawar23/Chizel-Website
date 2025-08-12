@@ -62,7 +62,7 @@ const Games = () => (
 
       {/* ============== BENTO GRID (Larger rows to accommodate fonts) ============== */}
       <div className="grid w-full auto-rows-[22rem] gap-5">
-        <BentoTilt className="col-span-1 md:col-span-2">
+        <BentoTilt className="col-span-1 md:col-span-2" data-aos="fade-up">
           <BentoCard
             icon={<TiPuzzle />}
             title={<>
@@ -80,7 +80,7 @@ const Games = () => (
             }
           />
         </BentoTilt>
-        <BentoTilt className="col-span-1">
+        <BentoTilt className="col-span-1" data-aos="fade-up" data-aos-delay="100">
           <BentoCard
             icon={<TiChartLine />}
             title={<>
@@ -98,7 +98,7 @@ const Games = () => (
             }
           />
         </BentoTilt>
-        <BentoTilt className="col-span-1">
+        <BentoTilt className="col-span-1" data-aos="fade-up" data-aos-delay="200">
           <BentoCard
             icon={<TiLightbulb />}
             title={<>
@@ -116,7 +116,7 @@ const Games = () => (
             }
           />
         </BentoTilt>
-        <BentoTilt className="col-span-1 md:col-span-2">
+        <BentoTilt className="col-span-1 md:col-span-2" data-aos="fade-up" data-aos-delay="300">
           <BentoCard
             icon={<FaLayerGroup />}
             title={<>
