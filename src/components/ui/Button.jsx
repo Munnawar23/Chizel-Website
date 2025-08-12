@@ -13,24 +13,34 @@ const Button = ({
       id={id}
       onClick={onClick}
       className={clsx(
-        "group relative z-10 flex w-fit cursor-pointer items-center gap-2 overflow-hidden rounded-full bg-primary px-7 py-3 text-text transition-transform duration-300 ease-out hover:scale-105",
+        "group relative z-10 flex w-fit cursor-pointer items-center gap-2 overflow-hidden rounded-full bg-primary px-7 py-3 text-text transition-all duration-300 ease-out hover:scale-105 hover:rotate-2 hover:shadow-lg hover:shadow-primary/25 active:rotate-1 active:scale-95",
         containerClass
       )}
     >
-      {leftIcon}
+      {/* Animated background overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out" />
+      
+      {/* Ripple effect background */}
+      <div className="absolute inset-0 rounded-full bg-white/5 scale-0 group-hover:scale-110 transition-transform duration-500 ease-out" />
 
-      <span className="relative inline-flex overflow-hidden font-body text-xs font-bold uppercase">
-        {/* Top text slides up on hover */}
-        <div className="translate-y-0 skew-y-0 transition duration-500 group-hover:-translate-y-[150%] group-hover:skew-y-[12deg]">
-          {title}
-        </div>
-        {/* Bottom text slides in on hover */}
-        <div className="absolute translate-y-[150%] skew-y-[12deg] transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0">
-          {title}
-        </div>
+      {leftIcon && (
+        <span className="relative transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
+          {leftIcon}
+        </span>
+      )}
+
+      <span className="relative inline-flex font-body text-xs font-bold uppercase leading-none transition-all duration-300 group-hover:tracking-wider">
+        {title}
       </span>
 
-      {rightIcon}
+      {rightIcon && (
+        <span className="relative transition-transform duration-300 group-hover:translate-x-1 group-hover:scale-110">
+          {rightIcon}
+        </span>
+      )}
+      
+      {/* Subtle border highlight */}
+      <div className="absolute inset-0 rounded-full border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
     </button>
   );
 };
