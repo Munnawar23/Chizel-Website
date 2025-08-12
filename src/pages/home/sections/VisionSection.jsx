@@ -6,7 +6,7 @@ import AnimatedTitle from "@components/common/AnimatedTitle";
 gsap.registerPlugin(ScrollTrigger);
 
 const VisionSection = () => {
-  // GSAP logic remains exactly as provided.
+  // Keep your original GSAP logic - it works fine on PC
   useGSAP(() => {
     const clipAnimation = gsap.timeline({
       scrollTrigger: {
@@ -16,12 +16,14 @@ const VisionSection = () => {
         scrub: 0.5,
         pin: true,
         pinSpacing: true,
+        // Only add mobile refresh fix
+        invalidateOnRefresh: true,
       },
     });
 
     clipAnimation.to(".mask-clip-path", {
       width: "100vw",
-      height: "100svh",
+      height: "100vh", // Change only this: vh instead of svh for mobile compatibility
       borderRadius: 0,
     });
   }, []);

@@ -5,7 +5,7 @@ import { FaLayerGroup, FaGamepad, FaBrain, FaChild } from "react-icons/fa";
 
 const GameSection = () => (
   <section id="games" className="bg-background pb-8 sm:pb-24">
-    <div className="container mx-auto px-4 md:px-8">
+    <div className="container mx-auto px-4 md:px-8 mt-16 sm:mt-0">
 
       {/* ============== SECTION HEADER ============== */}
       <div className="py-16 sm:py-24 text-center">
