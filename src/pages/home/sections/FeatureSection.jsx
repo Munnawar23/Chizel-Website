@@ -12,7 +12,6 @@ const FeatureSection = () => {
   const contentRef = useRef(null);
   const headerRef = useRef(null);
 
-  // GSAP logic is theme-independent and remains unchanged.
   useGSAP(() => {
     gsap.fromTo(
       contentRef.current.children,
@@ -38,16 +37,14 @@ const FeatureSection = () => {
 
   return (
     // ============== SECTION CONTAINER ==============
-    <section id="features" className="relative w-full bg-background py-12 sm:py-16">
+    <section id="features" className="relative w-full bg-background py-6 sm:py-16">
       <div className="container mx-auto max-w-7xl px-4 md:px-8">
         
         {/* ============== HEADER SECTION ============== */}
-        {/* FIX: Reduced margin-bottom so header sits closer to content */}
         <div ref={headerRef} className="text-center mb-8 md:mb-12">
           <p className="font-ui text-sm text-secondary-text uppercase tracking-wider mb-2">
             Discover Our Features
           </p>
-          {/* COPY CHANGE: Updated the main headline */}
           <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl text-text mb-4 leading-tight">
             Features of <span className="text-primary">Chizel for Better Learning</span>
           </h1>
@@ -57,7 +54,6 @@ const FeatureSection = () => {
         </div>
 
         {/* ============== INTERACTIVE GRID SECTION ============== */}
-        {/* FIX: Reduced gap sizes for both mobile and desktop */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-12 items-center">
           
           {/* ============== LEFT COLUMN: DYNAMIC CONTENT ============== */}

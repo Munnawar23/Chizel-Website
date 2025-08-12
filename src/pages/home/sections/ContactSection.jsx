@@ -6,8 +6,6 @@ import Button from "@/components/ui/Button";
 
 const ContactSection = () => {
   const containerRef = useRef(null);
-
-  // GSAP animations remain unchanged. They will now run on more performant elements.
   useGSAP(
     () => {
       gsap.to(".float-1", {
@@ -68,10 +66,9 @@ const ContactSection = () => {
     <div
       id="contact"
       ref={containerRef}
-      className="my-16 sm:my-24 w-full px-4 sm:px-8 "
+      className="my-10 sm:my-16 w-full px-4 sm:px-8 "
     >
       <div className="relative rounded-2xl bg-card py-14 sm:py-16 text-text overflow-hidden shadow-xl">
-        {/* ============== DECORATIVE BACKGROUND ============== */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="float-1 absolute top-12 left-12 w-20 h-20 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full"></div>
           <div
@@ -79,8 +76,6 @@ const ContactSection = () => {
             style={{ transform: "rotate(45deg)" }}
           ></div>
           <div className="float-3 absolute bottom-16 left-1/4 w-14 h-14 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full"></div>
-
-          {/* PERFORMANCE FIX: Removed heavy blurs from slow-moving elements */}
           <div className="float-slow-1 absolute bottom-1/4 left-1/3 w-32 h-32 bg-accent/5 rounded-full opacity-50"></div>
           <div className="pulse-slow absolute top-1/3 right-1/3 w-40 h-40 bg-primary/5 rounded-full opacity-30"></div>
         </div>
@@ -89,7 +84,6 @@ const ContactSection = () => {
         <div className="relative z-10 flex flex-col items-center text-center px-6 sm:px-8">
           <div className="mb-6 flex items-center gap-3 group">
             <div className="w-8 h-px bg-gradient-to-r from-transparent via-primary/50 to-accent/50"></div>
-            {/* PERFORMANCE FIX: Removed backdrop-blur from the badge */}
             <div className="relative overflow-hidden px-4 py-1 rounded-full border border-text/10 bg-card/50">
               <p className="font-ui text-xs uppercase text-primary tracking-widest font-medium">
                 Get In Touch
@@ -103,7 +97,6 @@ const ContactSection = () => {
               containerClass="!text-4xl sm:!text-5xl md:!text-6xl !font-black !leading-[.9] !text-center !items-center !text-text drop-shadow-lg"
               title="Have any question <br /> or want to talk with us"
             />
-            {/* PERFORMANCE FIX: Removed the heavy, animated glow div that was here */}
           </div>
 
           <p className="mt-6 max-w-2xl text-secondary-text text-base sm:text-lg leading-relaxed">
@@ -120,7 +113,13 @@ const ContactSection = () => {
 
           <div className="mt-10 relative group">
             <div className="contact-ping absolute -inset-1 bg-gradient-to-r from-primary via-accent to-primary/50 rounded-full blur-md opacity-25"></div>
-            <Button title="Contact Us" containerClass="button-primary" />
+            <Button
+              title="Contact Us"
+              containerClass="button-primary"
+              onClick={() => {
+                window.location.href = "mailto:chizelconnect@gmail.com";
+              }}
+            />
           </div>
 
           <div className="mt-8 flex items-center gap-4 sm:gap-6 text-xs text-secondary-text">

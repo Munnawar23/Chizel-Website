@@ -60,7 +60,7 @@ body::-webkit-scrollbar {
 --color-primary-alpha: rgba(31, 111, 235, 0.25); /* Galactic Blue Glow */
 
   /* Light Space Theme (High Contrast) */
-  --color-light-background: #D6F0FF; /* Clean White */
+  --color-light-background: #87CEEB; /* Clean White */
   --color-light-card: #ffffff; /* Pure White Card */
   --color-light-text: #1e293b; /* Deep Navy Text */
   --color-light-secondary-text: #64748b; /* Slate Gray */

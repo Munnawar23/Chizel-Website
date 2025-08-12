@@ -66,7 +66,7 @@ const ChizelAppSection = () => {
       id="chizel-app"
       className="w-full bg-background text-text overflow-hidden"
     >
-      <div className="flex size-full flex-col items-center pt-14 pb-10">
+      <div className="flex size-full flex-col items-center pt-14 pb-4 sm:pb-10">
         <p className="font-ui text-xl uppercase text-secondary-text tracking-wider">
           Coming Soon
         </p>

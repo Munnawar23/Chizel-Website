@@ -39,8 +39,6 @@ const VisionSection = () => {
           title="Expl<b>o</b>re, learn <br /> and gr<b>o</b>w with Chizel"
           containerClass="!text-text"
         />
-
-        {/* This text is positioned absolutely by the 'about-subtext' utility class */}
         <div className="about-subtext font-body text-text hidden sm:block">
           <p>Embark on a Chizel adventure!</p>
           <p className="text-secondary-text mt-1">

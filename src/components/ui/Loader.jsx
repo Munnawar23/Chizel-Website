@@ -5,12 +5,11 @@ import gsap from "gsap";
 const Loader = ({ setIsLoading }) => {
   const [progress, setProgress] = useState(0);
 
-  // Refs for GSAP animation targets
   const loaderRef = useRef(null);
   const progressBarRef = useRef(null);
   const progressTextRef = useRef(null);
 
-  // Effect to simulate loading progress
+  // All animation and progress logic is preserved exactly as it was.
   useEffect(() => {
     const progressInterval = setInterval(() => {
       setProgress((prev) => {
@@ -25,7 +24,6 @@ const Loader = ({ setIsLoading }) => {
     return () => clearInterval(progressInterval);
   }, []);
 
-  // GSAP: Main exit and progress animations
   useGSAP(
     () => {
       gsap.to(progressBarRef.current, {
@@ -62,7 +60,6 @@ const Loader = ({ setIsLoading }) => {
     { dependencies: [progress, setIsLoading], scope: loaderRef }
   );
 
-  // GSAP: Looping ambient animations
   useGSAP(
     () => {
       gsap.to(".mascot", {
@@ -105,49 +102,49 @@ const Loader = ({ setIsLoading }) => {
     // ============== LOADER CONTAINER ==============
     <div
       ref={loaderRef}
-      className="fixed inset-0 z-[100] flex-center flex-col gap-3 bg-light-background text-light-text"
+      className="fixed inset-0 z-[100] flex-center flex-col gap-3 bg-black text-text"
     >
-      {/* Background shapes using light theme colors */}
+      {/* Background shapes using dark theme colors */}
       <div className="absolute inset-0 pointer-events-none opacity-50">
-        <div className="bg-shape absolute top-[20%] left-[10%] w-6 h-6 bg-light-primary rounded-full" />
-        <div className="bg-shape absolute top-[70%] left-[25%] w-8 h-8 bg-light-badge-bg rounded-full" />
-        <div className="bg-shape absolute top-[15%] right-[15%] w-5 h-5 bg-light-accent rounded-lg rotate-45" />
-        <div className="bg-shape absolute top-[80%] right-[20%] w-7 h-7 bg-light-primary-alpha rounded-lg -rotate-45" />
+        <div className="bg-shape absolute top-[20%] left-[10%] w-6 h-6 bg-primary rounded-full" />
+        <div className="bg-shape absolute top-[70%] left-[25%] w-8 h-8 bg-badge-bg rounded-full" />
+        <div className="bg-shape absolute top-[15%] right-[15%] w-5 h-5 bg-accent rounded-lg rotate-45" />
+        <div className="bg-shape absolute top-[80%] right-[20%] w-7 h-7 bg-primary-alpha rounded-lg -rotate-45" />
       </div>
 
       <div className="relative z-10 text-center">
         {/* ============== MASCOT ============== */}
         <div className="mascot anim-element mb-4">
           <div className="w-20 h-20 mx-auto relative">
-            <div className="w-16 h-16 bg-light-accent border-2 border-light-accent/50 rounded-xl mx-auto relative shadow-lg">
-              <div className="robot-eye absolute top-5 left-4 w-3 h-3 bg-light-background rounded-full" />
-              <div className="robot-eye absolute top-5 right-4 w-3 h-3 bg-light-background rounded-full" />
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-8 h-4 border-b-2 border-l-2 border-r-2 border-light-background rounded-b-full" />
+            <div className="w-16 h-16 bg-accent border-2 border-accent/50 rounded-xl mx-auto relative shadow-lg">
+              <div className="robot-eye absolute top-5 left-4 w-3 h-3 bg-white rounded-full" />
+              <div className="robot-eye absolute top-5 right-4 w-3 h-3 bg-white rounded-full" />
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-8 h-4 border-b-2 border-l-2 border-r-2 border-background rounded-b-full" />
             </div>
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-1 h-4 bg-light-secondary-text" />
-            <div className="antenna-light absolute -top-5 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-light-primary rounded-full" />
+            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-1 h-4 bg-secondary-text" />
+            <div className="antenna-light absolute -top-5 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-primary rounded-full" />
           </div>
         </div>
 
         {/* ============== TEXT CONTENT ============== */}
         <div className="anim-element space-y-1 px-4">
           <h1 className="text-3xl md:text-4xl font-heading uppercase font-bold">
-            Get Ready — We’re Teleporting You Into Dark Space
+            Get Ready — We’re Teleporting You Into Space
           </h1>
-          <p className="font-body text-light-secondary-text text-xl">
+          <p className="font-body text-secondary-text text-xl">
             Brace yourself for your journey into the world of Chizel
           </p>
         </div>
 
         {/* ============== PROGRESS BAR ============== */}
         <div className="anim-element w-60 mx-auto mt-6 px-4">
-          <div className="flex justify-end text-sm text-light-secondary-text mb-1 font-ui">
+          <div className="flex justify-end text-sm text-secondary-text mb-1 font-ui">
             <span ref={progressTextRef}>0</span>%
           </div>
-          <div className="w-full h-2 bg-light-card border border-light-text/10 rounded-full overflow-hidden">
+          <div className="w-full h-2 bg-card border border-text/10 rounded-full overflow-hidden">
             <div
               ref={progressBarRef}
-              className="h-full bg-light-primary rounded-full"
+              className="h-full bg-primary rounded-full"
             />
           </div>
         </div>

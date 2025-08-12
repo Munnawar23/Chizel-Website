@@ -17,10 +17,7 @@ const Button = ({
         containerClass
       )}
     >
-      {/* Animated background overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out" />
-      
-      {/* Ripple effect background */}
       <div className="absolute inset-0 rounded-full bg-white/5 scale-0 group-hover:scale-110 transition-transform duration-500 ease-out" />
 
       {leftIcon && (
@@ -38,8 +35,6 @@ const Button = ({
           {rightIcon}
         </span>
       )}
-      
-      {/* Subtle border highlight */}
       <div className="absolute inset-0 rounded-full border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
     </button>
   );

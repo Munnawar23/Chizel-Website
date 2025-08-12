@@ -4,7 +4,7 @@ import { TiStarFullOutline, TiPuzzle, TiChartLine, TiLightbulb } from "react-ico
 import { FaLayerGroup, FaGamepad, FaBrain, FaChild } from "react-icons/fa";
 
 const GameSection = () => (
-  <section id="games" className="bg-background pb-16 sm:pb-24">
+  <section id="games" className="bg-background pb-8 sm:pb-24">
     <div className="container mx-auto px-4 md:px-8">
 
       {/* ============== SECTION HEADER ============== */}
@@ -22,13 +22,11 @@ const GameSection = () => (
         <div className="relative size-full overflow-hidden bg-card p-6 md:p-8">
           <div className="relative z-10 flex size-full flex-col justify-between items-center text-center text-text">
             <div className="flex flex-col items-center">
-              {/* Restored larger icon sizes */}
               <div className="flex gap-4 md:gap-6 mb-4">
                 <FaGamepad className="text-4xl md:text-6xl text-primary" />
                 <FaBrain className="text-4xl md:text-6xl text-primary" />
                 <FaChild className="text-4xl md:text-6xl text-primary" />
               </div>
-              {/* Restored larger heading size */}
               <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl mb-3 leading-tight">
                 Games for Every Young Mind
               </h2>
@@ -54,7 +52,7 @@ const GameSection = () => (
         </div>
       </BentoTilt>
 
-      {/* ============== BENTO GRID (Larger rows to accommodate fonts) ============== */}
+      {/* ============== BENTO GRID ============== */}
       <div className="grid w-full auto-rows-[22rem] gap-5">
         <BentoTilt className="col-span-1 md:col-span-2">
           <BentoCard

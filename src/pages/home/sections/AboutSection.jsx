@@ -59,7 +59,7 @@ const AboutSection = () => {
   }, []);
 
   return (
-    // ============== SECTION CONTAINER (CORRECTED BACKGROUND) ==============
+    // ============== SECTION CONTAINER ==============
     <section
       id="about"
       className="relative w-screen bg-background py-16 sm:py-24 overflow-hidden"

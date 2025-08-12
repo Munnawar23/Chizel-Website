@@ -10,14 +10,11 @@ const ChizelWebSection = () => {
   };
 
   return (
-    // The section container is unchanged
     <section 
       id="chizel-web" 
       className="relative bg-background pt-16 pb-6 md:py-18 overflow-hidden"
     >
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        
-        {/* Headline is unchanged */}
         <div className="mb-6">
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-text leading-tight">
             Experience Chizel on{" "}
@@ -27,25 +24,18 @@ const ChizelWebSection = () => {
             <div className="w-24 h-1 bg-primary rounded-full"></div>
           </div>
         </div>
-
-        {/* Description is unchanged */}
         <div className="mb-10">
           <p className="font-body text-lg md:text-xl text-secondary-text leading-relaxed max-w-2xl mx-auto">
             Dive deeper into our web development projects, case studies, and the cutting-edge technologies that power our digital experiences.
           </p>
         </div>
-
-        {/* ============== UPGRADED CALL-TO-ACTION BUTTON ============== */}
         <div className="flex justify-center">
           <Button 
             onClick={handleNavigate}
             title="Discover Our Web World"
-            // The new button is a "group", so we can add hover effects to the icon
             rightIcon={<FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />}
           />
         </div>
-
-        {/* Feature Highlights are unchanged */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
           <div className="p-4 bg-card rounded-lg border-hsla">
             <h3 className="font-body text-text font-bold mb-2">Modern Tech Stack</h3>
