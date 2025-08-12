@@ -23,10 +23,10 @@ const Games = () => (
           <div className="relative z-10 flex size-full flex-col justify-between items-center text-center text-text">
             <div className="flex flex-col items-center">
               {/* Restored larger icon sizes */}
-              <div className="flex gap-4 md:gap-6 mb-4">
-                <FaGamepad className="text-4xl md:text-6xl text-primary" />
-                <FaBrain className="text-4xl md:text-6xl text-primary" />
-                <FaChild className="text-4xl md:text-6xl text-primary" />
+              <div className="flex gap-4 md:gap-6 mb-4 will-change-transform">
+                <FaGamepad className="text-4xl md:text-6xl text-primary drop-shadow" />
+                <FaBrain className="text-4xl md:text-6xl text-primary drop-shadow" />
+                <FaChild className="text-4xl md:text-6xl text-primary drop-shadow" />
               </div>
               {/* Restored larger heading size */}
               <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl mb-3 leading-tight">
@@ -43,15 +43,15 @@ const Games = () => (
               </a>
             </div>
             <div className="flex flex-wrap justify-center gap-2 md:gap-3 mt-6">
-              <div className="flex items-center gap-2 bg-primary/10 px-3 py-1.5 rounded-full">
+              <div className="flex items-center gap-2 bg-gradient-to-r from-primary/15 to-accent/15 px-3 py-1.5 rounded-full border border-white/10">
                 <TiPuzzle className="text-primary" />
                 <span className="font-ui text-xs md:text-sm">Problem Solving</span>
               </div>
-              <div className="flex items-center gap-2 bg-primary/10 px-3 py-1.5 rounded-full">
+              <div className="flex items-center gap-2 bg-gradient-to-r from-primary/15 to-accent/15 px-3 py-1.5 rounded-full border border-white/10">
                 <TiLightbulb className="text-primary" />
                 <span className="font-ui text-xs md:text-sm">Memory Training</span>
               </div>
-              <div className="flex items-center gap-2 bg-primary/10 px-3 py-1.5 rounded-full">
+              <div className="flex items-center gap-2 bg-gradient-to-r from-primary/15 to-accent/15 px-3 py-1.5 rounded-full border border-white/10">
                 <TiChartLine className="text-primary" />
                 <span className="font-ui text-xs md:text-sm">Pattern Recognition</span>
               </div>

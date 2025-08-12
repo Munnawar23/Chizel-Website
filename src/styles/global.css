@@ -183,6 +183,8 @@ body::-webkit-scrollbar {
     background-color: var(--color-background);
     font-family: var(--font-body);
     color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 

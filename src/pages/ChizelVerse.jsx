@@ -187,7 +187,7 @@ const ChizelVerse = () => {
       <div className="relative min-h-screen flex items-center justify-center px-4">
         <div className="text-center relative z-10">
           <p className="font-ui text-lg text-primary uppercase tracking-wider mb-4 opacity-80 animate-pulse">
-            Enter the Universe
+            Explore The Solution
           </p>
 
           <h1

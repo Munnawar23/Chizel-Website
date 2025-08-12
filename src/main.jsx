@@ -10,8 +10,9 @@ try {
   import('lenis').then(({ default: Lenis }) => {
     LenisInstance = new Lenis({
       smoothWheel: true,
-      smoothTouch: false,
-      lerp: 0.09,
+      smoothTouch: true,
+      touchMultiplier: 1.2,
+      lerp: 0.1,
       wheelMultiplier: 1,
     });
     function raf(time) {

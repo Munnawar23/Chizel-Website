@@ -96,7 +96,7 @@ const ChizelApp = () => {
               <div className="absolute inset-0 rounded-[2.2rem] overflow-hidden">
                 <div className="absolute -inset-10 bg-gradient-to-br from-primary/15 via-accent/20 to-badge-bg/10 blur-2xl" />
                 <div className="relative h-full w-full flex items-center justify-center">
-                  <img src="/src/assets/logo.png" alt="Chizel Logo" className="w-28 h-28 object-contain animate-pulse" />
+                  <img src="\public\images\logo.png" alt="Chizel Logo" className="w-28 h-28 object-contain animate-pulse" />
                 </div>
               </div>
               <div className="absolute top-2 left-1/2 -translate-x-1/2 w-24 h-1.5 rounded-full bg-text/20" />

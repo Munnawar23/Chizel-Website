@@ -68,11 +68,11 @@ const About = () => {
         {/* ============== TEXT CONTENT ============== */}
         <div className="about-text-content order-1 md:order-2">
           <AnimatedTitle
-            title="Learning, <br /> Re<b>i</b>magined."
+            title="CHIZEL — The <br />Revolutionary Solution"
             containerClass="!text-4xl md:!text-5xl !leading-tight !items-start !text-left text-text"
           />
           <p className="about-description mt-4 font-body text-lg text-secondary-text leading-relaxed">
-            Screens aren’t the enemy — meaningless scrolling is. Chizel transforms idle screen time into a guided space adventure where every minute builds real skills.
+            CHIZEL doesn’t fight screens — it redefines them. We transform the same device that drains attention into a growth engine that sharpens minds, strengthens emotions, and builds real skills.
           </p>
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="p-5 rounded-xl bg-card border-hsla">
@@ -97,7 +97,7 @@ const About = () => {
           <div className="mt-6 p-5 rounded-xl bg-card border-hsla">
             <h4 className="font-heading text-2xl text-text">For Investors</h4>
             <p className="mt-2 text-secondary-text">
-              A category-defining platform at the intersection of gaming and learning. Strong retention loops, cross-device reach, and a mission parents love.
+              A category-defining platform at the intersection of gaming and learning — with retention loops, compounding engagement, and a brand parents trust.
             </p>
           </div>
           <ul className="principles-list mt-6 space-y-4">

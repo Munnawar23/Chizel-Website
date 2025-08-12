@@ -23,9 +23,9 @@ const BentoTilt = ({ children, className = "" }) => {
     const tiltX = (relativeY - 0.5) * 20; // Tilt up/down
     const tiltY = (relativeX - 0.5) * -20; // Tilt left/right
 
-    // Apply the transform style with perspective for a 3D effect
+    // Subtle hover only; reduce floaty feel for stability
     setTransformStyle(
-      `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.05, 1.05, 1.05)`
+      `perspective(800px) rotateX(${tiltX * 0.2}deg) rotateY(${tiltY * 0.2}deg) scale3d(1.02, 1.02, 1.02)`
     );
   };
 
@@ -34,7 +34,7 @@ const BentoTilt = ({ children, className = "" }) => {
    */
   const handleMouseLeave = () => {
     setTransformStyle(
-      "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)"
+      "perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)"
     );
   };
 
@@ -49,7 +49,7 @@ const BentoTilt = ({ children, className = "" }) => {
         // Apply the dynamic transform style
         transform: transformStyle,
         // Use a longer, smoother transition for a more graceful effect
-        transition: "transform 0.4s cubic-bezier(0.23, 1, 0.32, 1)",
+        transition: "transform 0.35s cubic-bezier(0.23, 1, 0.32, 1)",
         // Ensure child elements also respect the 3D space
         transformStyle: "preserve-3d",
       }}
