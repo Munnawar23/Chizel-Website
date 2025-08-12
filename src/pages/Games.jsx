@@ -30,7 +30,7 @@ const Games = () => (
               </div>
               {/* Restored larger heading size */}
               <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl mb-3 leading-tight">
-                Games for Every Young Mind
+                INTREACT WITH CHIZEL
               </h2>
               <a
                 href="https://rajvansh-1.github.io/ChizelVerse/"
@@ -38,23 +38,12 @@ const Games = () => (
                 rel="noopener noreferrer"
                 className="relative mt-2 inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-primary to-accent px-7 py-3 font-body text-sm font-extrabold uppercase text-badge-text shadow-[0_0_20px_rgba(31,111,235,0.45)]"
               >
-                <span className="relative z-10 tracking-wider">Try Me</span>
+                <span className="relative z-10 tracking-wider">TRY ME</span>
                 <span className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 animate-shine" />
               </a>
             </div>
             <div className="flex flex-wrap justify-center gap-2 md:gap-3 mt-6">
-              <div className="flex items-center gap-2 bg-gradient-to-r from-primary/15 to-accent/15 px-3 py-1.5 rounded-full border border-white/10">
-                <TiPuzzle className="text-primary" />
-                <span className="font-ui text-xs md:text-sm">Problem Solving</span>
-              </div>
-              <div className="flex items-center gap-2 bg-gradient-to-r from-primary/15 to-accent/15 px-3 py-1.5 rounded-full border border-white/10">
-                <TiLightbulb className="text-primary" />
-                <span className="font-ui text-xs md:text-sm">Memory Training</span>
-              </div>
-              <div className="flex items-center gap-2 bg-gradient-to-r from-primary/15 to-accent/15 px-3 py-1.5 rounded-full border border-white/10">
-                <TiChartLine className="text-primary" />
-                <span className="font-ui text-xs md:text-sm">Pattern Recognition</span>
-              </div>
+              
             </div>
           </div>
         </div>

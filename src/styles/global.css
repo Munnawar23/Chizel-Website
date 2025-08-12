@@ -482,3 +482,11 @@ body::-webkit-scrollbar {
     }
   }
 }
+
+span.relative.z-10.tracking-wider {
+  font-size: 2em;
+  font-weight: bold;
+  background-image: none;
+  background-clip: border-box;
+  color: white;
+}

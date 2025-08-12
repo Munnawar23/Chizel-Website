@@ -10,8 +10,6 @@ gsap.registerPlugin(ScrollTrigger);
 const ChizelVerse = () => {
   const containerRef = useRef(null);
   const headingRef = useRef(null);
-  const cardsContainerRef = useRef(null);
-  const scrollContainerRef = useRef(null);
 
   useGSAP(() => {
     // Kill any existing ScrollTriggers to prevent conflicts
@@ -78,68 +76,6 @@ const ChizelVerse = () => {
         stagger: 0.1,
         ease: "sine.inOut"
       });
-
-    // Horizontal Scrolling Animation - Fixed for all 3 cards
-    const cards = gsap.utils.toArray('.chizelverse-card');
-
-    if (cards.length > 0) {
-      // Create horizontal scroll animation
-      const horizontalTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: scrollContainerRef.current,
-          pin: true,
-          scrub: 0.8,
-          snap: cards.length > 1 ? 1 / (cards.length - 1) : false,
-          start: "top top",
-          end: () => `+=${(cards.length - 1) * window.innerWidth}`,
-          invalidateOnRefresh: true,
-          onUpdate: (self) => {
-            const dots = document.querySelectorAll('.progress-dot');
-            const activeIndex = Math.round(self.progress * (cards.length - 1));
-            dots.forEach((dot, i) => {
-              dot.style.transform = i === activeIndex ? 'scale(1.3)' : 'scale(1)';
-              dot.style.backgroundColor = i === activeIndex ? 'var(--color-primary)' : 'rgba(31,111,235,0.3)';
-            });
-          }
-        }
-      });
-
-      // Move all cards horizontally
-      horizontalTl.to(cards, {
-        xPercent: -100 * (cards.length - 1),
-        ease: "none",
-      });
-
-      // Individual card entrance animations
-      cards.forEach((card, index) => {
-        const cardContent = card.querySelector('.card-content');
-
-        gsap.fromTo(cardContent,
-          {
-            opacity: 0,
-            y: 100,
-            rotationX: 45,
-            scale: 0.8,
-          },
-          {
-            scrollTrigger: {
-              trigger: card,
-              start: "left 80%",
-              end: "left 20%",
-              toggleActions: "play none none reverse",
-              containerAnimation: horizontalTl,
-            },
-            opacity: 1,
-            y: 0,
-            rotationX: 0,
-            scale: 1,
-            duration: 1.5,
-            ease: "power3.out",
-            delay: index * 0.2,
-          }
-        );
-      });
-    }
 
     // Parallax background elements
     gsap.to(".bg-element-1", {
@@ -223,41 +159,19 @@ const ChizelVerse = () => {
         </div>
       </div>
 
-      {/* Horizontal Scrolling Cards Section */}
-      <div ref={scrollContainerRef} className="relative bg-background">
-        <div
-          ref={cardsContainerRef}
-          className="flex h-screen"
-          style={{
-            width: `${featuresData.length * 100}vw`,
-            willChange: 'transform',
-            touchAction: 'none'
-          }}
-        >
-          {featuresData.map((feature, index) => (
-            <div
-              key={`chizelverse-card-${index}`}
-              className="chizelverse-card w-screen h-full flex-shrink-0 relative"
-            >
-              <ChizelVerseCard
-                feature={feature}
-                index={index}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Progress Indicator (visible only within section) */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="flex space-x-3">
-          {featuresData.map((_, index) => (
-            <div
-              key={`progress-${index}`}
-              className="progress-dot w-3 h-3 rounded-full bg-primary/30 transition-all duration-300 border border-primary/50"
-              style={{ willChange: 'background-color, transform' }}
-            />
-          ))}
+      {/* Simple Vertical Scrolling Cards Section */}
+      <div className="relative bg-background py-20">
+        <div className="container mx-auto px-4">
+          <div className="space-y-20">
+            {featuresData.map((feature, index) => (
+              <div key={`chizelverse-card-${index}`} className="chizelverse-card">
+                <ChizelVerseCard
+                  feature={feature}
+                  index={index}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
