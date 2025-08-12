@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { navItems } from "../../utils/constants";
+import { navItems } from "@utils/constants";
 import { FaBuromobelexperte } from "react-icons/fa";
-import { useScrollDirection } from "../../hooks/useScrollDirection"; 
+import { useScrollDirection } from "@hooks/useScrollDirection"; 
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

@@ -1,5 +1,5 @@
 import { FaInstagram, FaDiscord, FaYoutube, FaLinkedin } from "react-icons/fa";
-import { socialLinks } from "../../utils/constants";
+import { socialLinks } from "@utils/constants";
 
 const iconMap = {
   Instagram: <FaInstagram size="1.2em" />,

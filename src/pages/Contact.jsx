@@ -1,8 +1,8 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
-import AnimatedTitle from "../components/common/AnimatedTitle";
-import Button from "../components/common/Button";
+import AnimatedTitle from "@components/common/AnimatedTitle";
+import Button from "@/components/ui/Button";
 
 const Contact = () => {
   const containerRef = useRef(null);

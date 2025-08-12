@@ -1,9 +1,5 @@
 import { useState, useEffect } from "react";
 
-/**
- * A custom hook that tracks the user's scroll direction to determine if the navbar should be visible.
- * @returns {boolean} - Returns `true` if the navbar should be visible (scrolling up or at the top), `false` otherwise.
- */
 export const useScrollDirection = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);

@@ -1,8 +1,8 @@
 import { useRef, useEffect, useState } from "react";
-import AnimatedTitle from "../components/common/AnimatedTitle";
+import AnimatedTitle from "@components/common/AnimatedTitle";
 import { FaCheckCircle } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
-import FeatureCard from "../components/features/chizelApp/FeatureCard";
+import FeatureCard from "@components/features/chizelApp/FeatureCard";
 
 const ChizelApp = () => {
   const containerRef = useRef(null);

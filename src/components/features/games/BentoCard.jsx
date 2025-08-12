@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState} from "react";
 import clsx from "clsx";
 
 export const BentoCard = ({ src, icon, title, description, className }) => {
