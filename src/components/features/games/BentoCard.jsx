@@ -33,9 +33,9 @@ export const BentoCard = ({ src, icon, title, description, className }) => {
       )}
 
       {/* Card Content */}
-      <div className="relative z-10 flex h-full flex-col justify-start text-text">
+      <div className="relative z-10 flex h-full flex-col justify-start text-text will-change-transform">
         {icon && <div className="mb-3 text-6xl text-primary">{icon}</div>}
-        
+
         <h3 className="font-heading text-5xl font-bold leading-tight">
           {title}
         </h3>

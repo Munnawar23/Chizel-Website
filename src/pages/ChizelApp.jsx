@@ -14,7 +14,7 @@ const ChizelApp = () => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
     };
-    
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
@@ -23,7 +23,7 @@ const ChizelApp = () => {
   // Only add mouse effects on desktop
   useEffect(() => {
     if (isMobile) return; // Completely skip on mobile
-    
+
     const element = frameRef.current;
     if (!element) return;
 
@@ -32,7 +32,7 @@ const ChizelApp = () => {
       const { left, top, width, height } = element.getBoundingClientRect();
       const rotateX = ((clientY - top) / height - 0.5) * -10;
       const rotateY = ((clientX - left) / width - 0.5) * 10;
-      
+
       // Use CSS transforms directly instead of GSAP
       element.style.transform = `perspective(500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
       element.style.transition = 'transform 0.3s ease-out';
@@ -64,64 +64,51 @@ const ChizelApp = () => {
     <section
       ref={containerRef}
       id="download"
-      className="w-full bg-background text-text overflow-hidden"
+      className="w-full bg-background/80 text-text overflow-hidden"
     >
       <div className="flex size-full flex-col items-center pt-14 pb-10">
-        <p className="font-ui text-xl uppercase text-secondary-text tracking-wider">
+        <p className="font-ui text-xl uppercase text-secondary-text tracking-wider animate-pulse">
           Coming Soon
         </p>
 
-        <div className="relative w-full">
-          <div className="flex justify-center w-full mt-4 relative z-10">
+        <div className="relative w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          {/* Left: hype text */}
+          <div className="relative z-10 px-6 order-2 md:order-1">
             <div style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), -1px -1px 2px rgba(0,0,0,0.5)' }}>
               <AnimatedTitle
-                title="Chizel app<br />is c<b>o</b>ming "
-                containerClass="pointer-events-none text-center"
+                title="The Chizel App <br /> launches s<b>o</b>on"
+                containerClass="pointer-events-none"
               />
             </div>
-          </div>
-          <div className="story-img-container -mt-8 sm:-mt-16">
-            <div className="story-img-mask">
-              <div className="story-img-content ">
-                <img
-                  ref={frameRef}
-                  src="/images/app-image.webp"
-                  alt="A phone showcasing the Chizel application"
-                  className="object-contain"
-                  style={isMobile ? { transform: 'none !important', willChange: 'auto' } : {}}
-                />
-              </div>
+            <p className="mt-4 text-secondary-text text-lg">
+              A playful space adventure for brighter minds. Smart play. Real skills. Zero junk.
+            </p>
+            <div className="mt-6 flex gap-3">
+              <div className="px-4 py-2 rounded-full border border-primary/40 bg-primary/15 font-ui text-sm">iOS</div>
+              <div className="px-4 py-2 rounded-full border border-accent/40 bg-accent/15 font-ui text-sm">Android</div>
+              <div className="px-4 py-2 rounded-full border border-badge-bg/40 bg-badge-bg/15 font-ui text-sm">Early Access</div>
             </div>
-            <svg className="invisible absolute size-0">
-              <defs>
-                <filter id="flt_tag">
-                  <feGaussianBlur
-                    in="SourceGraphic"
-                    stdDeviation="8"
-                    result="blur"
-                  />
-                  <feColorMatrix
-                    in="blur"
-                    mode="matrix"
-                    values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
-                    result="flt_tag"
-                  />
-                  <feComposite
-                    in="SourceGraphic"
-                    in2="flt_tag"
-                    operator="atop"
-                  />
-                </filter>
-              </defs>
-            </svg>
+          </div>
+
+          {/* Right: phone teaser with logo */}
+          <div className="relative order-1 md:order-2 flex justify-center">
+            <div className="relative w-64 h-[520px] rounded-[2.2rem] border-2 border-text/15 bg-card/60 backdrop-blur-md shadow-[0_0_40px_rgba(93,63,211,0.25)]">
+              <div className="absolute inset-0 rounded-[2.2rem] overflow-hidden">
+                <div className="absolute -inset-10 bg-gradient-to-br from-primary/15 via-accent/20 to-badge-bg/10 blur-2xl" />
+                <div className="relative h-full w-full flex items-center justify-center">
+                  <img src="/src/assets/logo.png" alt="Chizel Logo" className="w-28 h-28 object-contain animate-pulse" />
+                </div>
+              </div>
+              <div className="absolute top-2 left-1/2 -translate-x-1/2 w-24 h-1.5 rounded-full bg-text/20" />
+              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-24 h-1 rounded-full bg-text/20" />
+            </div>
           </div>
         </div>
 
-       <div className="relative z-10 flex w-full max-w-lg flex-col items-center px-4 -mt-[360px] sm:-mt-50">
+        <div className="relative z-10 flex w-full max-w-lg flex-col items-center px-4 -mt-[360px] sm:-mt-50">
 
           <p className="text-center font-body text-secondary-text text-xl">
-            "Big things are coming! The Chizel mobile app will soon bring smart
-            play right to your phone."
+            Join the first wave. Reserve your spot among the pioneers of smart play.
           </p>
           <div className="mt-6 grid w-full grid-cols-3 gap-2 md:gap-3">
             <FeatureCard

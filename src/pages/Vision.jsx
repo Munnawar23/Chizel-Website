@@ -24,13 +24,25 @@ const Vision = () => {
       height: "100svh",
       borderRadius: 0,
     });
+
+    // Parallax text subtle drift
+    gsap.to(".vision-parallax", {
+      scrollTrigger: {
+        trigger: "#vision",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 0.6,
+      },
+      y: -30,
+      ease: "none",
+    });
   }, []);
 
   return (
     // ============== ROOT CONTAINER ==============
     <div id="vision" className="min-h-screen w-screen bg-background">
       {/* ============== TOP TEXT CONTENT ============== */}
-      <div className="relative flex min-h-[40svh] md:min-h-[40vh] flex-col justify-end items-center gap-4 px-4 pb-12 text-center">
+      <div className="relative flex min-h-[40svh] md:min-h-[40vh] flex-col justify-end items-center gap-4 px-4 pb-12 text-center vision-parallax">
         <p className="font-ui text-sm uppercase text-secondary-text tracking-wider md:text-base">
           "Smart Play for Growth"
         </p>

@@ -7,7 +7,7 @@ const Home = () => {
     // GSAP: Animate hero text entrance
     gsap.from(".hero-element", {
       opacity: 0,
-      y: 30, 
+      y: 30,
       duration: 1,
       stagger: 0.2,
       ease: "power3.out",
@@ -25,7 +25,7 @@ const Home = () => {
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
-        delay: 2, 
+        delay: 2,
       }
     );
   }, []);
@@ -48,13 +48,11 @@ const Home = () => {
       {/* ============== CENTERED CONTENT ============== */}
       <div className="relative z-30 flex-center h-full flex-col text-center">
         <div className="max-w-4xl px-4">
-          <h1 className="hero-element font-heading text-5xl font-bold uppercase text-text sm:text-6xl md:text-7xl">
-            Turning Screen Time Into <span className="text-primary">Skill Time</span>
+          <h1 className="hero-element font-heading text-5xl font-bold uppercase text-text sm:text-6xl md:text-7xl drop-shadow-[0_0_25px_rgba(31,111,235,0.45)]">
+            Turning Screen Time Into <span className="bg-gradient-to-r from-primary via-accent to-badge-bg bg-clip-text text-transparent">Skill Time</span>
           </h1>
           <p className="hero-element mx-auto mt-4 max-w-2xl font-body text-base text-secondary-text md:text-xl">
-            Chizel transforms passive screen time into an active, playful
-            learning experience. Explore a universe of games designed to spark
-            curiosity and build essential skills.
+            Chizel transforms passive screen time into an active, playful learning experience — set among the stars. Every scroll unlocks a new galaxy of growth.
           </p>
         </div>
       </div>
