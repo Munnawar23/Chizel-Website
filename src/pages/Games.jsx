@@ -32,9 +32,15 @@ const Games = () => (
               <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl mb-3 leading-tight">
                 Games for Every Young Mind
               </h2>
-              <p className="max-w-2xl font-body text-sm md:text-base text-secondary-text leading-relaxed">
-                Chizel offers a comprehensive collection of cognitive development games. From pattern recognition to memory challenges, each is scientifically designed to enhance learning while keeping them entertained.
-              </p>
+              <a
+                href="https://rajvansh-1.github.io/ChizelVerse/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative mt-2 inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-primary to-accent px-7 py-3 font-body text-sm font-extrabold uppercase text-badge-text shadow-[0_0_20px_rgba(31,111,235,0.45)]"
+              >
+                <span className="relative z-10 tracking-wider">Try Me</span>
+                <span className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 animate-shine" />
+              </a>
             </div>
             <div className="flex flex-wrap justify-center gap-2 md:gap-3 mt-6">
               <div className="flex items-center gap-2 bg-primary/10 px-3 py-1.5 rounded-full">
@@ -59,29 +65,73 @@ const Games = () => (
         <BentoTilt className="col-span-1 md:col-span-2">
           <BentoCard
             icon={<TiPuzzle />}
-            title={<>Math<br/>Puzzles</>}
-            description="Makes math fun with engaging puzzles that improve problem-solving and numerical skills."
+            title={<>
+              Math<br />Puzzle
+            </>}
+            description={
+              <>
+                <span className="block font-body text-base md:text-lg text-text">
+                  Outsmart the toughest numbers, crush every challenge.
+                </span>
+                <span className="block mt-1 font-heading text-xl md:text-2xl bg-gradient-to-r from-primary via-accent to-badge-bg bg-clip-text text-transparent font-extrabold tracking-wide animate-shine">
+                  Unlock <span className="drop-shadow">+47% Sharper Problem-Solving</span> — instantly!
+                </span>
+              </>
+            }
           />
         </BentoTilt>
         <BentoTilt className="col-span-1">
           <BentoCard
             icon={<TiChartLine />}
-            title={<>Pattern<br/>Recognition</>}
-            description="Develops logical reasoning by identifying and completing complex patterns."
+            title={<>
+              Pattern<br />Recognition
+            </>}
+            description={
+              <>
+                <span className="block font-body text-base md:text-lg text-text">
+                  Expose the hidden codes no one else sees.
+                </span>
+                <span className="block mt-1 font-heading text-xl md:text-2xl bg-gradient-to-r from-accent via-primary to-badge-bg bg-clip-text text-transparent font-extrabold tracking-wide animate-shine">
+                  Gain <span className="drop-shadow">+53% Laser-Focused Logic</span> — before they do!
+                </span>
+              </>
+            }
           />
         </BentoTilt>
         <BentoTilt className="col-span-1">
           <BentoCard
             icon={<TiLightbulb />}
-            title={<>Memory<br/>Games</>}
-            description="Boosts short-term memory and concentration with fun matching challenges."
+            title={<>
+              Memory<br />Games
+            </>}
+            description={
+              <>
+                <span className="block font-body text-base md:text-lg text-text">
+                  Turn your brain into a recall machine.
+                </span>
+                <span className="block mt-1 font-heading text-xl md:text-2xl bg-gradient-to-r from-badge-bg via-accent to-primary bg-clip-text text-transparent font-extrabold tracking-wide animate-shine">
+                  Boost <span className="drop-shadow">+62% Memory Mastery</span> — starting now!
+                </span>
+              </>
+            }
           />
         </BentoTilt>
         <BentoTilt className="col-span-1 md:col-span-2">
           <BentoCard
             icon={<FaLayerGroup />}
-            title={<>Object<br/>Matching</>}
-            description="Enhances visual recognition and categorization skills by matching related objects."
+            title={<>
+              Object<br />Matching
+            </>}
+            description={
+              <>
+                <span className="block font-body text-base md:text-lg text-text">
+                  Spot the difference in record time.
+                </span>
+                <span className="block mt-1 font-heading text-xl md:text-2xl bg-gradient-to-r from-primary via-badge-bg to-accent bg-clip-text text-transparent font-extrabold tracking-wide animate-shine">
+                  Upgrade to <span className="drop-shadow">+58% Eagle-Eye Precision</span> — don’t blink!
+                </span>
+              </>
+            }
           />
         </BentoTilt>
         <BentoTilt className="col-span-1 md:col-span-3">

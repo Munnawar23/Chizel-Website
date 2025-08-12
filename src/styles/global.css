@@ -1,15 +1,21 @@
 @import "tailwindcss";
 
 * {
-  -webkit-user-select: none; /* Safari */
-  -moz-user-select: none;    /* Firefox */
-  -ms-user-select: none;     /* IE/Edge */
-  user-select: none;         /* Standard */
+  -webkit-user-select: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE/Edge */
+  user-select: none;
+  /* Standard */
 }
 
 ::selection {
-  background: transparent; /* No highlight color */
-  color: inherit; /* Keep original text color */
+  background: transparent;
+  /* No highlight color */
+  color: inherit;
+  /* Keep original text color */
 }
 
 /* Base HTML and Body setup */
@@ -18,8 +24,11 @@ body {
   overflow-x: hidden !important;
   max-width: 100vw !important;
   box-sizing: border-box;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE */
+  scroll-behavior: smooth;
 }
 
 /* Hide scrollbar for WebKit browsers */
@@ -49,23 +58,38 @@ body::-webkit-scrollbar {
 @theme {
   /* Dark Space Theme  */
 
- --color-background: #0b1226; /* Deep Space Navy */
---color-card: #16213e; /* Starship Blue */
---color-text: #e6f1ff; /* Moonlight White */
---color-secondary-text: #8fa5c6; /* Soft Nebula Blue */
---color-primary: #1f6feb; /* Galactic Blue */
---color-accent: #5d3fd3; /* Deep Cosmic Purple */
---color-badge-bg: #ffb347; /* Solar Flare Amber */
---color-badge-text: #0b1226; /* Deep Space Navy */
---color-primary-alpha: rgba(31, 111, 235, 0.25); /* Galactic Blue Glow */
+  --color-background: #0b1226;
+  /* Deep Space Navy */
+  --color-card: #16213e;
+  /* Starship Blue */
+  --color-text: #e6f1ff;
+  /* Moonlight White */
+  --color-secondary-text: #8fa5c6;
+  /* Soft Nebula Blue */
+  --color-primary: #1f6feb;
+  /* Galactic Blue */
+  --color-accent: #5d3fd3;
+  /* Deep Cosmic Purple */
+  --color-badge-bg: #ffb347;
+  /* Solar Flare Amber */
+  --color-badge-text: #0b1226;
+  /* Deep Space Navy */
+  --color-primary-alpha: rgba(31, 111, 235, 0.25);
+  /* Galactic Blue Glow */
 
   /* Light Space Theme (High Contrast) */
-  --color-light-background: #e4ebf3; /* Clean White */
-  --color-light-card: #ffffff; /* Pure White Card */
-  --color-light-text: #1e293b; /* Deep Navy Text */
-  --color-light-secondary-text: #64748b; /* Slate Gray */
-  --color-light-primary: #0f4c75; /* Deep Ocean Blue */
-  --color-light-accent: #7c3aed; /* Rich Violet */
+  --color-light-background: #e4ebf3;
+  /* Clean White */
+  --color-light-card: #ffffff;
+  /* Pure White Card */
+  --color-light-text: #1e293b;
+  /* Deep Navy Text */
+  --color-light-secondary-text: #64748b;
+  /* Slate Gray */
+  --color-light-primary: #0f4c75;
+  /* Deep Ocean Blue */
+  --color-light-accent: #7c3aed;
+  /* Rich Violet */
   --color-light-badge-bg: #0f4c75;
   --color-light-badge-text: #ffffff;
   --color-light-primary-alpha: rgba(15, 76, 117, 0.15);
@@ -96,47 +120,56 @@ body::-webkit-scrollbar {
 
 /* BASE AND FONT-FACE LAYER (No changes needed here) */
 @layer base {
+
   /* Font-face declarations remain the same */
   @font-face {
     font-family: "Orbitron";
     font-weight: 500;
     src: url("/fonts/Orbitron-Medium.woff2") format("woff2");
   }
+
   @font-face {
     font-family: "Orbitron";
     font-weight: 700;
     src: url("/fonts/Orbitron-Bold.woff2") format("woff2");
   }
+
   @font-face {
     font-family: "Fredoka";
     font-weight: 400;
     src: url("/fonts/Fredoka-Regular.woff2") format("woff2");
   }
+
   @font-face {
     font-family: "Fredoka";
     font-weight: 500;
     src: url("/fonts/Fredoka-Medium.woff2") format("woff2");
   }
+
   @font-face {
     font-family: "Fredoka";
     font-weight: 700;
     src: url("/fonts/Fredoka-Bold.woff2") format("woff2");
   }
+
   @font-face {
     font-family: "Baloo 2";
     font-weight: 600;
     src: url("/fonts/Baloo2-SemiBold.woff2") format("woff2");
   }
+
   @font-face {
     font-family: "Baloo 2";
     font-weight: 700;
     src: url("/fonts/Baloo2-Bold.woff2") format("woff2");
   }
+
   @font-face {
     font-family: "Quicksand";
     font-weight: 400;
     src: url("/fonts/Quicksand-Regular.woff2") format("woff2");
   }
+
   @font-face {
     font-family: "Quicksand";
     font-weight: 500;
@@ -155,72 +188,94 @@ body::-webkit-scrollbar {
 
 /* UTILITIES LAYER (No changes needed here) */
 @layer utilities {
+
   /* All utility classes remain the same */
   .absolute-center {
     @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
   }
+
   .flex-center {
     @apply flex items-center justify-center;
   }
+
   .hero-heading {
     @apply font-heading uppercase text-5xl sm:text-7xl md:text-9xl lg:text-[12rem];
   }
+
   .about-subtext {
     @apply absolute bottom-[-80dvh] left-1/2 w-full max-w-96 -translate-x-1/2 text-center text-lg md:max-w-[34rem];
   }
+
   .about-image {
     @apply absolute left-1/2 top-0 z-20 h-[60vh] w-96 origin-center -translate-x-1/2 overflow-hidden rounded-3xl md:w-[30vw];
   }
+
   .mask-clip-path {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
+
   .special-font b {
     font-family: var(--font-heading);
   }
+
   .animated-title {
     @apply flex flex-col gap-1 text-5xl md:text-6xl lg:text-[5rem] uppercase leading-[0.8];
   }
+
   .animated-word {
     @apply font-heading font-black opacity-0;
     transform: translate3d(10px, 51px, -60px) rotateY(60deg) rotateX(-40deg);
     transform-origin: 50% 50% -150px !important;
     will-change: opacity, transform;
   }
+
   .border-hsla {
     @apply border border-white/20;
-  } /* Adjusted for white text */
+  }
+
+  /* Adjusted for white text */
   .bento-tilt_1 {
     @apply relative col-span-2 overflow-hidden rounded-md transition-transform duration-300 ease-out md:col-span-1;
   }
+
   .bento-tilt_2 {
     @apply relative col-span-1 row-span-1 overflow-hidden rounded-md transition-transform duration-300 ease-out;
   }
+
   .bento-title {
     @apply uppercase md:text-6xl text-4xl font-black;
   }
+
   .sword-man-clip-path {
     clip-path: polygon(16% 0, 89% 15%, 75% 100%, 0 97%);
   }
+
   .contact-clip-path-1 {
     clip-path: polygon(25% 0%, 74% 0, 69% 64%, 34% 73%);
   }
+
   .contact-clip-path-2 {
     clip-path: polygon(29% 15%, 85% 30%, 50% 100%, 10% 64%);
   }
+
   .button-primary {
     @apply rounded-full bg-primary px-8 py-3 font-body text-sm font-bold uppercase text-badge-text transition-transform duration-300 ease-out hover:scale-105;
   }
+
   .reveal-from-left {
     clip-path: inset(0% 100% 0% 0%);
   }
+
   .story-img-container {
     @apply relative md:h-dvh h-[90vh] w-full;
     filter: url("#flt_tag");
   }
+
   .story-img-mask {
     @apply absolute left-0 top-0 size-full overflow-hidden md:left-[20%] md:top-[-10%] md:size-4/5;
     clip-path: polygon(4% 0, 83% 21%, 100% 73%, 0% 100%);
   }
+
   .story-img-content {
     @apply absolute w-full md:h-dvh h-[50dvh] opacity-100 left-10 top-16 md:left-0 md:top-10 lg:left-[-300px] lg:top-[-100px];
     transform: translate3d(0, 0, 0) rotateX(0) rotateY(0) rotateZ(0) scale(1);
@@ -247,6 +302,7 @@ body::-webkit-scrollbar {
       opacity: 0;
       transform: translateY(30px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -254,23 +310,49 @@ body::-webkit-scrollbar {
   }
 
   @keyframes shine {
-    0% { transform: translateX(-100%) skewX(-12deg); }
-    100% { transform: translateX(200%) skewX(-12deg); }
+    0% {
+      transform: translateX(-100%) skewX(-12deg);
+    }
+
+    100% {
+      transform: translateX(200%) skewX(-12deg);
+    }
   }
 
   @keyframes float-1 {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(180deg); }
+
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+      transform: translateY(-20px) rotate(180deg);
+    }
   }
 
   @keyframes float-2 {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-15px) rotate(-180deg); }
+
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+      transform: translateY(-15px) rotate(-180deg);
+    }
   }
 
   @keyframes float-3 {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-25px) rotate(90deg); }
+
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+      transform: translateY(-25px) rotate(90deg);
+    }
   }
 
   .animate-fade-in-up {
@@ -291,5 +373,110 @@ body::-webkit-scrollbar {
 
   .animate-float-3 {
     animation: float-3 7s ease-in-out infinite;
+  }
+
+  /* Animated gradient for 3D split-heading characters */
+  @keyframes gradient-pan {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Apply gradient animation to each character in the heading */
+  .gradient-3d-text .char {
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent), var(--color-badge-bg), var(--color-primary));
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-pan 6s ease-in-out infinite;
+    text-shadow: 0 0 10px rgba(31, 111, 235, 0.2);
+  }
+
+  /* Space starfield background */
+  .starfield {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .starfield-layer {
+    position: absolute;
+    inset: -50%;
+    background-repeat: repeat;
+    will-change: transform, opacity;
+    opacity: 0.6;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+  }
+
+  .stars-1 {
+    background-image:
+      radial-gradient(2px 2px at 20px 30px, #fff 60%, transparent),
+      radial-gradient(1px 1px at 80px 120px, #9ecbff 60%, transparent),
+      radial-gradient(1.5px 1.5px at 200px 50px, #ffd6a5 60%, transparent),
+      radial-gradient(1px 1px at 300px 200px, #fff 60%, transparent);
+    background-size: 400px 400px;
+    animation: drift-1 120s linear infinite;
+  }
+
+  .stars-2 {
+    background-image:
+      radial-gradient(2px 2px at 60px 80px, #fff 60%, transparent),
+      radial-gradient(1px 1px at 220px 140px, #b3a6ff 60%, transparent),
+      radial-gradient(1.5px 1.5px at 100px 260px, #ffa8a8 60%, transparent),
+      radial-gradient(1px 1px at 350px 280px, #fff 60%, transparent);
+    background-size: 600px 600px;
+    animation: drift-2 180s linear infinite;
+    opacity: 0.45;
+  }
+
+  .stars-3 {
+    background-image:
+      radial-gradient(2px 2px at 150px 220px, #fff 60%, transparent),
+      radial-gradient(1px 1px at 420px 340px, #9ecbff 60%, transparent),
+      radial-gradient(1.5px 1.5px at 260px 120px, #ffd6a5 60%, transparent);
+    background-size: 800px 800px;
+    animation: drift-3 240s linear infinite;
+    opacity: 0.35;
+  }
+
+  @keyframes drift-1 {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+
+    to {
+      transform: translate3d(-400px, -400px, 0);
+    }
+  }
+
+  @keyframes drift-2 {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+
+    to {
+      transform: translate3d(-600px, -200px, 0);
+    }
+  }
+
+  @keyframes drift-3 {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+
+    to {
+      transform: translate3d(-200px, -600px, 0);
+    }
   }
 }

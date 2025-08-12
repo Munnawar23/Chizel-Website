@@ -107,15 +107,9 @@ const Contact = () => {
           </div>
 
           <p className="mt-6 max-w-2xl text-secondary-text text-base sm:text-lg leading-relaxed">
-            Have a question or an idea?
-            <span className="text-primary font-medium">
-              {" "}
-              Don't hesitate to reach out.
-            </span>{" "}
-            We're excited to
-            <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent font-medium">
-              build the future of learning with you.
-            </span>
+            Parents, educators, and believers in better screen time —
+            <span className="text-primary font-medium"> we’d love to hear from you.</span>
+            Let’s build a smarter, kinder internet for kids.
           </p>
 
           <div className="mt-10 relative group">

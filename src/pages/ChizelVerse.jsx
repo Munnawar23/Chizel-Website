@@ -23,7 +23,7 @@ const ChizelVerse = () => {
 
     // 3D Cinematic Heading Animation
     const headingChars = headingRef.current.querySelectorAll('.char');
-    
+
     // Initial state - characters scattered in 3D space
     gsap.set(headingChars, {
       opacity: 0,
@@ -81,7 +81,7 @@ const ChizelVerse = () => {
 
     // Horizontal Scrolling Animation - Fixed for all 3 cards
     const cards = gsap.utils.toArray('.chizelverse-card');
-    
+
     if (cards.length > 0) {
       // Create horizontal scroll animation
       const horizontalTl = gsap.timeline({
@@ -118,8 +118,8 @@ const ChizelVerse = () => {
       // Individual card entrance animations
       cards.forEach((card, index) => {
         const cardContent = card.querySelector('.card-content');
-        
-        gsap.fromTo(cardContent, 
+
+        gsap.fromTo(cardContent,
           {
             opacity: 0,
             y: 100,
@@ -162,7 +162,7 @@ const ChizelVerse = () => {
     gsap.to(".bg-element-2", {
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top bottom", 
+        start: "top bottom",
         end: "bottom top",
         scrub: 1,
       },
@@ -173,28 +173,13 @@ const ChizelVerse = () => {
 
   }, []);
 
-  // Split text into characters for 3D animation
-  useEffect(() => {
-    const heading = headingRef.current;
-    if (heading) {
-      const text = heading.textContent;
-      heading.innerHTML = text
-        .split('')
-        .map(char => {
-          if (char === ' ') {
-            return '<span class="char">&nbsp;</span>';
-          }
-          return `<span class="char">${char}</span>`;
-        })
-        .join('');
-    }
-  }, []);
+  const headingLines = ["Welcome To", "The ChizelVerse !"];
 
   return (
-    <section 
+    <section
       ref={containerRef}
-      id="chizelverse" 
-      className="relative w-full bg-background overflow-hidden"
+      id="chizelverse"
+      className="relative w-full bg-background/80 overflow-hidden"
     >
       {/* Cinematic Background Elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -209,22 +194,29 @@ const ChizelVerse = () => {
           <p className="font-ui text-lg text-primary uppercase tracking-wider mb-4 opacity-80 animate-pulse">
             Enter the Universe
           </p>
-          
-          <h1 
+
+          <h1
             ref={headingRef}
-            className="font-heading text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-text leading-none mb-6"
-            style={{ 
+            className="font-heading text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black leading-none mb-6 gradient-3d-text"
+            style={{
               perspective: '1000px',
               transformStyle: 'preserve-3d'
             }}
           >
-            Welcome to the ChizelVerse!
+            {headingLines.map((line, i) => (
+              <span key={i}>
+                {line.split("").map((ch, idx) => (
+                  <span className="char" key={`${i}-${idx}`}>{ch === " " ? "\u00A0" : ch}</span>
+                ))}
+                {i < headingLines.length - 1 && <br />}
+              </span>
+            ))}
           </h1>
-          
+
           <p className="mt-6 max-w-2xl mx-auto font-body text-lg text-secondary-text leading-relaxed opacity-0 animate-fade-in-up">
             Embark on an epic journey through three incredible realms of learning and discovery.
           </p>
-          
+
           <div className="mt-8 flex justify-center">
             <div className="animate-bounce">
               <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center relative">
@@ -238,20 +230,20 @@ const ChizelVerse = () => {
 
       {/* Horizontal Scrolling Cards Section */}
       <div ref={scrollContainerRef} className="relative bg-background">
-        <div 
+        <div
           ref={cardsContainerRef}
           className="flex h-screen"
-          style={{ 
+          style={{
             width: `${featuresData.length * 100}vw`,
-            willChange: 'transform' 
+            willChange: 'transform'
           }}
         >
           {featuresData.map((feature, index) => (
-            <div 
+            <div
               key={`chizelverse-card-${index}`}
               className="chizelverse-card w-screen h-full flex-shrink-0 relative"
             >
-              <ChizelVerseCard 
+              <ChizelVerseCard
                 feature={feature}
                 index={index}
               />
@@ -260,11 +252,11 @@ const ChizelVerse = () => {
         </div>
       </div>
 
-      {/* Progress Indicator */}
-      <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50">
+      {/* Progress Indicator (visible only within section) */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
         <div className="flex space-x-3">
           {featuresData.map((_, index) => (
-            <div 
+            <div
               key={`progress-${index}`}
               className="progress-dot w-3 h-3 rounded-full bg-primary/30 transition-all duration-300 border border-primary/50"
               style={{ willChange: 'background-color, transform' }}
