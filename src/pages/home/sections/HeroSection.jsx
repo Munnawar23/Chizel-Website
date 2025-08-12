@@ -2,7 +2,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { FaChevronDown } from "react-icons/fa";
 
-const Home = () => {
+const HeroSection = () => {
   useGSAP(() => {
     // GSAP: Animate hero text entrance
     gsap.from(".hero-element", {
@@ -70,4 +70,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HeroSection;

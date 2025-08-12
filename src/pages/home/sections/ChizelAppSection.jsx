@@ -4,7 +4,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
 import FeatureCard from "@components/features/chizelApp/FeatureCard";
 
-const ChizelApp = () => {
+const ChizelAppSection = () => {
   const containerRef = useRef(null);
   const frameRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
@@ -63,7 +63,7 @@ const ChizelApp = () => {
   return (
     <section
       ref={containerRef}
-      id="download"
+      id="chizel-app"
       className="w-full bg-background text-text overflow-hidden"
     >
       <div className="flex size-full flex-col items-center pt-14 pb-10">
@@ -151,4 +151,4 @@ const ChizelApp = () => {
   );
 };
 
-export default ChizelApp;
+export default ChizelAppSection;

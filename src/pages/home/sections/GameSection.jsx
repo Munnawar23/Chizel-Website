@@ -3,7 +3,7 @@ import BentoCard from "@components/features/games/BentoCard";
 import { TiStarFullOutline, TiPuzzle, TiChartLine, TiLightbulb } from "react-icons/ti";
 import { FaLayerGroup, FaGamepad, FaBrain, FaChild } from "react-icons/fa";
 
-const Games = () => (
+const GameSection = () => (
   <section id="games" className="bg-background pb-16 sm:pb-24">
     <div className="container mx-auto px-4 md:px-8">
 
@@ -98,4 +98,4 @@ const Games = () => (
   </section>
 );
 
-export default Games;
+export default GameSection;

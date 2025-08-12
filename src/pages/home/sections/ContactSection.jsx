@@ -4,7 +4,7 @@ import { useRef } from "react";
 import AnimatedTitle from "@components/common/AnimatedTitle";
 import Button from "@/components/ui/Button";
 
-const Contact = () => {
+const ContactSection = () => {
   const containerRef = useRef(null);
 
   // GSAP animations remain unchanged. They will now run on more performant elements.
@@ -68,7 +68,7 @@ const Contact = () => {
     <div
       id="contact"
       ref={containerRef}
-      className="my-16 sm:my-24 w-full px-4 sm:px-8"
+      className="my-16 sm:my-24 w-full px-4 sm:px-8 "
     >
       <div className="relative rounded-2xl bg-card py-14 sm:py-16 text-text overflow-hidden shadow-xl">
         {/* ============== DECORATIVE BACKGROUND ============== */}
@@ -151,4 +151,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactSection;

@@ -8,7 +8,7 @@ import { principles } from "@utils/constants";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const About = () => {
+const AboutSection = () => {
   // GSAP logic is unchanged.
   useGSAP(() => {
     let ctx = gsap.context(() => {
@@ -114,4 +114,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutSection;

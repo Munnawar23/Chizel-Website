@@ -5,7 +5,7 @@ import AnimatedTitle from "@components/common/AnimatedTitle";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Vision = () => {
+const VisionSection = () => {
   // GSAP logic remains exactly as provided.
   useGSAP(() => {
     const clipAnimation = gsap.timeline({
@@ -65,4 +65,4 @@ const Vision = () => {
   );
 };
 
-export default Vision;
+export default VisionSection;

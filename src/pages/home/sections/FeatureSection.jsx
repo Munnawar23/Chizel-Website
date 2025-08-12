@@ -7,7 +7,7 @@ import { featuresData } from "@utils/constants";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Features = () => {
+const FeatureSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const contentRef = useRef(null);
   const headerRef = useRef(null);
@@ -110,4 +110,4 @@ const Features = () => {
   );
 };
 
-export default Features;
+export default FeatureSection;
