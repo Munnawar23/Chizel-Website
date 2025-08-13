@@ -98,9 +98,7 @@ const Games = () => (
                 <span className="block font-body text-base md:text-lg text-text">
                   Outsmart the toughest numbers, crush every challenge.
                 </span>
-                <span className="block mt-1 font-heading text-xl md:text-2xl bg-gradient-to-r from-primary via-accent to-badge-bg bg-clip-text text-transparent font-extrabold tracking-wide animate-shine">
-                  Unlock <span className="drop-shadow">+47% Sharper Problem-Solving</span> — instantly!
-                </span>
+              
               </>
             }
           />
@@ -116,9 +114,7 @@ const Games = () => (
                 <span className="block font-body text-base md:text-lg text-text">
                   Expose the hidden codes no one else sees.
                 </span>
-                <span className="block mt-1 font-heading text-xl md:text-2xl bg-gradient-to-r from-accent via-primary to-badge-bg bg-clip-text text-transparent font-extrabold tracking-wide animate-shine">
-                  Gain <span className="drop-shadow">+53% Laser-Focused Logic</span> — before they do!
-                </span>
+              
               </>
             }
           />
@@ -134,9 +130,7 @@ const Games = () => (
                 <span className="block font-body text-base md:text-lg text-text">
                   Turn your brain into a recall machine.
                 </span>
-                <span className="block mt-1 font-heading text-xl md:text-2xl bg-gradient-to-r from-badge-bg via-accent to-primary bg-clip-text text-transparent font-extrabold tracking-wide animate-shine">
-                  Boost <span className="drop-shadow">+62% Memory Mastery</span> — starting now!
-                </span>
+               
               </>
             }
           />
@@ -152,9 +146,7 @@ const Games = () => (
                 <span className="block font-body text-base md:text-lg text-text">
                   Spot the difference in record time.
                 </span>
-                <span className="block mt-1 font-heading text-xl md:text-2xl bg-gradient-to-r from-primary via-badge-bg to-accent bg-clip-text text-transparent font-extrabold tracking-wide animate-shine">
-                  Upgrade to <span className="drop-shadow">+58% Eagle-Eye Precision</span> — don't blink!
-                </span>
+                
               </>
             }
           />

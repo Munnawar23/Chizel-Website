@@ -17,18 +17,30 @@ const CustomCursor = () => {
     }
 
     const moveCursor = contextSafe((e) => {
+      // Add null checks to prevent GSAP errors
+      if (!cursorRingRef.current || !cursorDotRef.current) return;
+
       const { clientX, clientY } = e.touches ? e.touches[0] : e;
-      gsap.to(cursorRingRef.current, {
-        x: clientX,
-        y: clientY,
-        duration: 0.7,
-        ease: "power3.out",
-      });
-      gsap.to(cursorDotRef.current, {
-        x: clientX,
-        y: clientY,
-        duration: 0.2,
-        ease: "power3.out",
+
+      // Use requestAnimationFrame for better performance
+      requestAnimationFrame(() => {
+        if (cursorRingRef.current) {
+          gsap.to(cursorRingRef.current, {
+            x: clientX,
+            y: clientY,
+            duration: 0.7,
+            ease: "power3.out",
+          });
+        }
+
+        if (cursorDotRef.current) {
+          gsap.to(cursorDotRef.current, {
+            x: clientX,
+            y: clientY,
+            duration: 0.2,
+            ease: "power3.out",
+          });
+        }
       });
     });
 
@@ -53,14 +65,18 @@ const CustomCursor = () => {
     };
   }, [isMobile, contextSafe]);
 
-  // GSAP: Animate cursor based on hover state
+  // GSAP: Animate cursor based on hover state with null checks
   useGSAP(() => {
+    // Add null checks to prevent GSAP errors
+    if (!cursorRingRef.current || !cursorDotRef.current) return;
+
     gsap.to(cursorRingRef.current, {
       scale: isHovering ? 1.8 : 1,
       opacity: isHovering ? 0.7 : 1,
       duration: 0.3,
       ease: "power2.out",
     });
+
     gsap.to(cursorDotRef.current, {
       scale: isHovering ? 0 : 1,
       duration: 0.3,

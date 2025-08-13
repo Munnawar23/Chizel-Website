@@ -48,19 +48,25 @@ const Solution = () => {
   const containerRef = useRef(null);
 
   useGSAP(() => {
-    // Zig-zag scroll reveal: alternate X directions
+    // Optimized scroll reveal with better performance
     gsap.utils.toArray(".sol-feature").forEach((el, i) => {
+      // Add null check to prevent GSAP errors
+      if (!el) return;
+
       gsap.from(el, {
         scrollTrigger: {
           trigger: el,
           start: "top 85%",
           toggleActions: "play none none reverse",
+          // Performance optimizations
+          fastScrollEnd: true,
+          preventOverlaps: true,
         },
-        x: i % 2 === 0 ? -40 : 40,
-        y: 30,
+        x: i % 2 === 0 ? -30 : 30, // Reduced movement for better performance
+        y: 20, // Reduced movement for better performance
         opacity: 0,
-        duration: 0.7,
-        ease: "power3.out",
+        duration: 0.6, // Reduced duration for better performance
+        ease: "power2.out", // Lighter easing for better performance
       });
     });
   }, []);
@@ -73,15 +79,23 @@ const Solution = () => {
       </div>
 
       <div className="container mx-auto px-6">
-        <div className="text-center max-w-5xl mx-auto">
-          <p className="font-ui text-sm uppercase tracking-[0.25em] text-accent">CHIZEL — The Revolutionary Answer</p>
-          <h2 className="font-heading text-5xl md:text-6xl text-text mt-3">Turn Screens Into a Growth Engine</h2>
-          <p className="font-body text-lg text-secondary-text mt-4">Play becomes purpose. Curiosity becomes courage. Learning becomes an adventure.</p>
+        {/* Eye-catching section heading */}
+        <div className="text-center max-w-5xl mx-auto mb-16">
+          <p className="font-ui text-sm uppercase tracking-[0.25em] text-accent mb-4">CHIZEL — The Revolutionary Answer</p>
+          <h2 className="section-heading relative inline-block">
+            Turn Screens Into a Growth Engine
+          </h2>
+          <p className="font-body text-lg text-secondary-text mt-6 max-w-3xl mx-auto">Play becomes purpose. Curiosity becomes courage. Learning becomes an adventure.</p>
         </div>
 
         <div className="sol-features mt-12 grid sm:grid-cols-2 gap-5">
-          {features.map((f) => (
-            <div key={f.title} className="sol-feature rounded-2xl bg-card/70 border border-white/10 p-6 md:p-8 hover:shadow-[0_0_30px_rgba(93,63,211,0.25)] transition-shadow">
+          {features.map((f, index) => (
+            <div
+              key={f.title}
+              className="sol-feature rounded-2xl bg-card/70 border border-white/10 p-6 md:p-8 hover:shadow-[0_0_30px_rgba(93,63,211,0.25)] transition-shadow"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
               <span className="px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-primary font-ui text-[0.7rem] uppercase tracking-widest">{f.badge}</span>
               <h3 className="mt-3 font-heading text-2xl md:text-3xl text-text">{f.title}</h3>
               <p className="mt-2 font-body text-secondary-text">{f.desc}</p>

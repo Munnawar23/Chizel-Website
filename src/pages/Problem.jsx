@@ -42,12 +42,12 @@ const Problem = () => {
         <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-accent/15 blur-[110px]" />
       </div>
 
-      {/* Section heading */}
+      {/* Eye-catching section heading */}
       <div className="relative z-10 text-center px-4 mb-16">
-        <p className="font-ui text-sm uppercase tracking-[0.25em] text-primary">
+        <p className="font-ui text-sm uppercase tracking-[0.25em] text-primary mb-4">
           The Problem
         </p>
-        <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl text-text max-w-5xl mx-auto">
+        <h2 className="section-heading relative inline-block">
           We're Losing Their Minds to Screens
         </h2>
       </div>
@@ -59,6 +59,8 @@ const Problem = () => {
             <div
               key={i}
               className="problem-slide w-full max-w-[900px] mx-auto"
+              data-aos="fade-up"
+              data-aos-delay={i * 100}
             >
               <div
                 className={`relative w-full rounded-3xl border border-white/10 bg-gradient-to-br ${slide.gradient} backdrop-blur-md overflow-hidden hover:shadow-[0_0_40px_rgba(31,111,235,0.25)] transition-all duration-300 hover:scale-[1.02]`}
@@ -68,6 +70,7 @@ const Problem = () => {
                   src={slide.image}
                   alt={slide.title}
                   className="w-full h-64 md:h-80 lg:h-96 object-cover object-center"
+                  loading="lazy"
                 />
 
                 {/* Text Content */}

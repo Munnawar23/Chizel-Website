@@ -23,12 +23,13 @@ const App = () => {
         const AOS = (await import('aos')).default;
         await import('aos/dist/aos.css');
         AOS.init({
-          duration: 700,
+          duration: 500, // Reduced for better performance
           once: true,
           easing: 'ease-out',
-          offset: 100,
+          offset: 50, // Reduced offset for faster triggering
           delay: 0,
-          disable: 'mobile' // Disable on mobile for better performance
+          disable: 'mobile', // Disable on mobile for better performance
+          throttleDelay: 99, // Throttle scroll events for better performance
         });
       } catch (error) {
         console.warn('AOS initialization failed:', error);
@@ -37,18 +38,15 @@ const App = () => {
 
     // Only initialize AOS after loading is complete
     if (!isLoading) {
-      initAOS();
+      // Delay AOS initialization for better performance
+      setTimeout(initAOS, 100);
     }
   }, [isLoading]);
 
   return (
     <main className="relative min-h-screen w-full overflow-x-hidden">
-      {/* Global starfield background */}
-      <div className="starfield">
-        <div className="starfield-layer stars-1" />
-        <div className="starfield-layer stars-2" />
-        <div className="starfield-layer stars-3" />
-      </div>
+      {/* Optimized simple background instead of heavy starfield */}
+      <div className="lightweight-bg" />
 
       <Loader setIsLoading={setIsLoading} />
 
