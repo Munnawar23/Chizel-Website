@@ -17,7 +17,7 @@ const problemSlides = [
     description:
       "Quick hits replace real stories. Kids lose the ability to wait, listen, and care — not because they're bad, but because they're wired for speed. The result? Numbness where wonder should live.",
     gradient: "from-accent/25 via-badge-bg/20 to-primary/20",
-    image: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXozb2g1YjEwb3hvc3B0d243NjFqa256cDgzdzRyd3Rhemh1YjkxcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l4Ki1fHZorEdWAPsc/giphy.gif",
+    image: "\public\gifs\emotional_decay.gif",
   },
   {
     badge: "Gateway to Harm",
