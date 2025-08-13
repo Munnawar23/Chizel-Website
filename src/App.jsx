@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Footer from "./components/layout/Footer";
 import Loader from "./components/layout/Loader";
 import Navbar from "./components/layout/Navbar";
@@ -9,7 +9,6 @@ import Games from "./pages/Games";
 import Vision from "./pages/Vision";
 import CustomCursor from "./components/layout/CustomCursor";
 import Home from "./pages/Home";
-import { useEffect } from "react";
 import ChizelVerse from "./pages/ChizelVerse";
 import Problem from "./pages/Problem";
 import Solution from "./pages/Solution";
@@ -18,15 +17,29 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Initialize AOS if present
-    (async () => {
+    // Initialize AOS only when needed and with better error handling
+    const initAOS = async () => {
       try {
         const AOS = (await import('aos')).default;
         await import('aos/dist/aos.css');
-        AOS.init({ duration: 700, once: true, easing: 'ease-out' });
-      } catch { }
-    })();
-  }, []);
+        AOS.init({
+          duration: 700,
+          once: true,
+          easing: 'ease-out',
+          offset: 100,
+          delay: 0,
+          disable: 'mobile' // Disable on mobile for better performance
+        });
+      } catch (error) {
+        console.warn('AOS initialization failed:', error);
+      }
+    };
+
+    // Only initialize AOS after loading is complete
+    if (!isLoading) {
+      initAOS();
+    }
+  }, [isLoading]);
 
   return (
     <main className="relative min-h-screen w-full overflow-x-hidden">
@@ -36,7 +49,9 @@ const App = () => {
         <div className="starfield-layer stars-2" />
         <div className="starfield-layer stars-3" />
       </div>
+
       <Loader setIsLoading={setIsLoading} />
+
       {!isLoading && (
         <>
           <CustomCursor />

@@ -2,26 +2,102 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/images/logo.png" type="image/png" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>Chizel — Turning Screen Time Into Skill Time </title>
-    <meta name="description" content="CHIZEL turns screen time into smart time with gamified learning, AI companions, adaptive growth maps, and a safe global community." />
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" href="/images/logo.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/images/logo.png" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Preconnect and DNS Prefetch for Performance -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    
+    <!-- Title and Meta Tags -->
+    <title>Chizel — Turning Screen Time Into Skill Time</title>
+    <meta name="description" content="CHIZEL turns screen time into smart time with gamified learning, AI companions, adaptive growth maps, and a safe global community. Transform your child's learning experience." />
+    <meta name="keywords" content="educational games, cognitive development, memory games, problem solving, learning apps, children education, brain training, educational technology" />
+    <meta name="author" content="Chizel Team" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Theme and Colors -->
     <meta name="theme-color" content="#0b1226" />
+    <meta name="msapplication-TileColor" content="#0b1226" />
+    
+    <!-- Canonical URL -->
     <link rel="canonical" href="https://www.chizel.app/" />
+    
+    <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Chizel — Play That Builds Brains" />
     <meta property="og:description" content="Turn screen time into a growth engine. Memory, logic, focus, and social confidence — made playful." />
     <meta property="og:image" content="/images/app-image.webp" />
     <meta property="og:url" content="https://www.chizel.app/" />
+    <meta property="og:site_name" content="Chizel" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Chizel — Play That Builds Brains" />
     <meta name="twitter:description" content="Play becomes purpose. Learning becomes an adventure." />
     <meta name="twitter:image" content="/images/app-image.webp" />
+    <meta name="twitter:creator" content="@chizelapp" />
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="application-name" content="Chizel" />
+    <meta name="apple-mobile-web-app-title" content="Chizel" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <!-- Structured Data for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Chizel",
+      "description": "Educational gaming platform that turns screen time into skill time",
+      "url": "https://www.chizel.app/",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "iOS, Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Chizel",
+        "url": "https://www.chizel.app/"
+      }
+    }
+    </script>
+    
+    <!-- Performance Optimizations -->
+    <link rel="preload" href="/fonts/Orbitron-Bold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Fredoka-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/images/logo.png" as="image" />
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Performance Monitoring -->
+    <script>
+      // Performance monitoring
+      if ('performance' in window) {
+        window.addEventListener('load', () => {
+          const perfData = performance.getEntriesByType('navigation')[0];
+          if (perfData) {
+            console.log('Page Load Time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
+          }
+        });
+      }
+    </script>
   </body>
 </html>

@@ -1,0 +1,46 @@
+{
+  "name": "Chizel - Play That Builds Brains",
+  "short_name": "Chizel",
+  "description": "Turn screen time into a growth engine. Memory, logic, focus, and social confidence — made playful.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b1226",
+  "theme_color": "#0b1226",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": [
+    "education",
+    "games",
+    "productivity"
+  ],
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/app-image.webp",
+      "sizes": "1280x720",
+      "type": "image/webp",
+      "form_factor": "wide"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://www.chizel.app/"
+    }
+  ],
+  "prefer_related_applications": false
+}

@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 import AnimatedTitle from "../components/common/AnimatedTitle";
-import { FaCheckCircle } from "react-icons/fa";
+import { FaCheckCircle, FaMobile, FaTablet, FaDesktop, FaRocket, FaBrain, FaUsers } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
 import FeatureCard from "../components/features/chizelApp/FeatureCard";
 
@@ -64,69 +64,153 @@ const ChizelApp = () => {
     <section
       ref={containerRef}
       id="download"
-      className="w-full bg-background/80 text-text overflow-hidden"
+      className="w-full bg-background/80 text-text overflow-hidden py-20"
     >
-      <div className="flex size-full flex-col items-center pt-14 pb-10">
-        <p className="font-ui text-xl uppercase text-secondary-text tracking-wider animate-pulse">
-          Coming Soon
-        </p>
+      <div className="container mx-auto px-4 md:px-8">
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <p className="font-ui text-lg md:text-xl uppercase text-primary tracking-wider mb-4">
+            Coming Soon
+          </p>
+          <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl text-text mb-6 leading-tight">
+            The Chizel App
+          </h1>
+          <p className="font-body text-lg md:text-xl text-secondary-text max-w-3xl mx-auto leading-relaxed">
+            A revolutionary space adventure that transforms learning into an exciting journey.
+            Smart play, real skills, zero junk content.
+          </p>
+        </div>
 
-        <div className="relative w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          {/* Left: hype text */}
-          <div className="relative z-10 px-6 order-2 md:order-1">
-            <div style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), -1px -1px 2px rgba(0,0,0,0.5)' }}>
-              <AnimatedTitle
-                title="The Chizel App <br /> launches s<b>o</b>on"
-                containerClass="pointer-events-none"
-              />
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+          {/* Left: App Features & Info */}
+          <div className="space-y-8">
+            {/* App Description */}
+            <div className="space-y-6">
+              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-text leading-tight">
+                Launching <span className="text-primary">Soon</span>
+              </h2>
+              <p className="font-body text-lg text-secondary-text leading-relaxed">
+                Join the first wave of pioneers in smart play. Our app combines cutting-edge AI technology
+                with proven educational methods to create an experience that's both fun and transformative.
+              </p>
             </div>
-            <p className="mt-4 text-secondary-text text-lg">
-              A playful space adventure for brighter minds. Smart play. Real skills. Zero junk.
-            </p>
-            <div className="mt-6 flex gap-3">
-              <div className="px-4 py-2 rounded-full border border-primary/40 bg-primary/15 font-ui text-sm">iOS</div>
-              <div className="px-4 py-2 rounded-full border border-accent/40 bg-accent/15 font-ui text-sm">Android</div>
-              <div className="px-4 py-2 rounded-full border border-badge-bg/40 bg-badge-bg/15 font-ui text-sm">Early Access</div>
+
+            {/* Platform Badges */}
+            <div className="flex flex-wrap gap-3">
+              <div className="px-6 py-3 rounded-full border-2 border-primary/40 bg-primary/15 font-ui text-sm font-semibold text-primary">
+                <div className="flex items-center gap-2">
+                  <MdPhoneIphone className="text-lg" />
+                  iOS
+                </div>
+              </div>
+              <div className="px-6 py-3 rounded-full border-2 border-accent/40 bg-accent/15 font-ui text-sm font-semibold text-accent">
+                <div className="flex items-center gap-2">
+                  <FaMobile className="text-lg" />
+                  Android
+                </div>
+              </div>
+              <div className="px-6 py-3 rounded-full border-2 border-badge-bg/40 bg-badge-bg/15 font-ui text-sm font-semibold text-badge-bg">
+                <div className="flex items-center gap-2">
+                  <FaRocket className="text-lg" />
+                  Early Access
+                </div>
+              </div>
+            </div>
+
+            {/* Key Features */}
+            <div className="space-y-4">
+              <h3 className="font-heading text-2xl md:text-3xl text-text mb-4">
+                What Makes Us Special
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="flex items-start gap-3 p-4 rounded-xl bg-card/50 border border-white/10">
+                  <FaBrain className="text-2xl text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-heading text-lg text-text mb-1">AI-Powered Learning</h4>
+                    <p className="font-body text-sm text-secondary-text">Adaptive difficulty and personalized challenges</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 p-4 rounded-xl bg-card/50 border border-white/10">
+                  <FaUsers className="text-2xl text-accent mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-heading text-lg text-text mb-1">Progress Tracking</h4>
+                    <p className="font-body text-sm text-secondary-text">Monitor development with detailed insights</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Right: phone teaser with logo */}
-          <div className="relative order-1 md:order-2 flex justify-center">
-            <div className="relative w-64 h-[520px] rounded-[2.2rem] border-2 border-text/15 bg-card/60 backdrop-blur-md shadow-[0_0_40px_rgba(93,63,211,0.25)]">
-              <div className="absolute inset-0 rounded-[2.2rem] overflow-hidden">
-                <div className="absolute -inset-10 bg-gradient-to-br from-primary/15 via-accent/20 to-badge-bg/10 blur-2xl" />
-                <div className="relative h-full w-full flex items-center justify-center">
-                  <img src="images\logo.png" alt="Chizel Logo" className="w-28 h-28 object-contain animate-pulse" />
+          {/* Right: Phone Mockup */}
+          <div className="flex justify-center lg:justify-end">
+            <div
+              ref={frameRef}
+              className="relative w-72 h-[600px] rounded-[2.5rem] border-2 border-white/20 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl shadow-[0_0_60px_rgba(31,111,235,0.3)] overflow-hidden"
+            >
+              {/* Phone Screen Content */}
+              <div className="absolute inset-0 rounded-[2.5rem] overflow-hidden">
+                {/* Background Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/15 to-badge-bg/10" />
+
+                {/* App Content Preview */}
+                <div className="relative h-full w-full flex flex-col items-center justify-center p-8">
+                  {/* Logo */}
+                  <div className="mb-8">
+                    <img
+                      src="/images/logo.png"
+                      alt="Chizel Logo"
+                      className="w-24 h-24 object-contain animate-pulse"
+                    />
+                  </div>
+
+                  {/* App Name */}
+                  <h3 className="font-heading text-2xl text-text text-center mb-4">
+                    Chizel
+                  </h3>
+
+                  {/* Status */}
+                  <div className="text-center">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/30">
+                      <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                      <span className="font-ui text-sm text-primary font-medium">Coming Soon</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="absolute top-2 left-1/2 -translate-x-1/2 w-24 h-1.5 rounded-full bg-text/20" />
-              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-24 h-1 rounded-full bg-text/20" />
+
+              {/* Phone Details */}
+              <div className="absolute top-4 left-1/2 -translate-x-1/2 w-32 h-1.5 rounded-full bg-white/30" />
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-24 h-1 rounded-full bg-white/20" />
             </div>
           </div>
         </div>
 
-        <div className="relative z-10 flex w-full max-w-lg flex-col items-center px-4 -mt-[360px] sm:-mt-50">
-
-          <p className="text-center font-body text-secondary-text text-xl">
-            Join the first wave. Reserve your spot among the pioneers of smart play.
+        {/* Bottom Features Section */}
+        <div className="text-center">
+          <h3 className="font-heading text-2xl md:text-3xl text-text mb-8">
+            Join the Revolution
+          </h3>
+          <p className="font-body text-lg text-secondary-text max-w-2xl mx-auto mb-12">
+            Be among the first to experience the future of educational gaming.
+            Reserve your spot and get exclusive early access benefits.
           </p>
-          <div className="mt-6 grid w-full grid-cols-3 gap-2 md:gap-3">
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
             <FeatureCard
-              icon={
-                <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              }
-              title="Coming Soon"
-              subtitle="Mobile App"
+              icon={<FaRocket className="text-2xl text-primary" />}
+              title="Early Access"
+              subtitle="First to Experience"
               isMobile={isMobile}
             />
             <FeatureCard
-              icon={<FaCheckCircle className="text-accent" />}
+              icon={<FaCheckCircle className="text-2xl text-accent" />}
               title="Smart Play"
               subtitle="AI Powered"
               isMobile={isMobile}
             />
             <FeatureCard
-              icon={<MdPhoneIphone className="text-accent" />}
+              icon={<MdPhoneIphone className="text-2xl text-badge-bg" />}
               title="Mobile Ready"
               subtitle="iOS & Android"
               isMobile={isMobile}

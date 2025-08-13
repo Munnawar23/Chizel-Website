@@ -1,34 +1,34 @@
 @import "tailwindcss";
 
+/* Performance optimizations */
 * {
   -webkit-user-select: none;
-  /* Safari */
   -moz-user-select: none;
-  /* Firefox */
   -ms-user-select: none;
-  /* IE/Edge */
   user-select: none;
-  /* Standard */
+  box-sizing: border-box;
 }
 
 ::selection {
   background: transparent;
-  /* No highlight color */
   color: inherit;
-  /* Keep original text color */
 }
 
-/* Base HTML and Body setup */
+/* Base HTML and Body setup with performance optimizations */
 html,
 body {
   overflow-x: hidden !important;
   max-width: 100vw !important;
   box-sizing: border-box;
   scrollbar-width: none;
-  /* Firefox */
   -ms-overflow-style: none;
-  /* IE */
   scroll-behavior: smooth;
+  /* Performance optimizations */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 /* Hide scrollbar for WebKit browsers */
@@ -48,65 +48,43 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 /* THEME DEFINITIONS */
 @theme {
   /* Dark Space Theme  */
-
   --color-background: #0b1226;
-  /* Deep Space Navy */
   --color-card: #16213e;
-  /* Starship Blue */
   --color-text: #e6f1ff;
-  /* Moonlight White */
   --color-secondary-text: #8fa5c6;
-  /* Soft Nebula Blue */
   --color-primary: #1f6feb;
-  /* Galactic Blue */
   --color-accent: #5d3fd3;
-  /* Deep Cosmic Purple */
   --color-badge-bg: #ffb347;
-  /* Solar Flare Amber */
   --color-badge-text: #0b1226;
-  /* Deep Space Navy */
   --color-primary-alpha: rgba(31, 111, 235, 0.25);
-  /* Galactic Blue Glow */
 
   /* Light Space Theme (High Contrast) */
   --color-light-background: #e4ebf3;
-  /* Clean White */
   --color-light-card: #ffffff;
-  /* Pure White Card */
   --color-light-text: #1e293b;
-  /* Deep Navy Text */
   --color-light-secondary-text: #64748b;
-  /* Slate Gray */
   --color-light-primary: #0f4c75;
-  /* Deep Ocean Blue */
   --color-light-accent: #7c3aed;
-  /* Rich Violet */
   --color-light-badge-bg: #0f4c75;
   --color-light-badge-text: #ffffff;
   --color-light-primary-alpha: rgba(15, 76, 117, 0.15);
 
-  /* Typography System (No Change) */
+  /* Typography System */
   --font-heading: "Orbitron", sans-serif;
   --font-body: "Fredoka", sans-serif;
   --font-display: "Baloo 2", cursive;
   --font-ui: "Quicksand", sans-serif;
 
-  /* Font Weights (No Change) */
+  /* Font Weights */
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
-  /* Font Sizes (No Change) */
+  /* Font Sizes */
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
@@ -118,62 +96,71 @@ body::-webkit-scrollbar {
   --font-size-5xl: 3rem;
 }
 
-/* BASE AND FONT-FACE LAYER (No changes needed here) */
+/* BASE AND FONT-FACE LAYER */
 @layer base {
 
-  /* Font-face declarations remain the same */
+  /* Font-face declarations with performance optimizations */
   @font-face {
     font-family: "Orbitron";
     font-weight: 500;
     src: url("/fonts/Orbitron-Medium.woff2") format("woff2");
+    font-display: swap;
   }
 
   @font-face {
     font-family: "Orbitron";
     font-weight: 700;
     src: url("/fonts/Orbitron-Bold.woff2") format("woff2");
+    font-display: swap;
   }
 
   @font-face {
     font-family: "Fredoka";
     font-weight: 400;
     src: url("/fonts/Fredoka-Regular.woff2") format("woff2");
+    font-display: swap;
   }
 
   @font-face {
     font-family: "Fredoka";
     font-weight: 500;
     src: url("/fonts/Fredoka-Medium.woff2") format("woff2");
+    font-display: swap;
   }
 
   @font-face {
     font-family: "Fredoka";
     font-weight: 700;
     src: url("/fonts/Fredoka-Bold.woff2") format("woff2");
+    font-display: swap;
   }
 
   @font-face {
     font-family: "Baloo 2";
     font-weight: 600;
     src: url("/fonts/Baloo2-SemiBold.woff2") format("woff2");
+    font-display: swap;
   }
 
   @font-face {
     font-family: "Baloo 2";
     font-weight: 700;
     src: url("/fonts/Baloo2-Bold.woff2") format("woff2");
+    font-display: swap;
   }
 
   @font-face {
     font-family: "Quicksand";
     font-weight: 400;
     src: url("/fonts/Quicksand-Regular.woff2") format("woff2");
+    font-display: swap;
   }
 
   @font-face {
     font-family: "Quicksand";
     font-weight: 500;
     src: url("/fonts/Quicksand-Medium.woff2") format("woff2");
+    font-display: swap;
   }
 
   /* Apply base styles */
@@ -183,15 +170,13 @@ body::-webkit-scrollbar {
     background-color: var(--color-background);
     font-family: var(--font-body);
     color: var(--color-text);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
 }
 
-/* UTILITIES LAYER (No changes needed here) */
+/* UTILITIES LAYER */
 @layer utilities {
 
-  /* All utility classes remain the same */
+  /* Performance-optimized utility classes */
   .absolute-center {
     @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
   }
@@ -235,7 +220,6 @@ body::-webkit-scrollbar {
     @apply border border-white/20;
   }
 
-  /* Adjusted for white text */
   .bento-tilt_1 {
     @apply relative col-span-2 overflow-hidden rounded-md transition-transform duration-300 ease-out md:col-span-1;
   }
@@ -298,7 +282,7 @@ body::-webkit-scrollbar {
     will-change: transform, opacity;
   }
 
-  /* Enhanced animations for ChizelVerse */
+  /* Optimized animations for better performance */
   @keyframes fade-in-up {
     from {
       opacity: 0;
@@ -321,15 +305,16 @@ body::-webkit-scrollbar {
     }
   }
 
+  /* Simplified floating animations for better performance */
   @keyframes float-1 {
 
     0%,
     100% {
-      transform: translateY(0px) rotate(0deg);
+      transform: translateY(0px);
     }
 
     50% {
-      transform: translateY(-20px) rotate(180deg);
+      transform: translateY(-20px);
     }
   }
 
@@ -337,11 +322,11 @@ body::-webkit-scrollbar {
 
     0%,
     100% {
-      transform: translateY(0px) rotate(0deg);
+      transform: translateY(0px);
     }
 
     50% {
-      transform: translateY(-15px) rotate(-180deg);
+      transform: translateY(-15px);
     }
   }
 
@@ -349,11 +334,11 @@ body::-webkit-scrollbar {
 
     0%,
     100% {
-      transform: translateY(0px) rotate(0deg);
+      transform: translateY(0px);
     }
 
     50% {
-      transform: translateY(-25px) rotate(90deg);
+      transform: translateY(-25px);
     }
   }
 
@@ -403,22 +388,27 @@ body::-webkit-scrollbar {
     text-shadow: 0 0 10px rgba(31, 111, 235, 0.2);
   }
 
-  /* Space starfield background */
+  /* Optimized space starfield background */
   .starfield {
     position: fixed;
     inset: 0;
     pointer-events: none;
     z-index: 0;
     overflow: hidden;
+    /* Performance optimization */
+    will-change: transform;
+    transform: translateZ(0);
   }
 
   .starfield-layer {
     position: absolute;
     inset: -50%;
     background-repeat: repeat;
-    will-change: transform, opacity;
+    will-change: transform;
     opacity: 0.6;
     filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+    /* Performance optimization */
+    transform: translateZ(0);
   }
 
   .stars-1 {
@@ -483,10 +473,47 @@ body::-webkit-scrollbar {
   }
 }
 
+/* Performance optimization for specific elements */
 span.relative.z-10.tracking-wider {
   font-size: 2em;
   font-weight: bold;
   background-image: none;
   background-clip: border-box;
   color: white;
+  /* Performance optimization */
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Media query optimizations for better performance */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --color-background: #000000;
+    --color-card: #1a1a1a;
+    --color-text: #ffffff;
+    --color-secondary-text: #cccccc;
+  }
+}
+
+/* Print styles for better accessibility */
+@media print {
+
+  .starfield,
+  .animate-float-1,
+  .animate-float-2,
+  .animate-float-3 {
+    display: none !important;
+  }
 }
