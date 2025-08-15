@@ -8,7 +8,7 @@ const problemSlides = [
     description:
       "Glowing rectangles are silently dismantling the foundation of young minds. Harmless-looking videos and games form dopamine loops that dull curiosity, erode patience, and make real learning feel 'too slow' to tolerate.",
     gradient: "from-primary/25 via-accent/20 to-badge-bg/20",
-    image: "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDdjMWxlOTFyZ29yeGd2dWgxd2FrajVwZXltbnYyaHR2eGNrMWJ6OSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l0HlEEwgZfgqfH70c/giphy.webp",
+    image: "/gifs/brain_hijack.gif",
   },
   {
     badge: "Emotional Decay",
@@ -17,7 +17,7 @@ const problemSlides = [
     description:
       "Quick hits replace real stories. Kids lose the ability to wait, listen, and care — not because they're bad, but because they're wired for speed. The result? Numbness where wonder should live.",
     gradient: "from-accent/25 via-badge-bg/20 to-primary/20",
-    image: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXozb2g1YjEwb3hvc3B0d243NjFqa256cDgzdzRyd3Rhemh1YjkxcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l4Ki1fHZorEdWAPsc/giphy.gif",
+    image: "/gifs/emotional_decay.gif",
   },
   {
     badge: "Gateway to Harm",
@@ -26,7 +26,7 @@ const problemSlides = [
     description:
       "Violence and explicit content are reaching children far earlier than parents imagine. What shocks at 8 feels normal at 10 — rewiring values, emotions, and trust.",
     gradient: "from-red-500/15 via-orange-400/15 to-primary/10",
-    image: "https://media1.tenor.com/m/ACZReejIQ0MAAAAC/hack-hacking.gif",
+    image: "/gifs/gateway-to-harm.gif",
   },
 ];
 
