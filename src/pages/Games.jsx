@@ -85,82 +85,106 @@ const Games = () => (
         </div>
       </div>
 
-      {/* ============== BENTO GRID (Larger rows to accommodate fonts) ============== */}
-      <div className="grid w-full auto-rows-[22rem] gap-5">
-        <BentoTilt className="col-span-1 md:col-span-2" data-aos="fade-up">
-          <BentoCard
-            icon={<TiPuzzle />}
-            title={<>
-              Math<br />Puzzle
-            </>}
-            description={
-              <>
-                <span className="block font-body text-base md:text-lg text-text">
-                  Outsmart the toughest numbers, crush every challenge.
-                </span>
-              
-              </>
-            }
-          />
-        </BentoTilt>
-        <BentoTilt className="col-span-1" data-aos="fade-up" data-aos-delay="100">
-          <BentoCard
-            icon={<TiChartLine />}
-            title={<>
-              Pattern<br />Recognition
-            </>}
-            description={
-              <>
-                <span className="block font-body text-base md:text-lg text-text">
-                  Expose the hidden codes no one else sees.
-                </span>
-              
-              </>
-            }
-          />
-        </BentoTilt>
-        <BentoTilt className="col-span-1" data-aos="fade-up" data-aos-delay="200">
-          <BentoCard
-            icon={<TiLightbulb />}
-            title={<>
-              Memory<br />Games
-            </>}
-            description={
-              <>
-                <span className="block font-body text-base md:text-lg text-text">
-                  Turn your brain into a recall machine.
-                </span>
-               
-              </>
-            }
-          />
-        </BentoTilt>
-        <BentoTilt className="col-span-1 md:col-span-2" data-aos="fade-up" data-aos-delay="300">
-          <BentoCard
-            icon={<FaLayerGroup />}
-            title={<>
-              Object<br />Matching
-            </>}
-            description={
-              <>
-                <span className="block font-body text-base md:text-lg text-text">
-                  Spot the difference in record time.
-                </span>
-                
-              </>
-            }
-          />
-        </BentoTilt>
-        <BentoTilt className="col-span-1 md:col-span-3">
-          <div className="flex size-full flex-col justify-center items-center text-center bg-card border-hsla rounded-xl p-6 gap-4">
-            {/* Restored larger font size */}
-            <h3 className="font-heading text-4xl md:text-6xl font-bold text-text">
-              M<b>o</b>re Games Co<b>m</b>ing S<b>o</b>on
-            </h3>
-            <TiStarFullOutline className="text-6xl text-primary" />
-          </div>
-        </BentoTilt>
-      </div>
+      {/* ============== BENTO GRID (Hyped Version) ============== */}
+<div className="grid w-full auto-rows-[22rem] gap-5">
+  <BentoTilt className="col-span-1 md:col-span-2" data-aos="fade-up">
+    <BentoCard
+      icon={<TiPuzzle />}
+      title={
+        <>
+          🧩 Next-Level<br />Numbers
+        </>
+      }
+      description={
+        <>
+          <span className="block font-body text-base md:text-lg text-text">
+            Crack today’s puzzles… but miss tomorrow, and you’ll never catch up. <br />
+            <strong>Fall behind once, stay behind forever.</strong>
+          </span>
+        </>
+      }
+    />
+  </BentoTilt>
+
+  <BentoTilt className="col-span-1" data-aos="fade-up" data-aos-delay="100">
+    <BentoCard
+      icon={<TiChartLine />}
+      title={
+        <>
+          📈 Hidden<br />Codes Await
+        </>
+      }
+      description={
+        <>
+          <span className="block font-body text-base md:text-lg text-text">
+            Spot the patterns now—before new ones appear that only the sharpest will see.  
+            <br /><em>Blink… and you’ll miss it.</em>
+          </span>
+        </>
+      }
+    />
+  </BentoTilt>
+
+  <BentoTilt className="col-span-1" data-aos="fade-up" data-aos-delay="200">
+    <BentoCard
+      icon={<TiLightbulb />}
+      title={
+        <>
+          🧠 Memory<br />Under Fire
+        </>
+      }
+      description={
+        <>
+          <span className="block font-body text-base md:text-lg text-text">
+            Train your memory today… or risk being left behind when the real tests arrive.  
+            <br /><strong>Memories unlock magic.</strong>
+          </span>
+        </>
+      }
+    />
+  </BentoTilt>
+
+  <BentoTilt className="col-span-1 md:col-span-2" data-aos="fade-up" data-aos-delay="300">
+    <BentoCard
+      icon={<FaLayerGroup />}
+      title={
+        <>
+          ⚡ Speed is<br />Just the Start
+        </>
+      }
+      description={
+        <>
+          <span className="block font-body text-base md:text-lg text-text">
+            Think you’re fast? The next wave is coming… and hesitation means elimination.  
+          </span>
+        </>
+      }
+    />
+  </BentoTilt>
+
+  <BentoTilt className="col-span-1 md:col-span-3">
+  <div className="flex size-full flex-col justify-center items-center text-center bg-card border-hsla rounded-xl p-6 gap-4 relative overflow-hidden">
+    {/* Glow background effect */}
+    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-badge-bg/10 animate-pulse" />
+    
+    {/* Heading */}
+    <h3 className="font-heading text-4xl md:text-6xl font-extrabold text-text relative z-10 tracking-wide">
+      🚀 M<b>o</b>re Games Co<b>m</b>ing S<b>o</b>on
+    </h3>
+    
+    {/* Star Icon with subtle animation */}
+    <TiStarFullOutline className="text-6xl text-primary relative z-10 animate-bounce" />
+    
+    {/* Tagline */}
+    <p className="font-body text-lg md:text-2xl text-secondary-text relative z-10 italic">
+      Bigger. Smarter. Fiercer.<br />
+      <span className="text-primary font-semibold">The next wave is closer than you think.</span>
+    </p>
+  </div>
+</BentoTilt>
+
+</div>
+
 
       {/* ============== WHAT WE OFFER SECTION ============== */}
       <div className="mt-24 text-center">
