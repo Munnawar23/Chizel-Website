@@ -232,33 +232,36 @@ const Games = () => (
           </div>
 
           {/* Investors Card */}
-          <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-badge-bg/20 via-primary/15 to-accent/10 border border-white/20 p-8 hover:shadow-[0_0_40px_rgba(255,179,71,0.3)] transition-all duration-500 hover:scale-105">
-            <div className="absolute inset-0 bg-gradient-to-br from-badge-bg/5 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative z-10 text-center">
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-badge-bg to-primary mb-6 group-hover:scale-110 transition-transform duration-300">
-                <FaRocket className="text-3xl text-white" />
-              </div>
-              <h3 className="font-heading text-2xl md:text-3xl text-text mb-4">For Investors</h3>
-              <p className="font-body text-secondary-text mb-6 leading-relaxed">
-                Join the future of educational technology. Invest in a platform that's revolutionizing how children learn,
-                with proven results and a rapidly growing market in edtech and cognitive development.
-              </p>
-              <div className="space-y-3 text-left">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-badge-bg rounded-full" />
-                  <span className="font-ui text-sm text-text">EdTech Innovation</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full" />
-                  <span className="font-ui text-sm text-text">Proven Results</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-accent rounded-full" />
-                  <span className="font-ui text-sm text-text">Market Growth</span>
-                </div>
-              </div>
-            </div>
-          </div>
+<div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-badge-bg/20 via-primary/15 to-accent/10 border border-white/20 p-8 hover:shadow-[0_0_40px_rgba(255,179,71,0.3)] transition-all duration-500 hover:scale-105">
+  <div className="absolute inset-0 bg-gradient-to-br from-badge-bg/5 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+  <div className="relative z-10 text-center">
+    <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-badge-bg to-primary mb-6 group-hover:scale-110 transition-transform duration-300">
+      <FaRocket className="text-3xl text-white" />
+    </div>
+    <h3 className="font-heading text-2xl md:text-3xl text-text mb-4">For Investors</h3>
+    <p className="font-body text-secondary-text mb-6 leading-relaxed">
+      Be part of the revolution redefining education for the next generation. <br />
+      Chizel is not just another EdTech app — it’s India’s first <strong>AI-powered Skill-Time platform</strong>, 
+      built to transform screen time into lifelong growth. 
+      The opportunity is massive, the demand is urgent, and the future belongs to those who act first. 
+    </p>
+    <div className="space-y-3 text-left">
+      <div className="flex items-center gap-3">
+        <div className="w-2 h-2 bg-badge-bg rounded-full" />
+        <span className="font-ui text-sm text-text">Category-Creating EdTech</span>
+      </div>
+      <div className="flex items-center gap-3">
+        <div className="w-2 h-2 bg-primary rounded-full" />
+        <span className="font-ui text-sm text-text">Defensible Vision & Innovation</span>
+      </div>
+      <div className="flex items-center gap-3">
+        <div className="w-2 h-2 bg-accent rounded-full" />
+        <span className="font-ui text-sm text-text">Unstoppable Market Growth</span>
+      </div>
+    </div>
+  </div>
+</div>
+
         </div>
       </div>
     </div>
