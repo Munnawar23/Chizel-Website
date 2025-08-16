@@ -36,6 +36,7 @@ const problemSlides = [
 ];
 
 const Problem = () => {
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
   return (
     <section
       id="problem"
@@ -44,13 +45,13 @@ const Problem = () => {
       {/* Fiery Space Background */}
       <div className="absolute inset-0 pointer-events-none z-0">
         {/* Blazing comets and burning stars */}
-        <div className="absolute -top-40 -left-40 h-[360px] w-[360px] rounded-full bg-gradient-to-tr from-red-700/45 via-yellow-500/20 to-transparent blur-[80px] animate-pulse" />
-        <div className="absolute -bottom-32 right-20 h-72 w-72 rounded-full bg-gradient-to-br from-orange-600/40 via-pink-600/20 to-transparent blur-[100px] animate-pulse delay-1000" />
-        <div className="absolute top-32 left-1/2 transform -translate-x-1/2 h-60 w-60 rounded-full bg-gradient-to-br from-indigo-700/40 via-purple-900/30 to-blue-700/20 blur-[80px] animate-pulse delay-500" />
+        <div className={`absolute -top-40 -left-40 h-[360px] w-[360px] rounded-full bg-gradient-to-tr from-red-700/45 via-yellow-500/20 to-transparent ${isMobile ? 'blur-[40px]' : 'blur-[80px]'} animate-pulse`} style={{ willChange: 'transform, opacity' }} />
+        <div className={`absolute -bottom-32 right-20 h-72 w-72 rounded-full bg-gradient-to-br from-orange-600/40 via-pink-600/20 to-transparent ${isMobile ? 'blur-[50px]' : 'blur-[100px]'} animate-pulse delay-1000`} style={{ willChange: 'transform, opacity' }} />
+        <div className={`absolute top-32 left-1/2 transform -translate-x-1/2 h-60 w-60 rounded-full bg-gradient-to-br from-indigo-700/40 via-purple-900/30 to-blue-700/20 ${isMobile ? 'blur-[40px]' : 'blur-[80px]'} animate-pulse delay-500`} style={{ willChange: 'transform, opacity' }} />
         {/* Cosmic sparks everywhere */}
-        <div className="absolute left-1/3 top-[40%] w-3 h-3 bg-yellow-500 animate-ping rounded-full" />
-        <div className="absolute right-[15%] top-[10%] w-2 h-2 bg-red-600 animate-ping rounded-full" />
-        <div className="absolute left-[7%] bottom-[20%] w-4 h-4 bg-indigo-400 animate-ping rounded-full" />
+        <div className="absolute left-1/3 top-[40%] w-3 h-3 bg-yellow-500 animate-ping rounded-full" style={{ willChange: 'transform, opacity' }} />
+        <div className="absolute right-[15%] top-[10%] w-2 h-2 bg-red-600 animate-ping rounded-full" style={{ willChange: 'transform, opacity' }} />
+        <div className="absolute left-[7%] bottom-[20%] w-4 h-4 bg-indigo-400 animate-ping rounded-full" style={{ willChange: 'transform, opacity' }} />
       </div>
 
       {/* Section Heading - Urgent and Powerful */}
@@ -93,8 +94,9 @@ const Problem = () => {
                 <img
                   src={slide.image}
                   alt={slide.title}
-                  className="w-full h-72 md:h-80 lg:h-96 object-cover object-center rounded-t-3xl border-b-4 border-yellow-500/40"
+                  className={`w-full ${isMobile ? 'h-52' : 'h-72'} md:h-80 lg:h-96 object-cover object-center rounded-t-3xl border-b-4 border-yellow-500/40`}
                   loading="lazy"
+                  style={{ willChange: 'transform, opacity' }}
                 />
 
                 {/* Extreme Content */}
