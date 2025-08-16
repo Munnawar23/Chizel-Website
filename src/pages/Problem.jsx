@@ -62,7 +62,7 @@ const Problem = () => {
           Every Second is a Disaster
         </h2>
         <p className="mt-4 text-2xl text-white font-semibold font-heading animate-pulse">
-        act now or your child's spark could vanish forever
+        Act now or your child’s spark will vanish forever.
         </p>
       </div>
 
