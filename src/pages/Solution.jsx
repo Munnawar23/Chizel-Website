@@ -34,13 +34,13 @@ const features = [
     badge: "Safe By Default",
     title: "Moderated Global Community",
     desc:
-      "Creativity thrives in safety. Share, build, and celebrate wins in a space built for kindness.",
+      "Where children spark ideas, share skills, and grow into confident creators in a safe, lively space.",
   },
   {
     badge: "For Every Child",
     title: "Inclusive by Design",
     desc:
-      "Built for accessibility — because learning isn't a privilege, it's a right.",
+      "Built for accessibility for all childrens — because learning isn't a privilege, it's a right.",
   },
 ];
 
