@@ -103,7 +103,6 @@ const Contact = () => {
               containerClass="!text-4xl sm:!text-5xl md:!text-6xl !font-black !leading-[.9] !text-center !items-center !text-text drop-shadow-lg"
               title="Have any question <br /> or want to talk with us"
             />
-            {/* PERFORMANCE FIX: Removed the heavy, animated glow div that was here */}
           </div>
 
           <p className="mt-6 max-w-2xl text-secondary-text text-base sm:text-lg leading-relaxed">
@@ -114,7 +113,11 @@ const Contact = () => {
 
           <div className="mt-10 relative group">
             <div className="contact-ping absolute -inset-1 bg-gradient-to-r from-primary via-accent to-primary/50 rounded-full blur-md opacity-25"></div>
-            <Button title="Contact Us" containerClass="button-primary" />
+            <Button
+              title="Contact Us"
+              containerClass="button-primary"
+              onClick={() => window.open("https://docs.google.com/forms/d/1pgIheerPwWhEGL8gNWiv-fvXsn2POEbU2HjEl4RievU/edit", "_blank")}
+            />
           </div>
 
           <div className="mt-8 flex items-center gap-4 sm:gap-6 text-xs text-secondary-text">
