@@ -3,7 +3,7 @@ import { useRef } from "react";
 const problemSlides = [
   {
     badge: "🧠 Brainrot",
-    title: "The Silent Brainrot",
+    title: "The Silent Pandemic",
     highlight: "Every second, a black hole empties your child's mind.",
     description: "This is not distraction — it's a merciless cosmic decay eating away their brain. Focus, memory, feelings — vaporized into space. The clock is ticking, and their future is at stake. Fix this now before it's too late.",
     gradient: "from-purple-900/70 via-indigo-700/60 to-blue-700/60",
