@@ -11,11 +11,11 @@ export const navItems = [
 export const principles = [
   {
     title: "From Screen Waste to Smart Play",
-    description: "Ditch violent games and junk videos — kids get the same fun while sharpening creativity and problem-solving skills.",
+    description: "Turn useless screen time into fun that makes kids smarter and more creative.",
   },
   {
     title: "From Shy to Social Star",
-    description: "From speaking up to making friends, our AI chatbot helps kids build social skills and shine anywhere — no boring lessons here.",
+    description: "Kids learn to speak up, make friends, and build confidence — all through fun, not boring lessons.",
   },
   {
     title: "From Isolated to Inspired",

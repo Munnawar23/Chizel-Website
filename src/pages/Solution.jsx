@@ -83,7 +83,7 @@ const Solution = () => {
         <div className="text-center max-w-5xl mx-auto mb-16">
           <p className="font-ui text-sm uppercase tracking-[0.25em] text-accent mb-4">CHIZEL — The Revolutionary Answer</p>
           <h2 className="section-heading relative inline-block">
-            Turn Screens Into a Growth Engine
+            Ready To Turn Screens Into A Growth Engine?
           </h2>
           <p className="font-body text-lg text-secondary-text mt-6 max-w-3xl mx-auto">Play becomes purpose. Curiosity becomes courage. Learning becomes an adventure.</p>
         </div>
