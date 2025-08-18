@@ -71,9 +71,7 @@ const About = () => {
             title="CHIZEL — The <br />Revolutionary Solution"
             containerClass="!text-4xl md:!text-5xl !leading-tight !items-start !text-left text-text"
           />
-          <p className="about-description mt-4 font-body text-lg text-secondary-text leading-relaxed">
-            CHIZEL doesn't fight screens — it redefines them. We transform the same device that drains attention into a growth engine that sharpens minds, strengthens emotions, and builds real skills.
-          </p>
+          {/* Removed written content as requested */}
           <ul className="principles-list mt-6 space-y-4">
             {principles.map((principle) => (
               <li

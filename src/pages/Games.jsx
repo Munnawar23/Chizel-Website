@@ -90,16 +90,11 @@ const Games = () => (
   <BentoTilt className="col-span-1 md:col-span-2" data-aos="fade-up">
     <BentoCard
       icon={<TiPuzzle />}
-      title={
-        <>
-          🧩 Next-Level<br />Numbers
-        </>
-      }
+      title={<>🧩 Play That<br />Teaches</>}
       description={
         <>
           <span className="block font-body text-base md:text-lg text-text">
-            Crack today’s puzzles… but miss tomorrow, and you’ll never catch up. <br />
-            <strong>Fall behind once, stay behind forever.</strong>
+            Smart challenges that grow focus, memory, and logic.
           </span>
         </>
       }
@@ -109,16 +104,11 @@ const Games = () => (
   <BentoTilt className="col-span-1" data-aos="fade-up" data-aos-delay="100">
     <BentoCard
       icon={<TiChartLine />}
-      title={
-        <>
-          📈 Hidden<br />Codes Await
-        </>
-      }
+      title={<>🤖 Confidence in<br />Conversation</>}
       description={
         <>
           <span className="block font-body text-base md:text-lg text-text">
-            Spot the patterns now—before new ones appear that only the sharpest will see.  
-            <br /><em>Blink… and you’ll miss it.</em>
+            An AI buddy that boosts social skills, conversation, and confident choices.
           </span>
         </>
       }
@@ -128,16 +118,11 @@ const Games = () => (
   <BentoTilt className="col-span-1" data-aos="fade-up" data-aos-delay="200">
     <BentoCard
       icon={<TiLightbulb />}
-      title={
-        <>
-          🧠 Memory<br />Under Fire
-        </>
-      }
+      title={<>🌍 Moderated<br />Global Community</>}
       description={
         <>
           <span className="block font-body text-base md:text-lg text-text">
-            Train your memory today… or risk being left behind when the real tests arrive.  
-            <br /><strong>Memories unlock magic.</strong>
+            Where children spark ideas, share skills, and grow into confident creators safely.
           </span>
         </>
       }
@@ -147,42 +132,32 @@ const Games = () => (
   <BentoTilt className="col-span-1 md:col-span-2" data-aos="fade-up" data-aos-delay="300">
     <BentoCard
       icon={<FaLayerGroup />}
-      title={
-        <>
-          ⚡ Speed is<br />Just the Start
-        </>
-      }
+      title={<> 🎖️Inclusive<br />by Design</>}
       description={
         <>
           <span className="block font-body text-base md:text-lg text-text">
-            Think you’re fast? The next wave is coming… and hesitation means elimination.  
+            Accessible learning for all children — because learning is a right, not a privilege.
           </span>
         </>
       }
     />
   </BentoTilt>
 
+  {/* Keep the "More Games Coming Soon" card unchanged */}
   <BentoTilt className="col-span-1 md:col-span-3">
-  <div className="flex size-full flex-col justify-center items-center text-center bg-card border-hsla rounded-xl p-6 gap-4 relative overflow-hidden">
-    {/* Glow background effect */}
-    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-badge-bg/10 animate-pulse" />
-    
-    {/* Heading */}
-    <h3 className="font-heading text-4xl md:text-6xl font-extrabold text-text relative z-10 tracking-wide">
-      🚀 M<b>o</b>re Games Co<b>m</b>ing S<b>o</b>on
-    </h3>
-    
-    {/* Star Icon with subtle animation */}
-    <TiStarFullOutline className="text-6xl text-primary relative z-10 animate-bounce" />
-    
-    {/* Tagline */}
-    <p className="font-body text-lg md:text-2xl text-secondary-text relative z-10 italic">
-      Bigger. Smarter. Fiercer.<br />
-      <span className="text-primary font-semibold">The next wave is closer than you think.</span>
-    </p>
-  </div>
-</BentoTilt>
+    <div className="flex size-full flex-col justify-center items-center text-center bg-card border-hsla rounded-xl p-6 gap-4 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-badge-bg/10 animate-pulse" />
+      <h3 className="font-heading text-4xl md:text-6xl font-extrabold text-text relative z-10 tracking-wide">
+  More Big Things Coming Soon!
+</h3>
 
+      <TiStarFullOutline className="text-6xl text-primary relative z-10 animate-bounce" />
+      <p className="font-body text-lg md:text-2xl text-secondary-text relative z-10 italic">
+        Bigger. Smarter. Fiercer.<br />
+        <span className="text-primary font-semibold">The next wave is closer than you think.</span>
+      </p>
+    </div>
+  </BentoTilt>
 </div>
 
 
