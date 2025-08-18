@@ -9,18 +9,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 const FeatureSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const contentRef = useRef(null);
   const headerRef = useRef(null);
 
+  // GSAP animation for the header (no changes here)
   useGSAP(() => {
-    gsap.fromTo(
-      contentRef.current.children,
-      { opacity: 0, y: 15 },
-      { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: "power2.out" }
-    );
-  }, [activeIndex]);
-
-  useGSAP(() => {
+    if (!headerRef.current) return;
     gsap.from(headerRef.current.children, {
       scrollTrigger: {
         trigger: headerRef.current,
@@ -37,7 +30,7 @@ const FeatureSection = () => {
 
   return (
     // ============== SECTION CONTAINER ==============
-    <section id="features" className="relative w-full bg-background py-6 sm:py-16">
+    <section id="features" className="relative w-full bg-background py-4 sm:py-0 mt-12">
       <div className="container mx-auto max-w-7xl px-4 md:px-8">
         
         {/* ============== HEADER SECTION ============== */}
@@ -57,38 +50,55 @@ const FeatureSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-12 items-center">
           
           {/* ============== LEFT COLUMN: DYNAMIC CONTENT ============== */}
-          <div ref={contentRef} className="flex flex-col justify-center space-y-4">
-            <div key={`${activeIndex}-gif`} className="relative w-full rounded-xl overflow-hidden shadow-lg shadow-black/20">
-              <img
-                src={featuresData[activeIndex].gifSrc}
-                alt={`${featuresData[activeIndex].title} feature in action`}
-                className="w-full h-auto object-contain bg-background"
-              />
+          <div className="flex flex-col justify-center space-y-4">
+            
+            {/* GIF Container - Taller Aspect Ratio */}
+            <div className="relative w-full rounded-xl overflow-hidden shadow-lg shadow-black/20 aspect-[4/3] bg-background"> {/* CHANGED */}
+              {featuresData.map((feature, index) => (
+                <img
+                  key={index}
+                  src={feature.gifSrc}
+                  alt={`${feature.title} feature in action`}
+                  className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ease-in-out ${
+                    activeIndex === index ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                  }`}
+                />
+              ))}
             </div>
-            <div key={`${activeIndex}-text`} className="space-y-3 pt-2">
-              <p className="font-body text-secondary-text">
-                {featuresData[activeIndex].description}
-              </p>
-              <div className="relative border-l-2 border-primary/30 pl-4 pt-1">
-                <FaQuoteLeft className="absolute -top-1 -left-1.5 text-xl text-primary/30" />
-                <blockquote className="font-body text-text/80 italic">
-                  "{featuresData[activeIndex].quote}"
-                </blockquote>
-                <cite className="mt-1 block text-xs not-italic text-secondary-text">
-                  — {featuresData[activeIndex].author}
-                </cite>
-              </div>
+            
+            {/* Text Content Container (no changes here) */}
+            <div className="relative pt-2 min-h-[280px]">
+              {featuresData.map((feature, index) => (
+                <div
+                  key={index}
+                  className={`absolute inset-0 space-y-3 transition-opacity duration-500 ease-in-out ${
+                    activeIndex === index ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                  }`}
+                >
+                  <p className="font-body text-secondary-text">
+                    {feature.description}
+                  </p>
+                  <div className="relative border-l-2 border-primary/30 pl-4 pt-1">
+                    <FaQuoteLeft className="absolute -top-1 -left-1.5 text-xl text-primary/30" />
+                    <blockquote className="font-body text-text/80 italic">
+                      "{feature.quote}"
+                    </blockquote>
+                    <cite className="mt-1 block text-xs not-italic text-secondary-text">
+                      — {feature.author}
+                    </cite>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
           
           {/* ============== RIGHT COLUMN: FEATURE SELECTORS ============== */}
           <div className="flex flex-col justify-center">
-            {/* FIX: Reduced spacing between titles */}
             <ul className="space-y-3 md:space-y-4 text-center md:text-right">
               {featuresData.map((feature, index) => (
                 <li key={index} onMouseEnter={() => setActiveIndex(index)} className="cursor-pointer">
                   <h2
-                    className={`font-heading text-3xl sm:text-4xl lg:text-7xl uppercase transition-opacity duration-300 ${
+                    className={`font-heading text-3xl sm:text-4xl lg:text-6xl uppercase transition-opacity duration-300 ${
                       activeIndex === index
                         ? "text-text opacity-100"
                         : "text-secondary-text opacity-30 hover:opacity-60"

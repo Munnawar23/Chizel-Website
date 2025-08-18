@@ -67,8 +67,8 @@ const AboutSection = () => {
       <div className="container mx-auto grid grid-cols-1 items-center gap-10 px-8 md:grid-cols-2 md:gap-16 relative z-10">
         {/* ============== TEXT CONTENT ============== */}
         <div className="about-text-content order-1 md:order-2">
-          <AnimatedTitle
-            title="Learning, <br /> Re<b>i</b>magined."
+           <AnimatedTitle
+            title="CHIZEL — The <br />Revolutionary Solution"
             containerClass="!text-4xl md:!text-5xl !leading-tight !items-start !text-left text-text"
           />
           <p className="about-description mt-4 font-body text-lg text-secondary-text leading-relaxed">

@@ -1,29 +1,41 @@
 import { useRef, useEffect, useState } from "react";
-import AnimatedTitle from "@components/common/AnimatedTitle";
-import { FaCheckCircle } from "react-icons/fa";
-import { MdPhoneIphone } from "react-icons/md";
 import FeatureCard from "@components/features/chizelApp/FeatureCard";
+import PlatformBadge from "@components/features/chizelApp/PlatformBadge";
+import SpecialFeatureCard from "@components/features/chizelApp/SpecialFeatureCard";
+import { chizelAppData } from "@utils/constants";
+import { FaCheckCircle, FaMobile, FaRocket, FaBrain, FaUsers } from "react-icons/fa";
+import { MdPhoneIphone } from "react-icons/md";
+
+const iconMap = {
+  MdPhoneIphone,
+  FaMobile,
+  FaRocket,
+  FaBrain,
+  FaUsers,
+  FaCheckCircle,
+};
 
 const ChizelAppSection = () => {
   const containerRef = useRef(null);
   const frameRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Detect mobile devices
+  // Hooks and renderIcon function remain the same
+  // 1. Detect mobile devices to disable animations
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
     };
-    
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Only add mouse effects on desktop
+  // 2. Add mouse-based 3D tilt effect only on desktop
   useEffect(() => {
-    if (isMobile) return; // Completely skip on mobile
-    
+    if (isMobile) return;
+
     const element = frameRef.current;
     if (!element) return;
 
@@ -32,8 +44,7 @@ const ChizelAppSection = () => {
       const { left, top, width, height } = element.getBoundingClientRect();
       const rotateX = ((clientY - top) / height - 0.5) * -10;
       const rotateY = ((clientX - left) / width - 0.5) * 10;
-      
-      // Use CSS transforms directly instead of GSAP
+
       element.style.transform = `perspective(500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
       element.style.transition = 'transform 0.3s ease-out';
     };
@@ -52,98 +63,143 @@ const ChizelAppSection = () => {
     };
   }, [isMobile]);
 
-  // Reset any transforms on mobile
+  // 3. Ensure transforms are reset on mobile
   useEffect(() => {
     if (isMobile && frameRef.current) {
       frameRef.current.style.transform = 'none';
       frameRef.current.style.transition = 'none';
     }
   }, [isMobile]);
+  
+  // 4. Helper function to render icons dynamically
+  const renderIcon = (name, type) => {
+    const IconComponent = iconMap[name];
+    if (!IconComponent) return null;
+
+    switch (type) {
+      case 'platform':
+        return <IconComponent className="text-lg" />;
+      case 'special':
+        const colorClass = name === 'FaBrain' ? 'text-primary' : 'text-accent';
+        return <IconComponent className={`text-2xl ${colorClass} mt-1 flex-shrink-0`} />;
+      case 'revolution':
+        const revColor = {
+          FaRocket: 'text-primary',
+          FaCheckCircle: 'text-accent',
+          MdPhoneIphone: 'text-badge-bg',
+        }[name];
+        return <IconComponent className={`text-2xl ${revColor}`} />;
+      default:
+        return <IconComponent />;
+    }
+  };
+
 
   return (
-    <section
-      ref={containerRef}
-      id="chizel-app"
-      className="w-full bg-background text-text overflow-hidden"
-    >
-      <div className="flex size-full flex-col items-center pt-14 pb-4 sm:pb-10">
-        <p className="font-ui text-xl uppercase text-secondary-text tracking-wider">
-          Coming Soon
-        </p>
+    <section ref={containerRef} id="chizel-app" className="w-full bg-background/80 text-text overflow-hidden py-4">
+      <div className="container mx-auto px-4 md:px-8">
+        
+        {/* ============== HEADER SECTION ============== */}
+        <div className="text-center mb-16">
+          <p className="font-ui text-xl md:text-2xl uppercase text-primary tracking-wider mb-4"> {/* CHANGED */}
+            {chizelAppData.header.comingSoonText}
+          </p>
+          <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl text-text mb-6 leading-tight"> {/* CHANGED */}
+            {chizelAppData.header.title}
+          </h1>
+          <p className="font-body text-xl md:text-2xl text-secondary-text max-w-3xl mx-auto leading-relaxed"> {/* CHANGED */}
+            {chizelAppData.header.subtitle}
+          </p>
+        </div>
 
-        <div className="relative w-full">
-          <div className="flex justify-center w-full mt-4 relative z-10">
-            <div style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), -1px -1px 2px rgba(0,0,0,0.5)' }}>
-              <AnimatedTitle
-                title="Chizel app<br />is c<b>o</b>ming "
-                containerClass="pointer-events-none text-center"
-              />
+        {/* ============== MAIN CONTENT GRID ============== */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+          
+          {/* Left Panel: App Features & Info */}
+          <div className="space-y-8">
+            <div className="space-y-6">
+              <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-text leading-tight"> {/* CHANGED */}
+                {chizelAppData.mainContent.leftPanel.title}{" "}
+                <span className="text-primary">{chizelAppData.mainContent.leftPanel.highlight}</span>
+              </h2>
+              <p className="font-body text-xl text-secondary-text leading-relaxed"> {/* CHANGED */}
+                {chizelAppData.mainContent.leftPanel.description}
+              </p>
             </div>
-          </div>
-          <div className="story-img-container -mt-8 sm:-mt-16">
-            <div className="story-img-mask">
-              <div className="story-img-content ">
-                <img
-                  ref={frameRef}
-                  src="/images/app-image.webp"
-                  alt="A phone showcasing the Chizel application"
-                  className="object-contain"
-                  style={isMobile ? { transform: 'none !important', willChange: 'auto' } : {}}
+
+            <div className="flex flex-wrap gap-3">
+              {chizelAppData.mainContent.leftPanel.platformBadges.map((badge) => (
+                <PlatformBadge
+                  key={badge.text}
+                  icon={renderIcon(badge.iconName, 'platform')}
+                  text={badge.text}
+                  colorClasses={badge.colorClasses}
                 />
+              ))}
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="font-heading text-3xl md:text-4xl text-text mb-4"> {/* CHANGED */}
+                {chizelAppData.mainContent.leftPanel.specialFeatures.title}
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {chizelAppData.mainContent.leftPanel.specialFeatures.features.map((feature) => (
+                  <SpecialFeatureCard
+                    key={feature.title}
+                    icon={renderIcon(feature.iconName, 'special')}
+                    title={feature.title}
+                    description={feature.description}
+                  />
+                ))}
               </div>
             </div>
-            <svg className="invisible absolute size-0">
-              <defs>
-                <filter id="flt_tag">
-                  <feGaussianBlur
-                    in="SourceGraphic"
-                    stdDeviation="8"
-                    result="blur"
-                  />
-                  <feColorMatrix
-                    in="blur"
-                    mode="matrix"
-                    values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
-                    result="flt_tag"
-                  />
-                  <feComposite
-                    in="SourceGraphic"
-                    in2="flt_tag"
-                    operator="atop"
-                  />
-                </filter>
-              </defs>
-            </svg>
+          </div>
+
+          {/* Right Panel: Phone Mockup */}
+          <div className="flex justify-center lg:justify-end">
+            <div
+              ref={frameRef}
+              className="relative w-72 h-[600px] rounded-[2.5rem] border-2 border-white/20 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl shadow-[0_0_60px_rgba(31,111,235,0.3)] overflow-hidden"
+            >
+              <div className="absolute inset-0 rounded-[2.5rem] overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/15 to-badge-bg/10" />
+                <div className="relative h-full w-full flex flex-col items-center justify-center p-8">
+                  <div className="mb-8">
+                    <img src="/images/logo.png" alt="Chizel Logo" className="w-24 h-24 object-contain animate-pulse" />
+                  </div>
+                  <h3 className="font-heading text-2xl text-text text-center mb-4">Chizel</h3>
+                  <div className="text-center">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/30">
+                      <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                      <span className="font-ui text-sm text-primary font-medium">Coming Soon</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute top-4 left-1/2 -translate-x-1/2 w-32 h-1.5 rounded-full bg-white/30" />
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-24 h-1 rounded-full bg-white/20" />
+            </div>
           </div>
         </div>
 
-       <div className="relative z-10 flex w-full max-w-lg flex-col items-center px-4 -mt-[360px] sm:-mt-50">
-
-          <p className="text-center font-body text-secondary-text text-xl">
-            "Big things are coming! The Chizel mobile app will soon bring smart
-            play right to your phone."
+        {/* ============== BOTTOM FEATURES (REVOLUTION) SECTION ============== */}
+        <div className="text-center">
+          <h3 className="font-heading text-3xl md:text-4xl text-text mb-8"> {/* CHANGED */}
+            {chizelAppData.revolutionSection.title}
+          </h3>
+          <p className="font-body text-xl text-secondary-text max-w-2xl mx-auto mb-12"> {/* CHANGED */}
+            {chizelAppData.revolutionSection.subtitle}
           </p>
-          <div className="mt-6 grid w-full grid-cols-3 gap-2 md:gap-3">
-            <FeatureCard
-              icon={
-                <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              }
-              title="Coming Soon"
-              subtitle="Mobile App"
-              isMobile={isMobile}
-            />
-            <FeatureCard
-              icon={<FaCheckCircle className="text-accent" />}
-              title="Smart Play"
-              subtitle="AI Powered"
-              isMobile={isMobile}
-            />
-            <FeatureCard
-              icon={<MdPhoneIphone className="text-accent" />}
-              title="Mobile Ready"
-              subtitle="iOS & Android"
-              isMobile={isMobile}
-            />
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            {chizelAppData.revolutionSection.features.map((feature) => (
+              <FeatureCard
+                key={feature.title}
+                icon={renderIcon(feature.iconName, 'revolution')}
+                title={feature.title}
+                subtitle={feature.subtitle}
+                isMobile={isMobile}
+              />
+            ))}
           </div>
         </div>
       </div>

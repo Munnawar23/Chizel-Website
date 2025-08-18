@@ -48,7 +48,6 @@ body::-webkit-scrollbar {
 /* THEME DEFINITIONS */
 @theme {
   /* Dark Space Theme  */
-
  --color-background: #0b1226; /* Deep Space Navy */
 --color-card: #16213e; /* Starship Blue */
 --color-text: #e6f1ff; /* Moonlight White */
@@ -58,6 +57,9 @@ body::-webkit-scrollbar {
 --color-badge-bg: #ffb347; /* Solar Flare Amber */
 --color-badge-text: #0b1226; /* Deep Space Navy */
 --color-primary-alpha: rgba(31, 111, 235, 0.25); /* Galactic Blue Glow */
+  --color-primary-alpha: rgba(31, 111, 235, 0.25); /* Galactic Blue Glow */
+  --color-accent-alpha: rgba(93, 63, 211, 0.25); /* Cosmic Purple Glow */
+  --color-border: rgba(230, 241, 255, 0.1); /* Moonlight White @ 10% */
 
   /* Light Space Theme (High Contrast) */
   --color-light-background: #87CEEB; /* Clean White */
@@ -69,6 +71,21 @@ body::-webkit-scrollbar {
   --color-light-badge-bg: #0f4c75;
   --color-light-badge-text: #ffffff;
   --color-light-primary-alpha: rgba(15, 76, 117, 0.15);
+    --color-light-primary-alpha: rgba(15, 76, 117, 0.15);
+  --color-light-accent-alpha: rgba(124, 58, 237, 0.25); /* Rich Violet Glow */
+  --color-light-border: rgba(30, 41, 59, 0.1); /* Deep Navy Text @ 10% */
+
+   /* Problem Section Theme */
+  --color-problem-red-start: #991b1b; /* red-900 */
+  --color-problem-red-mid: #dc2626; /* red-600 */
+  --color-problem-red-end: #ef4444; /* red-500 */
+  --color-problem-orange: #f97316; /* orange-500 */
+  --color-problem-yellow: #facc15; /* yellow-400 */
+  --color-problem-indigo: #4f46e5; /* indigo-600 */
+  --color-problem-blue: #3b82f6;   /* blue-500 */
+  --color-problem-purple-start: #5b21b6; /* purple-800 */
+  --color-problem-pink: #ec4899;   /* pink-500 */
+  --color-problem-text: #f3f4f6;   /* gray-100 */
 
   /* Typography System (No Change) */
   --font-heading: "Orbitron", sans-serif;
