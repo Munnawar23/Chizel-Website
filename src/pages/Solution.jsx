@@ -6,42 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const features = [
-  {
-    badge: "Revolutionary Core",
-    title: "Hybrid Gamified Learning",
-    desc:
-      "Not 'edutainment'. A system where play is the engine, and growth is the outcome — by design.",
-  },
-  {
-    badge: "Your Child's Co-Pilot",
-    title: "AI Learning Companions",
-    desc:
-      "Customizable, caring, and adaptive — guiding progress without pressure. Confidence, not comparison.",
-  },
-  {
-    badge: "Cognitive Science",
-    title: "Scientifically Tuned Difficulty",
-    desc:
-      "Spaced repetition, interleaving, and desirable difficulty — calibrated to keep the brain in the sweet spot for growth.",
-  },
-  {
-    badge: "See Growth",
-    title: "Adaptive Growth Maps",
-    desc:
-      "Focus, memory, logic, and social skills — visible, measurable, and motivating for families.",
-  },
-  {
-    badge: "Safe By Default",
-    title: "Moderated Global Community",
-    desc:
-      "Where children spark ideas, share skills, and grow into confident creators in a safe, lively space.",
-  },
-  {
-    badge: "For Every Child",
-    title: "Inclusive by Design",
-    desc:
-      "Built for accessibility for all childrens — because learning isn't a privilege, it's a right.",
-  },
+  
 ];
 
 const Solution = () => {
@@ -83,7 +48,7 @@ const Solution = () => {
         <div className="text-center max-w-5xl mx-auto mb-16">
           <p className="font-ui text-sm uppercase tracking-[0.25em] text-accent mb-4">CHIZEL — The Revolutionary Answer</p>
           <h2 className="section-heading relative inline-block">
-            Ready To Turn Screens Into A Growth Engine?
+            Ready To Turn Your Screen Time Into Skill Time?
           </h2>
           <p className="font-body text-lg text-secondary-text mt-6 max-w-3xl mx-auto">Play becomes purpose. Curiosity becomes courage. Learning becomes an adventure.</p>
         </div>
