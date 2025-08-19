@@ -3,7 +3,6 @@ import Footer from "./components/layout/Footer";
 import Loader from "./components/layout/Loader";
 import Navbar from "./components/layout/Navbar";
 import About from "./pages/About";
-import ChallengeToChange from "./components/common/ChallengeToChange";
 import ChizelApp from "./pages/ChizelApp";
 import Contact from "./pages/Contact";
 import Games from "./pages/Games";
@@ -57,7 +56,6 @@ const App = () => {
           <Navbar />
           <Home />
           <Problem />
-          <ChallengeToChange />
           <About />
           <Solution />
           <ChizelVerse />
