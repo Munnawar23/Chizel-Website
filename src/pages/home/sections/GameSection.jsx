@@ -1,8 +1,9 @@
 import BentoTilt from "@components/common/BentoTilt";
 import BentoCard from "@components/features/games/BentoCard";
-import StatCard from "@components/features/games/StatCard"; // Import the new component
+import StatCard from "@components/features/games/StatCard"; 
+
 import { TiStarFullOutline, TiPuzzle, TiChartLine, TiLightbulb } from "react-icons/ti";
-import { FaLayerGroup, FaChild, FaUsers, FaRocket } from "react-icons/fa";
+import { FaLayerGroup, FaChild, FaUsers, FaRocket, FaGamepad, FaBrain } from "react-icons/fa";
 
 const impactStats = [
   { percentage: "+62%", label: "Memory Mastery" },
@@ -25,6 +26,38 @@ const GameSection = () => (
         </p>
       </div>
 
+      {/* ============== MAIN FEATURE CARD ============== */}
+      <BentoTilt className="border-hsla relative mb-12 h-auto w-full overflow-hidden rounded-xl">
+        <div className="relative size-full overflow-hidden bg-card p-6 md:p-8">
+          <div className="relative z-10 flex size-full flex-col justify-between items-center text-center text-text">
+            <div className="flex flex-col items-center">
+              {/* Larger icons row */}
+              <div className="flex gap-4 md:gap-6 mb-4 will-change-transform">
+                <FaGamepad className="text-4xl md:text-6xl text-primary drop-shadow" />
+                <FaBrain className="text-4xl md:text-6xl text-primary drop-shadow" />
+                <FaChild className="text-4xl md:text-6xl text-primary drop-shadow" />
+              </div>
+
+              {/* Heading */}
+              <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl mb-3 leading-tight">
+                INTERACT WITH CHIZEL
+              </h2>
+
+  {/* TRY ME button */}
+              <a
+  href="https://rajvansh-1.github.io/ChizelVerse/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="px-10 py-4 rounded-full font-extrabold text-white tracking-wide text-lg md:text-xl bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg hover:shadow-[0_0_25px_rgba(124,58,237,0.6)] transition-transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-purple-500/40"
+>
+  TRY ME
+</a>
+
+            </div>
+          </div>
+        </div>
+      </BentoTilt>
+
       {/* ============== IMPACT STATS CARDS ============== */}
       <div className="mb-12 grid grid-cols-2 sm:grid-cols-4 gap-4">
         {impactStats.map((stat) => (
@@ -37,18 +70,12 @@ const GameSection = () => (
         <BentoTilt className="col-span-1 md:col-span-2" data-aos="fade-up">
           <BentoCard
             icon={<TiPuzzle />}
-            title={
-              <>
-                🧩 Next-Level<br />Numbers
-              </>
-            }
+            title={<>🧩 Next-Level<br />Numbers</>}
             description={
-              <>
-                <span className="block font-body text-base md:text-lg text-text">
-                  Crack today’s puzzles… but miss tomorrow, and you’ll never catch up. <br />
-                  <strong>Fall behind once, stay behind forever.</strong>
-                </span>
-              </>
+              <span className="block font-body text-base md:text-lg text-text">
+                Crack today’s puzzles… but miss tomorrow, and you’ll never catch up. <br />
+                <strong>Fall behind once, stay behind forever.</strong>
+              </span>
             }
           />
         </BentoTilt>
@@ -56,18 +83,12 @@ const GameSection = () => (
         <BentoTilt className="col-span-1" data-aos="fade-up" data-aos-delay="100">
           <BentoCard
             icon={<TiChartLine />}
-            title={
-              <>
-                📈 Hidden<br />Codes Await
-              </>
-            }
+            title={<>📈 Hidden<br />Codes Await</>}
             description={
-              <>
-                <span className="block font-body text-base md:text-lg text-text">
-                  Spot the patterns now—before new ones appear that only the sharpest will see.
-                  <br /><em>Blink… and you’ll miss it.</em>
-                </span>
-              </>
+              <span className="block font-body text-base md:text-lg text-text">
+                Spot the patterns now—before new ones appear that only the sharpest will see.
+                <br /><em>Blink… and you’ll miss it.</em>
+              </span>
             }
           />
         </BentoTilt>
@@ -75,18 +96,12 @@ const GameSection = () => (
         <BentoTilt className="col-span-1" data-aos="fade-up" data-aos-delay="200">
           <BentoCard
             icon={<TiLightbulb />}
-            title={
-              <>
-                🧠 Memory<br />Under Fire
-              </>
-            }
+            title={<>🧠 Memory<br />Under Fire</>}
             description={
-              <>
-                <span className="block font-body text-base md:text-lg text-text">
-                  Train your memory today… or risk being left behind when the real tests arrive.
-                  <br /><strong>Memories unlock magic.</strong>
-                </span>
-              </>
+              <span className="block font-body text-base md:text-lg text-text">
+                Train your memory today… or risk being left behind when the real tests arrive.
+                <br /><strong>Memories unlock magic.</strong>
+              </span>
             }
           />
         </BentoTilt>
@@ -94,17 +109,11 @@ const GameSection = () => (
         <BentoTilt className="col-span-1 md:col-span-2" data-aos="fade-up" data-aos-delay="300">
           <BentoCard
             icon={<FaLayerGroup />}
-            title={
-              <>
-                ⚡ Speed is<br />Just the Start
-              </>
-            }
+            title={<>⚡ Speed is<br />Just the Start</>}
             description={
-              <>
-                <span className="block font-body text-base md:text-lg text-text">
-                  Think you’re fast? The next wave is coming… and hesitation means elimination.
-                </span>
-              </>
+              <span className="block font-body text-base md:text-lg text-text">
+                Think you’re fast? The next wave is coming… and hesitation means elimination.
+              </span>
             }
           />
         </BentoTilt>
@@ -113,7 +122,7 @@ const GameSection = () => (
           <div className="flex size-full flex-col justify-center items-center text-center bg-card border-hsla rounded-xl p-6 gap-4 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-badge-bg/10 animate-pulse" />
             <h3 className="font-heading text-4xl md:text-6xl font-extrabold text-text relative z-10 tracking-wide">
-              🚀 M<b>o</b>re Games Co<b>m</b>ing S<b>o</b>on
+              M<b>o</b>re Big Things Co<b>m</b>ing S<b>o</b>on
             </h3>
             <TiStarFullOutline className="text-6xl text-primary relative z-10 animate-bounce" />
             <p className="font-body text-lg md:text-2xl text-secondary-text relative z-10 italic">
@@ -147,20 +156,6 @@ const GameSection = () => (
                 Engaging games that make learning fun. Build critical thinking, memory, and problem-solving skills
                 through interactive adventures designed specifically for young minds.
               </p>
-              <div className="space-y-3 text-left">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full" />
-                  <span className="font-ui text-sm text-text">Cognitive Development</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-accent rounded-full" />
-                  <span className="font-ui text-sm text-text">Fun Learning Experience</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-badge-bg rounded-full" />
-                  <span className="font-ui text-sm text-text">Skill Building Games</span>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -176,20 +171,6 @@ const GameSection = () => (
                 Peace of mind knowing your child is learning while having fun. Track progress, monitor development,
                 and be part of your child's educational journey with detailed insights and reports.
               </p>
-              <div className="space-y-3 text-left">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-accent rounded-full" />
-                  <span className="font-ui text-sm text-text">Progress Tracking</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full" />
-                  <span className="font-ui text-sm text-text">Development Insights</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-badge-bg rounded-full" />
-                  <span className="font-ui text-sm text-text">Parent Dashboard</span>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -205,22 +186,7 @@ const GameSection = () => (
                 Be part of the revolution redefining education for the next generation. <br />
                 Chizel is not just another EdTech app — it’s India’s first <strong>AI-powered Skill-Time platform</strong>,
                 built to transform screen time into lifelong growth.
-                The opportunity is massive, the demand is urgent, and the future belongs to those who act first.
               </p>
-              <div className="space-y-3 text-left">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-badge-bg rounded-full" />
-                  <span className="font-ui text-sm text-text">Category-Creating EdTech</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full" />
-                  <span className="font-ui text-sm text-text">Defensible Vision & Innovation</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-accent rounded-full" />
-                  <span className="font-ui text-sm text-text">Unstoppable Market Growth</span>
-                </div>
-              </div>
             </div>
           </div>
         </div>

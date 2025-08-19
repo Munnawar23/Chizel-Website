@@ -117,7 +117,7 @@ const ContactSection = () => {
               title="Contact Us"
               containerClass="button-primary"
               onClick={() => {
-                window.location.href = "mailto:chizelconnect@gmail.com";
+                window.open("https://docs.google.com/forms/d/1pgIheerPwWhEGL8gNWiv-fvXsn2POEbU2HjEl4RievU/viewform?edit_requested=true", "_blank");
               }}
             />
           </div>
