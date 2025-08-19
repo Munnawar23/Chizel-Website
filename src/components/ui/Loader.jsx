@@ -102,7 +102,7 @@ const Loader = ({ setIsLoading }) => {
     // ============== LOADER CONTAINER ==============
     <div
       ref={loaderRef}
-      className="fixed inset-0 z-[100] flex-center flex-col gap-3 bg-black text-text"
+      className="fixed inset-0 z-[100] flex-center flex-col gap-3 bg-overlay text-text"
     >
       {/* Background shapes using dark theme colors */}
       <div className="absolute inset-0 pointer-events-none opacity-50">

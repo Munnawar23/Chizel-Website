@@ -130,7 +130,7 @@ const Navbar = () => {
       {/* ============== FULLSCREEN MENU OVERLAY ============== */}
       <div
         ref={menuRef}
-        className="fixed inset-0 z-40 hidden flex-col items-center justify-center bg-black text-text overflow-hidden"
+        className="fixed inset-0 z-40 hidden flex-col items-center justify-center bg-overlay text-text overflow-hidden"
       >
         <div className="absolute inset-0 opacity-20 pointer-events-none">
           <div className="absolute top-[20%] left-[10%] w-20 h-20 bg-accent/20 rounded-full" />
