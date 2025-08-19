@@ -49,7 +49,7 @@ body::-webkit-scrollbar {
 @theme {
   /* Dark Space Theme  */
  --color-background: #0b1226; /* Deep Space Navy */
- --color-overlay: #2a1b47; 
+ --color-overlay: #121212; 
 --color-card: #16213e; /* Starship Blue */
 --color-text: #e6f1ff; /* Moonlight White */
 --color-secondary-text: #8fa5c6; /* Soft Nebula Blue */

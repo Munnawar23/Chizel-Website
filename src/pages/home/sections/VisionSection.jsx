@@ -6,7 +6,6 @@ import AnimatedTitle from "@components/common/AnimatedTitle";
 gsap.registerPlugin(ScrollTrigger);
 
 const VisionSection = () => {
-  // Keep your original GSAP logic - it works fine on PC
   useGSAP(() => {
     const clipAnimation = gsap.timeline({
       scrollTrigger: {
@@ -16,24 +15,22 @@ const VisionSection = () => {
         scrub: 0.5,
         pin: true,
         pinSpacing: true,
-        // Only add mobile refresh fix
         invalidateOnRefresh: true,
       },
     });
 
     clipAnimation.to(".mask-clip-path", {
       width: "100vw",
-      height: "100vh", // Change only this: vh instead of svh for mobile compatibility
+      height: "100vh",
       borderRadius: 0,
     });
   }, []);
 
   return (
-    // ============== ROOT CONTAINER ==============
     <div id="vision" className="min-h-screen w-screen bg-background">
-      {/* ============== TOP TEXT CONTENT ============== */}
-      <div className="relative flex min-h-[40svh] md:min-h-[40vh] flex-col justify-end items-center gap-4 px-4 pb-12 text-center mt-0 sm:-mt-18">
-        <p className="font-ui text-sm uppercase text-secondary-text tracking-wider md:text-base">
+      {/* TOP TEXT CONTENT */}
+      <div className="relative flex min-h-[40vh] md:min-h-[40vh] flex-col justify-end items-center gap-4 px-4 pb-12 text-center">
+        <p className="font-ui text-xl uppercase text-secondary-text tracking-wider md:text-2xl">
           "Smart Play for Growth"
         </p>
 
@@ -41,9 +38,10 @@ const VisionSection = () => {
           title="Expl<b>o</b>re, learn <br /> and gr<b>o</b>w with Chizel"
           containerClass="!text-text"
         />
-        <div className="about-subtext font-body text-text hidden sm:block">
+
+        <div className="about-subtext font-body text-text hidden sm:flex flex-col items-center gap-2">
           <p>Embark on a Chizel adventure!</p>
-          <p className="text-secondary-text mt-1">
+          <p className="text-secondary-text">
             Explore games that spark learning and imagination.
             <br />
             Dive into puzzles, colors, and curious challenges.
@@ -51,13 +49,13 @@ const VisionSection = () => {
         </div>
       </div>
 
-      {/* ============== GSAP ANIMATED IMAGE SECTION ============== */}
-      <div id="clip-container" className="h-[100svh] w-screen">
-        <div className="mask-clip-path about-image">
+      {/* GSAP ANIMATED IMAGE SECTION */}
+      <div id="clip-container" className="h-[100vh] w-screen relative overflow-hidden">
+        <div className="mask-clip-path about-image absolute inset-0">
           <img
             src="/images/vision-image.webp"
             alt="Kids playing educational games on a tablet"
-            className="absolute left-0 top-0 size-full object-cover"
+            className="absolute left-0 top-0 w-full h-full object-cover"
           />
         </div>
       </div>

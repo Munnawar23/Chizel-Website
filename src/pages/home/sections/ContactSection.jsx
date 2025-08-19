@@ -6,6 +6,7 @@ import Button from "@/components/ui/Button";
 
 const ContactSection = () => {
   const containerRef = useRef(null);
+
   useGSAP(
     () => {
       gsap.to(".float-1", {
@@ -66,9 +67,10 @@ const ContactSection = () => {
     <div
       id="contact"
       ref={containerRef}
-      className="my-10 sm:my-16 w-full px-4 sm:px-8 "
+      className="my-10 sm:my-16 w-full px-4 sm:px-8"
     >
       <div className="relative rounded-2xl bg-card py-14 sm:py-16 text-text overflow-hidden shadow-xl">
+        {/* Background Animations */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="float-1 absolute top-12 left-12 w-20 h-20 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full"></div>
           <div
@@ -80,11 +82,12 @@ const ContactSection = () => {
           <div className="pulse-slow absolute top-1/3 right-1/3 w-40 h-40 bg-primary/5 rounded-full opacity-30"></div>
         </div>
 
-        {/* ============== MAIN CONTENT ============== */}
-        <div className="relative z-10 flex flex-col items-center text-center px-6 sm:px-8">
-          <div className="mb-6 flex items-center gap-3 group">
+        {/* Main Content */}
+        <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-8">
+          {/* Header */}
+          <div className="flex items-center gap-3 justify-center mb-6">
             <div className="w-8 h-px bg-gradient-to-r from-transparent via-primary/50 to-accent/50"></div>
-            <div className="relative overflow-hidden px-4 py-1 rounded-full border border-text/10 bg-card/50">
+            <div className="px-4 py-1 rounded-full border border-text/10 bg-card/50">
               <p className="font-ui text-xs uppercase text-primary tracking-widest font-medium">
                 Get In Touch
               </p>
@@ -92,37 +95,41 @@ const ContactSection = () => {
             <div className="w-8 h-px bg-gradient-to-l from-transparent via-primary/50 to-accent/50"></div>
           </div>
 
-          <div className="relative group max-w-5xl mx-auto">
+          {/* Animated Title */}
+          <div className="mb-6">
             <AnimatedTitle
-              containerClass="!text-4xl sm:!text-5xl md:!text-6xl !font-black !leading-[.9] !text-center !items-center !text-text drop-shadow-lg"
+              containerClass="!text-4xl sm:!text-5xl md:!text-6xl !font-black !leading-[0.9] !text-center drop-shadow-lg"
               title="Have any question <br /> or want to talk with us"
             />
           </div>
 
-          <p className="mt-6 max-w-2xl text-secondary-text text-base sm:text-lg leading-relaxed">
+          {/* Description */}
+          <p className="max-w-2xl text-base sm:text-lg text-secondary-text leading-relaxed mb-10">
             Have a question or an idea?
             <span className="text-primary font-medium">
               {" "}
-              Don't hesitate to reach out.
-            </span>{" "}
+              Don't hesitate to reach out.{" "}
+            </span>
             We're excited to
             <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent font-medium">
               build the future of learning with you.
             </span>
           </p>
 
-          <div className="mt-10 relative group">
+          {/* Contact Button */}
+          <div className="relative group mb-8">
             <div className="contact-ping absolute -inset-1 bg-gradient-to-r from-primary via-accent to-primary/50 rounded-full blur-md opacity-25"></div>
             <Button
               title="Contact Us"
               containerClass="button-primary"
-              onClick={() => {
-                window.location.href = "mailto:chizelconnect@gmail.com";
-              }}
+              onClick={() =>
+                (window.location.href = "mailto:chizelconnect@gmail.com")
+              }
             />
           </div>
 
-          <div className="mt-8 flex items-center gap-4 sm:gap-6 text-xs text-secondary-text">
+          {/* Quick Info Dots */}
+          <div className="flex items-center gap-4 sm:gap-6 text-xs text-secondary-text justify-center">
             <div className="flex items-center gap-2">
               <div className="dot-pulse w-1.5 h-1.5 bg-green-400 rounded-full"></div>
               <span className="hidden sm:inline">Quick Response</span>
@@ -140,7 +147,7 @@ const ContactSection = () => {
           </div>
         </div>
 
-        {/* Border accents */}
+        {/* Border Accents */}
         <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-primary/30 rounded-tl-lg"></div>
         <div className="absolute top-4 right-4 w-8 h-8 border-r-2 border-t-2 border-accent/30 rounded-tr-lg"></div>
         <div className="absolute bottom-4 left-4 w-8 h-8 border-l-2 border-b-2 border-primary/30 rounded-bl-lg"></div>

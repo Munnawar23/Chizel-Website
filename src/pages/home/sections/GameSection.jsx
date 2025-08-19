@@ -13,60 +13,28 @@ const impactStats = [
 ];
 
 const GameSection = () => (
-  <section id="games" className="bg-background pb-16 mt-12 sm:mt-0 sm:pb-24">
+  <section id="games" className="bg-background py-12 md:py-16 pb-20 md:pb-24">
     <div className="container mx-auto px-4 md:px-8">
 
       {/* ============== SECTION HEADER ============== */}
-      <div className="py-16 sm:py-24 text-center">
+      <div className="text-center flex flex-col items-center mb-6 space-y-4 md:space-y-6">
         <p className="font-ui text-lg text-primary uppercase tracking-wider">Explore Our Games</p>
-        <h1 className="font-heading text-5xl md:text-6xl text-text mt-2">A Universe of Fun & Learning</h1>
-        <p className="mt-4 max-w-2xl mx-auto font-body text-lg text-secondary-text opacity-80">
+        <h1 className="font-heading text-5xl md:text-6xl text-text">A Universe of Fun & Learning</h1>
+        <p className="max-w-2xl font-body text-lg text-secondary-text opacity-80">
           Dive into a world of fun and learning. Each game is designed to boost
           core cognitive skills while your child plays.
         </p>
       </div>
 
-      {/* ============== MAIN FEATURE CARD ============== */}
-      <BentoTilt className="border-hsla relative mb-12 h-auto w-full overflow-hidden rounded-xl">
-        <div className="relative size-full overflow-hidden bg-card p-6 md:p-8">
-          <div className="relative z-10 flex size-full flex-col justify-between items-center text-center text-text">
-            <div className="flex flex-col items-center">
-              {/* Larger icons row */}
-              <div className="flex gap-4 md:gap-6 mb-4 will-change-transform">
-                <FaGamepad className="text-4xl md:text-6xl text-primary drop-shadow" />
-                <FaBrain className="text-4xl md:text-6xl text-primary drop-shadow" />
-                <FaChild className="text-4xl md:text-6xl text-primary drop-shadow" />
-              </div>
-
-              {/* Heading */}
-              <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl mb-3 leading-tight">
-                INTERACT WITH CHIZEL
-              </h2>
-
-  {/* TRY ME button */}
-              <a
-  href="https://rajvansh-1.github.io/ChizelVerse/"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="px-10 py-4 rounded-full font-extrabold text-white tracking-wide text-lg md:text-xl bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg hover:shadow-[0_0_25px_rgba(124,58,237,0.6)] transition-transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-purple-500/40"
->
-  TRY ME
-</a>
-
-            </div>
-          </div>
-        </div>
-      </BentoTilt>
-
       {/* ============== IMPACT STATS CARDS ============== */}
-      <div className="mb-12 grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-6 mb-12">
         {impactStats.map((stat) => (
           <StatCard key={stat.label} percentage={stat.percentage} label={stat.label} />
         ))}
       </div>
 
       {/* ============== BENTO GRID (Hyped Version) ============== */}
-      <div className="grid w-full auto-rows-[22rem] gap-5">
+      <div className="grid w-full auto-rows-[22rem] gap-5 md:gap-6">
         <BentoTilt className="col-span-1 md:col-span-2" data-aos="fade-up">
           <BentoCard
             icon={<TiPuzzle />}
@@ -119,7 +87,7 @@ const GameSection = () => (
         </BentoTilt>
 
         <BentoTilt className="col-span-1 md:col-span-3">
-          <div className="flex size-full flex-col justify-center items-center text-center bg-card border-hsla rounded-xl p-6 gap-4 relative overflow-hidden">
+          <div className="flex h-full flex-col justify-center items-center text-center bg-card border-hsla rounded-xl p-6 gap-4 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-badge-bg/10 animate-pulse" />
             <h3 className="font-heading text-4xl md:text-6xl font-extrabold text-text relative z-10 tracking-wide">
               M<b>o</b>re Big Things Co<b>m</b>ing S<b>o</b>on
@@ -134,16 +102,16 @@ const GameSection = () => (
       </div>
 
       {/* ============== WHAT WE OFFER SECTION ============== */}
-      <div className="mt-24 text-center">
-        <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-text mb-4">
+      <div className="mt-12 md:mt-16 text-center space-y-6 md:space-y-8">
+        <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-text">
           What We Offer
         </h2>
-        <p className="font-body text-lg text-secondary-text max-w-3xl mx-auto mb-16">
+        <p className="font-body text-lg text-secondary-text max-w-3xl mx-auto">
           Tailored experiences for every member of the Chizel family. From playful learning to strategic growth,
           we've got something special for everyone.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
           {/* Kids Card */}
           <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 via-accent/15 to-badge-bg/10 border border-white/20 p-8 hover:shadow-[0_0_40px_rgba(31,111,235,0.3)] transition-all duration-500 hover:scale-105">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

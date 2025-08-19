@@ -1,10 +1,10 @@
 export const navItems = [
   { name: "Home", href: "#home" },
-  { name: "What is Chizel", href: "#problem" },
+  { name: "What is Chizel", href: "#about" },
   { name: "Features", href: "#features" },
   { name: "Games", href: "#games" },
-  { name: "Chizel App", href: "#chizel-app" },
-  { name: "Chizel Web", href: "#chizel-web" },
+  { name: "Chizel-App", href: "#chizel-app" },
+  { name: "Chizel-Web", href: "#chizel-web" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -166,11 +166,7 @@ export const chizelAppData = {
           text: "Android",
           colorClasses: "border-accent/40 bg-accent/15 text-accent",
         },
-        {
-          iconName: "FaRocket",
-          text: "Early Access",
-          colorClasses: "border-badge-bg/40 bg-badge-bg/15 text-badge-bg",
-        },
+       
       ],
       specialFeatures: {
         title: "What Makes Us Special",

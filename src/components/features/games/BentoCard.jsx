@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useState } from "react";
 import clsx from "clsx";
 
 export const BentoCard = ({ src, icon, title, description, className }) => {
@@ -35,7 +35,7 @@ export const BentoCard = ({ src, icon, title, description, className }) => {
       {/* Card Content */}
       <div className="relative z-10 flex h-full flex-col justify-start text-text">
         {icon && <div className="mb-3 text-6xl text-primary">{icon}</div>}
-        
+
         <h3 className="font-heading text-4xl sm:text-5xl font-bold leading-tight">
           {title}
         </h3>

@@ -10,8 +10,7 @@ import ChizelWebSection from "./sections/ChizelWebSection";
 import ContactSection from "@/pages/home/sections/ContactSection";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
-import ProblemSection from "./sections/ProblemSection";
-import SolutionSection from "./sections/SoultionSection";
+import ChizelEcosystemSection from "./sections/ChizelEcosystemSection";
 
 const HomePage = () => {
   const [isPageLoading, setIsPageLoading] = useState(true);
@@ -22,14 +21,13 @@ const HomePage = () => {
     <>
       <Navbar />
       <HeroSection />
-      <ProblemSection />
       <AboutSection />
-      <SolutionSection />
-      <FeatureSection />
+      <ChizelEcosystemSection />
       <VisionSection />
+      <FeatureSection />
       <GameSection />
-      <ChizelWebSection />
       <ChizelAppSection />
+      <ChizelWebSection />
       <ContactSection />
       <Footer />
     </>

@@ -11,7 +11,6 @@ const FeatureSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const headerRef = useRef(null);
 
-  // GSAP animation for the header (no changes here)
   useGSAP(() => {
     if (!headerRef.current) return;
     gsap.from(headerRef.current.children, {
@@ -29,50 +28,52 @@ const FeatureSection = () => {
   }, []);
 
   return (
-    // ============== SECTION CONTAINER ==============
-    <section id="features" className="relative w-full bg-background py-4 sm:py-0 mt-12">
+    <section
+      id="features"
+      className="relative w-full bg-background py-20 sm:py-16 overflow-hidden"
+    >
       <div className="container mx-auto max-w-7xl px-4 md:px-8">
-        
-        {/* ============== HEADER SECTION ============== */}
-        <div ref={headerRef} className="text-center mb-8 md:mb-12">
-          <p className="font-ui text-sm text-secondary-text uppercase tracking-wider mb-2">
+        {/* HEADER */}
+        <div
+          ref={headerRef}
+          className="text-center flex flex-col items-center space-y-4 md:space-y-6"
+        >
+          <p className="font-ui text-sm text-secondary-text uppercase tracking-wider">
             Discover Our Features
           </p>
-          <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl text-text mb-4 leading-tight">
-            Features of <span className="text-primary">Chizel for Better Learning</span>
+          <h1 className="font-heading text-4xl sm:text-5xl md:text-5xl text-text leading-tight">
+            Features of{" "}
+            <span className="text-primary">Chizel for Better Learning</span>
           </h1>
           <p className="font-body max-w-3xl mx-auto text-base sm:text-lg text-secondary-text leading-relaxed">
-            Transform screen time into meaningful growth with our three core experiences designed for modern learners.
+            Transform screen time into meaningful growth with our three core
+            experiences designed for modern learners.
           </p>
         </div>
 
-        {/* ============== INTERACTIVE GRID SECTION ============== */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-12 items-center">
-          
-          {/* ============== LEFT COLUMN: DYNAMIC CONTENT ============== */}
-          <div className="flex flex-col justify-center space-y-4">
-            
-            {/* GIF Container - Taller Aspect Ratio */}
-            <div className="relative w-full rounded-xl overflow-hidden shadow-lg shadow-black/20 aspect-[4/3] bg-background"> {/* CHANGED */}
+        {/* GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-start mt-12 md:mt-16">
+          {/* LEFT COLUMN */}
+          <div className="order-2 md:order-1 flex flex-col space-y-8">
+            <div className="relative w-full rounded-xl overflow-hidden shadow-lg shadow-black/20 h-[350px] md:h-[550px] bg-background">
               {featuresData.map((feature, index) => (
                 <img
                   key={index}
                   src={feature.gifSrc}
                   alt={`${feature.title} feature in action`}
                   className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ease-in-out ${
-                    activeIndex === index ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                    activeIndex === index ? "opacity-100" : "opacity-0"
                   }`}
                 />
               ))}
             </div>
-            
-            {/* Text Content Container (no changes here) */}
-            <div className="relative pt-2 min-h-[280px]">
+
+            <div>
               {featuresData.map((feature, index) => (
                 <div
                   key={index}
-                  className={`absolute inset-0 space-y-3 transition-opacity duration-500 ease-in-out ${
-                    activeIndex === index ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                  className={`space-y-4 transition-opacity duration-300 ${
+                    activeIndex === index ? "opacity-100" : "opacity-0 hidden"
                   }`}
                 >
                   <p className="font-body text-secondary-text">
@@ -83,7 +84,7 @@ const FeatureSection = () => {
                     <blockquote className="font-body text-text/80 italic">
                       "{feature.quote}"
                     </blockquote>
-                    <cite className="mt-1 block text-xs not-italic text-secondary-text">
+                    <cite className="block text-xs not-italic text-secondary-text">
                       — {feature.author}
                     </cite>
                   </div>
@@ -91,14 +92,19 @@ const FeatureSection = () => {
               ))}
             </div>
           </div>
-          
-          {/* ============== RIGHT COLUMN: FEATURE SELECTORS ============== */}
-          <div className="flex flex-col justify-center">
+
+          {/* RIGHT COLUMN */}
+          <div className="order-1 md:order-2 flex flex-col justify-center md:justify-end h-auto md:h-[550px]">
             <ul className="space-y-3 md:space-y-4 text-center md:text-right">
               {featuresData.map((feature, index) => (
-                <li key={index} onMouseEnter={() => setActiveIndex(index)} className="cursor-pointer">
+                <li
+                  key={index}
+                  onMouseEnter={() => setActiveIndex(index)}
+                  onClick={() => setActiveIndex(index)}
+                  className="cursor-pointer"
+                >
                   <h2
-                    className={`font-heading text-3xl sm:text-4xl lg:text-6xl uppercase transition-opacity duration-300 ${
+                    className={`font-heading text-3xl sm:text-4xl lg:text-7xl uppercase transition-opacity duration-300 ${
                       activeIndex === index
                         ? "text-text opacity-100"
                         : "text-secondary-text opacity-30 hover:opacity-60"
