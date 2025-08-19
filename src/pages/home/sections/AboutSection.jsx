@@ -71,12 +71,7 @@ const AboutSection = () => {
             title="CHIZEL — The <br />Revolutionary Solution"
             containerClass="!text-4xl md:!text-5xl !leading-tight !items-start !text-left text-text"
           />
-          <p className="about-description mt-4 font-body text-lg text-secondary-text leading-relaxed">
-            Chizel is a fun and safe learning app made especially for kids.
-            Instead of just watching videos or wasting time on screens, Chizel
-            turns screen time into smart time — where every tap and swipe helps
-            children learn, think, and grow in a playful way.
-          </p>
+        
           <ul className="principles-list mt-6 space-y-4">
             {principles.map((principle) => (
               <li
