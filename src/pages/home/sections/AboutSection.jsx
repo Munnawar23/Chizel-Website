@@ -41,6 +41,7 @@ const AboutSection = () => {
         ease: "power2.out",
         delay: 0.3,
       });
+      
       gsap.from(".principle-item", {
         scrollTrigger: {
           trigger: ".principles-list",
