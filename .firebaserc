@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "chizel-e6e83"
-  }
+  },
+  "targets": {
+    "chizel-e6e83": {
+      "hosting": {
+        "default": [
+          "chizel"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
