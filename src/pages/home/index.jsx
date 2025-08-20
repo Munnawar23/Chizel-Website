@@ -10,13 +10,14 @@ import ChizelWebSection from "./sections/ChizelWebSection";
 import ContactSection from "@/pages/home/sections/ContactSection";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
-import ChizelEcosystemSection from "./sections/ChizelEcosystemSection";
+import ChizelEcosystemSection from "@pages/home/sections/ChizelEcosystemSection";
+import FeedbackFloatingAlert from "@/components/features/feedback/FeedbackFloatingAlert";
 
 const HomePage = () => {
-   const [isPageLoading, setIsPageLoading] = useState(true);
-   if (isPageLoading) {
-     return <Loader setIsLoading={setIsPageLoading} />;
-   }
+  const [isPageLoading, setIsPageLoading] = useState(true);
+  if (isPageLoading) {
+    return <Loader setIsLoading={setIsPageLoading} />;
+  }
   return (
     <>
       <Navbar />
@@ -30,6 +31,7 @@ const HomePage = () => {
       <ChizelWebSection />
       <ContactSection />
       <Footer />
+      <FeedbackFloatingAlert />
     </>
   );
 };

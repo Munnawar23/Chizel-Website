@@ -13,7 +13,6 @@ const FeedbackFloatingAlert = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   
-  // Replace this with your Google Form URL
   const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/1pgIheerPwWhEGL8gNWiv-fvXsn2POEbU2HjEl4RievU/edit";
 
   const floatingRef = useRef(null);
@@ -131,7 +130,7 @@ const FeedbackFloatingAlert = () => {
   const handleGoogleFormRedirect = () => {
     window.open(GOOGLE_FORM_URL, '_blank');
     closeModal();
-    // Removed dismissAlert() - keep the floating button visible
+    dismissAlert(); // Hide the floating alert after going to form
   };
 
   if (!isVisible) return null;
@@ -220,8 +219,6 @@ const FeedbackFloatingAlert = () => {
                   <FaExternalLinkAlt />
                   Fill Feedback Form
                 </button>
-                
-               
                 
                 <p className="text-sm text-secondary-text">
                   Opens in a new tab • Takes less than 2 minutes
