@@ -95,7 +95,7 @@ const ChizelAppSection = () => {
           <p className="font-ui text-xl md:text-2xl uppercase text-primary tracking-wider">
             {chizelAppData.header.comingSoonText}
           </p>
-          <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl text-text leading-tight">
+          <h1 className="font-heading text-5xl md:text-7xl lg:text-7xl text-text leading-tight">
             {chizelAppData.header.title}
           </h1>
           <p className="font-body text-xl md:text-2xl text-secondary-text max-w-3xl mx-auto leading-relaxed">

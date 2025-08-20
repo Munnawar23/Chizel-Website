@@ -76,18 +76,6 @@ body::-webkit-scrollbar {
   --color-light-accent-alpha: rgba(124, 58, 237, 0.25); /* Rich Violet Glow */
   --color-light-border: rgba(30, 41, 59, 0.1); /* Deep Navy Text @ 10% */
 
-   /* Problem Section Theme */
-  --color-problem-red-start: #991b1b; /* red-900 */
-  --color-problem-red-mid: #dc2626; /* red-600 */
-  --color-problem-red-end: #ef4444; /* red-500 */
-  --color-problem-orange: #f97316; /* orange-500 */
-  --color-problem-yellow: #facc15; /* yellow-400 */
-  --color-problem-indigo: #4f46e5; /* indigo-600 */
-  --color-problem-blue: #3b82f6;   /* blue-500 */
-  --color-problem-purple-start: #5b21b6; /* purple-800 */
-  --color-problem-pink: #ec4899;   /* pink-500 */
-  --color-problem-text: #f3f4f6;   /* gray-100 */
-
   /* Typography System (No Change) */
   --font-heading: "Orbitron", sans-serif;
   --font-body: "Fredoka", sans-serif;
@@ -247,4 +235,34 @@ body::-webkit-scrollbar {
     transform: translate3d(0, 0, 0) rotateX(0) rotateY(0) rotateZ(0) scale(1);
   }
   
+}
+
+.ecosystem-title b {
+  font-weight: 500 !important;
+  background: linear-gradient(
+    90deg,
+    var(--color-accent) 0%,
+    var(--color-primary) 50%,
+    var(--color-badge-bg) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes scaleUp {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+.animate-scale-up {
+  animation: scaleUp 0.3s ease-out forwards;
 }

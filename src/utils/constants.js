@@ -109,38 +109,7 @@ export const problemSlides = [
   },
 ];
 
-export const features = [
-  {
-    badge: "Revolutionary Core",
-    title: "Hybrid Gamified Learning",
-    desc: "Not 'edutainment'. A system where play is the engine, and growth is the outcome — by design.",
-  },
-  {
-    badge: "Your Child's Co-Pilot",
-    title: "AI Learning Companions",
-    desc: "Customizable, caring, and adaptive — guiding progress without pressure. Confidence, not comparison.",
-  },
-  {
-    badge: "Cognitive Science",
-    title: "Scientifically Tuned Difficulty",
-    desc: "Spaced repetition, interleaving, and desirable difficulty — calibrated to keep the brain in the sweet spot for growth.",
-  },
-  {
-    badge: "See Growth",
-    title: "Adaptive Growth Maps",
-    desc: "Focus, memory, logic, and social skills — visible, measurable, and motivating for families.",
-  },
-  {
-    badge: "Safe By Default",
-    title: "Moderated Global Community",
-    desc: "Where children spark ideas, share skills, and grow into confident creators in a safe, lively space.",
-  },
-  {
-    badge: "For Every Child",
-    title: "Inclusive by Design",
-    desc: "Built for accessibility for all childrens — because learning isn't a privilege, it's a right.",
-  },
-];
+
 
 export const chizelAppData = {
   header: {
@@ -208,3 +177,30 @@ export const chizelAppData = {
     ],
   },
 };
+
+export const offers = [
+  {
+    icon: "kids", 
+    title: "For Kids",
+    description: "Engaging games that make learning fun. Build critical thinking, memory, and problem-solving skills through interactive adventures designed for young minds.",
+    bgGradient: "from-primary/20 via-accent/15 to-badge-bg/10",
+    iconGradient: "from-primary to-accent",
+    hoverShadow: "hover:shadow-[0_0_40px_rgba(31,111,235,0.3)]",
+  },
+  {
+    icon: "parents", 
+    title: "For Parents",
+    description: "Peace of mind knowing your child is learning while having fun. Track progress, monitor development, and be part of their educational journey with detailed insights.",
+    bgGradient: "from-accent/20 via-primary/15 to-badge-bg/10",
+    iconGradient: "from-accent to-primary",
+    hoverShadow: "hover:shadow-[0_0_40px_rgba(93,63,211,0.3)]",
+  },
+  {
+    icon: "investors", 
+    title: "For Investors",
+    description: `Be part of the revolution redefining education. Chizel is India’s first AI-powered Skill-Time platform, built to transform screen time into lifelong growth.`,
+    bgGradient: "from-badge-bg/20 via-primary/15 to-accent/10",
+    iconGradient: "from-badge-bg to-primary",
+    hoverShadow: "hover:shadow-[0_0_40px_rgba(255,179,71,0.3)]",
+  },
+];

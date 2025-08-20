@@ -13,19 +13,19 @@ import Navbar from "@/components/layout/Navbar";
 import ChizelEcosystemSection from "./sections/ChizelEcosystemSection";
 
 const HomePage = () => {
-  const [isPageLoading, setIsPageLoading] = useState(true);
-  if (isPageLoading) {
-    return <Loader setIsLoading={setIsPageLoading} />;
-  }
+  // const [isPageLoading, setIsPageLoading] = useState(true);
+  // if (isPageLoading) {
+  //   return <Loader setIsLoading={setIsPageLoading} />;
+  // }
   return (
     <>
       <Navbar />
       <HeroSection />
       <AboutSection />
-      <ChizelEcosystemSection />
       <VisionSection />
       <FeatureSection />
       <GameSection />
+      <ChizelEcosystemSection />
       <ChizelAppSection />
       <ChizelWebSection />
       <ContactSection />
