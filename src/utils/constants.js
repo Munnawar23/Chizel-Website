@@ -178,7 +178,7 @@ export const offers = [
   {
     icon: "kids", 
     title: "For Kids",
-    description: "Engaging games that make learning fun. Build critical thinking, memory, and problem-solving skills through interactive adventures designed for young minds.",
+    description: "Fun games that make learning exciting, an AI buddy that builds confidence, and a safe space to share, explore, and connect with kids everywhere — supporting their overall development in every aspect of life.",
     bgGradient: "from-primary/20 via-accent/15 to-badge-bg/10",
     iconGradient: "from-primary to-accent",
     hoverShadow: "hover:shadow-[0_0_40px_rgba(31,111,235,0.3)]",
@@ -186,7 +186,7 @@ export const offers = [
   {
     icon: "parents", 
     title: "For Parents",
-    description: "Peace of mind knowing your child is learning while having fun. Track progress, monitor development, and be part of their educational journey with detailed insights.",
+    description: "Peace of mind knowing your child is learning while having fun. Watch their interests grow, support their journey, and turn screen time into skill time",
     bgGradient: "from-accent/20 via-primary/15 to-badge-bg/10",
     iconGradient: "from-accent to-primary",
     hoverShadow: "hover:shadow-[0_0_40px_rgba(93,63,211,0.3)]",
@@ -194,7 +194,7 @@ export const offers = [
   {
     icon: "investors", 
     title: "For Investors",
-    description: `Be part of the revolution redefining education. Chizel is India’s first AI-powered Skill-Time platform, built to transform screen time into lifelong growth.`,
+    description: `Be part of transforming lives with Chizel. This is your chance to be an early supporter of something set for massive growth — blink now, and you might miss us`,
     bgGradient: "from-badge-bg/20 via-primary/15 to-accent/10",
     iconGradient: "from-badge-bg to-primary",
     hoverShadow: "hover:shadow-[0_0_40px_rgba(255,179,71,0.3)]",
