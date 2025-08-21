@@ -92,9 +92,7 @@ const ChizelAppSection = () => {
 
         {/* HEADER */}
         <div className="text-center space-y-6">
-          <p className="font-ui text-2xl md:text-3xl uppercase text-primary tracking-wider">
-            {chizelAppData.header.comingSoonText}
-          </p>
+        
           <h1 className="font-heading text-5xl md:text-7xl lg:text-7xl text-text leading-tight">
             {chizelAppData.header.title}
           </h1>

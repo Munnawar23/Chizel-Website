@@ -72,19 +72,17 @@ export const problemSlides = [
     title: "The Silent Pandemic",
     highlight: "Every second, a black hole empties your child's mind.",
     description:
-      "This is not distraction — it's a merciless cosmic decay eating away their brain. Focus, memory, feelings — vaporized into space. The clock is ticking, and their future is at stake. Fix this now before it's too late.",
-    gradient:
-      "from-problem-purple-start/70 via-problem-indigo/60 to-problem-blue/60",
+      "What looks like play is silent harm. Focus weakens, memory fades, and feelings turn numb. We need to fix it now before it's too late.",
+    gradient: "from-purple-900/70 via-indigo-700/60 to-blue-700/60",
     image: "/gifs/brain_rot.gif",
   },
   {
     badge: "🧠 Mind Theft",
-    title: "They're Stealing Our Kids' Brains",
-    highlight: "Every swipe, every click steals pieces of their soul.",
+    title: "Screens Are Stealing Childhood",
+    highlight: "Bit by bit, the screen is stealing their spark.",
     description:
-      "Screens are relentless raiders, shattering curiosity and crushing creativity. Your child isn't just distracted — they're being stolen from. This is a theft of hope, imagination, and dreams.",
-    gradient:
-      "from-problem-red-start/50 via-problem-orange/50 to-problem-yellow/50",
+      "It feels like play, but every moment online steals tomorrow — second by second, dream by dream.",
+    gradient: "from-red-700/50 via-orange-600/50 to-yellow-500/50",
     image: "/gifs/brain_hijack.gif",
   },
   {
@@ -92,19 +90,17 @@ export const problemSlides = [
     title: "Hearts Going Radio Silent",
     highlight: "Love, empathy, and compassion are dying in real time.",
     description:
-      "The emotional furnace is shutting down, replaced by numbing void. Children are becoming emotional ghosts — unable to feel, to care, to connect. This isn't just loss — it's heartbreak on a cosmic scale.",
-    gradient:
-      "from-problem-purple-start/60 via-problem-pink/60 to-problem-red-end/60",
+      "The fire of feeling is fading. Kids are turning into shadows, unable to love or connect.",
+    gradient: "from-purple-700/60 via-pink-600/60 to-red-600/60",
     image: "/gifs/emotional_decay.gif",
   },
   {
     badge: "🚨 Gateway to Harm",
-    title: "Doors to Digital Hell",
-    highlight: "Predators and poison lurk behind every innocent tap.",
+    title: "The Dark Side of Screens",
+    highlight: "One wrong swipe can shatter innocence forever.",
     description:
-      "The internet is a deadly black hole swallowing innocence. Violence, predators, and corrosive content are redefining childhood in the darkest ways imaginable. The gate to hell is just a screen away.",
-    gradient:
-      "from-problem-red-start/70 via-problem-red-mid/60 to-problem-orange/60",
+      "The internet hides dangers no child should face. Predators, violence, and toxic content are twisting childhood into something darker.",
+    gradient: "from-red-900/70 via-red-700/60 to-orange-600/60",
     image: "/gifs/gateway-to-harm.gif",
   },
 ];

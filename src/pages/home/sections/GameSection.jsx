@@ -19,55 +19,19 @@ const GameSection = () => (
         <h1 className="font-heading text-5xl md:text-6xl text-text">
           A Universe of Fun & Learning
         </h1>
-        <p className="max-w-2xl font-body text-lg text-secondary-text opacity-80">
-          Dive into a world of fun and learning. Each game is designed to boost
-          core cognitive skills while your child plays.
-        </p>
+        
       </div>
 
       <div className="text-center mb-8">
-        <h3 className="font-heading text-3xl md:text-4xl text-accent mb-3">
-          Proven Results That Matter
+        <h3 className="font-heading text-3xl md:text-4xl text-accent mb-3 uppercase">
+          Expore our games
         </h3>
         <p className="font-body text-lg text-secondary-text max-w-3xl mx-auto">
           Our games don't just entertain — they transform. Here's how much these
           games literally help your child grow:
         </p>
       </div>
-      <div className="mb-12 grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-6">
-        <div className="text-center rounded-2xl bg-gradient-to-br from-primary/15 via-accent/10 to-badge-bg/10 border border-white/10 p-6 hover:shadow-[0_0_30px_rgba(93,63,211,0.25)] transition-shadow">
-          <div className="font-heading text-4xl md:text-5xl bg-gradient-to-r from-primary via-accent to-badge-bg bg-clip-text text-transparent">
-            +62%
-          </div>
-          <div className="mt-1 font-ui text-xs uppercase tracking-widest text-secondary-text">
-            Memory Mastery
-          </div>
-        </div>
-        <div className="text-center rounded-2xl bg-gradient-to-br from-primary/15 via-accent/10 to-badge-bg/10 border border-white/10 p-6 hover:shadow-[0_0_30px_rgba(93,63,211,0.25)] transition-shadow">
-          <div className="font-heading text-4xl md:text-5xl bg-gradient-to-r from-primary via-accent to-badge-bg bg-clip-text text-transparent">
-            +47%
-          </div>
-          <div className="mt-1 font-ui text-xs uppercase tracking-widest text-secondary-text">
-            Problem Solving
-          </div>
-        </div>
-        <div className="text-center rounded-2xl bg-gradient-to-br from-primary/15 via-accent/10 to-badge-bg/10 border border-white/10 p-6 hover:shadow-[0_0_30px_rgba(93,63,211,0.25)] transition-shadow">
-          <div className="font-heading text-4xl md:text-5xl bg-gradient-to-r from-primary via-accent to-badge-bg bg-clip-text text-transparent">
-            +53%
-          </div>
-          <div className="mt-1 font-ui text-xs uppercase tracking-widest text-secondary-text">
-            Laser Logic
-          </div>
-        </div>
-        <div className="text-center rounded-2xl bg-gradient-to-br from-primary/15 via-accent/10 to-badge-bg/10 border border-white/10 p-6 hover:shadow-[0_0_30px_rgba(93,63,211,0.25)] transition-shadow">
-          <div className="font-heading text-4xl md:text-5xl bg-gradient-to-r from-primary via-accent to-badge-bg bg-clip-text text-transparent">
-            +38%
-          </div>
-          <div className="mt-1 font-ui text-xs uppercase tracking-widest text-secondary-text">
-            Social Confidence
-          </div>
-        </div>
-      </div>
+    
 
       <div className="grid w-full auto-rows-[22rem] gap-5 md:gap-6">
         <BentoTilt className="col-span-1 md:col-span-2" data-aos="fade-up">
