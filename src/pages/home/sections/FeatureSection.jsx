@@ -46,8 +46,7 @@ const FeatureSection = () => {
             <span className="text-primary">Chizel for Better Learning</span>
           </h1>
           <p className="font-body max-w-3xl mx-auto text-base sm:text-lg text-secondary-text leading-relaxed">
-            Transform screen time into meaningful growth with our three core
-            experiences designed for modern learners.
+            Transform screen time into meaningful growth with our <span className="font-bold text-primary">three core experiences</span> designed for modern learners.
           </p>
         </div>
 
