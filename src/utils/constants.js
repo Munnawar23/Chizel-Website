@@ -178,7 +178,7 @@ export const offers = [
   {
     icon: "kids", 
     title: "For Kids",
-    description: "Fun games that make learning exciting, an AI buddy that builds confidence, and a safe space to share, explore, and connect with kids everywhere — supporting their overall development in every aspect of life.",
+    description: "Fun games that make learning exciting, an AI buddy that builds confidence, and a community to explore, learn, and connect — helping them grow in every aspect of life from the very beginning.",
     bgGradient: "from-primary/20 via-accent/15 to-badge-bg/10",
     iconGradient: "from-primary to-accent",
     hoverShadow: "hover:shadow-[0_0_40px_rgba(31,111,235,0.3)]",
