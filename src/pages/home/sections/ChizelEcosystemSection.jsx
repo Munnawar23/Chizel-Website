@@ -54,7 +54,7 @@ const ChizelEcosystemSection = () => {
       id="chizel-ecosystem"
       className="w-full bg-background text-text overflow-hidden"
     >
-      <div className="flex flex-col items-center pt-8 pb-12 sm:pb-20">
+      <div className="flex flex-col items-center pt-8 pb-20 sm:pb-20">
         <p className="font-ui text-lg uppercase text-secondary-text tracking-wider">
           Our Vision
         </p>
@@ -88,7 +88,7 @@ const ChizelEcosystemSection = () => {
         </div>
 
         {/* FIX 4: Adjusted Negative Margin for Quote */}
-        <div className="relative z-10 flex w-full max-w-2xl -mt-72  md:-mt-48 flex-col items-center px-4">
+        <div className="relative z-10 flex w-full max-w-2xl -mt-92  md:-mt-48 flex-col items-center px-4">
           <p className="text-center font-body text-secondary-text text-lg sm:text-xl">
             "We are creating a comprehensive ecosystem for your child — where
             learning, play, and growth come together in a single, engaging
