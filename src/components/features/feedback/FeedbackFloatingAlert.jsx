@@ -210,7 +210,7 @@ const FeedbackFloatingAlert = () => {
                 >
                   <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <span className="text-lg">💙</span>
-                  <span className="relative">Share Your Ideas</span>
+                  <span className="relative">Share Your Feedback</span>
                   <FaRocket className="relative text-lg group-hover:rotate-12 transition-transform duration-300" />
                 </button>
                 
